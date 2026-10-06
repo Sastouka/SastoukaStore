@@ -2,6 +2,8 @@
 """SastoukaStore — couche PayPal Checkout sécurisée."""
 from __future__ import annotations
 
+import os
+
 import json
 import secrets
 from dataclasses import dataclass
@@ -10,6 +12,9 @@ from pathlib import Path
 from typing import Any, Dict
 
 import requests
+from dotenv import load_dotenv
+
+load_dotenv()
 
 ROOT = Path(__file__).resolve().parent
 SECRET_PATH = ROOT / "secret.json"
@@ -62,23 +67,83 @@ def _first(section: dict[str, Any], *names: str, default: Any = None) -> Any:
 
 
 def load_paypal_config() -> PayPalConfig:
-    section = _paypal_section(_load_secret_data())
-    client_id = str(_first(
-        section, "client_id", "clientId", "paypal_client_id", "PAYPAL_CLIENT_ID",
-        default=""
-    ) or "").strip()
-    client_secret = str(_first(
-        section, "client_secret", "clientSecret", "paypal_client_secret", "PAYPAL_CLIENT_SECRET",
-        default=""
-    ) or "").strip()
-    if not client_id or not client_secret:
-        raise RuntimeError(
-            "Identifiants PayPal manquants dans secret.json : client_id et client_secret."
+    # Sur Render, les variables d'environnement sont prioritaires.
+    # En local, secret.json reste un fallback et n'est pas versionne.
+    env_client_id = os.getenv("PAYPAL_CLIENT_ID", "").strip()
+    env_client_secret = os.getenv("PAYPAL_CLIENT_SECRET", "").strip()
+
+    if env_client_id and env_client_secret:
+        client_id = env_client_id
+        client_secret = env_client_secret
+        environment = os.getenv("PAYPAL_ENVIRONMENT", "live").strip().lower() or "live"
+        currency = os.getenv("PAYPAL_CURRENCY", "EUR").strip().upper() or "EUR"
+
+        raw_rates_text = os.getenv("PAYPAL_EXCHANGE_RATES", "").strip()
+        if raw_rates_text:
+            try:
+                raw_rates = json.loads(raw_rates_text)
+            except Exception as exc:
+                raise RuntimeError(
+                    "PAYPAL_EXCHANGE_RATES doit contenir un objet JSON valide."
+                ) from exc
+        else:
+            raw_rates = {}
+    else:
+        try:
+            section = _paypal_section(_load_secret_data())
+        except Exception as exc:
+            raise RuntimeError(
+                "Identifiants PayPal manquants. Sur Render, definissez "
+                "PAYPAL_CLIENT_ID et PAYPAL_CLIENT_SECRET."
+            ) from exc
+
+        client_id = str(_first(
+            section,
+            "client_id",
+            "clientId",
+            "paypal_client_id",
+            "PAYPAL_CLIENT_ID",
+            default=""
+        ) or "").strip()
+
+        client_secret = str(_first(
+            section,
+            "client_secret",
+            "clientSecret",
+            "paypal_client_secret",
+            "PAYPAL_CLIENT_SECRET",
+            default=""
+        ) or "").strip()
+
+        environment = str(_first(
+            section,
+            "environment",
+            "mode",
+            "env",
+            default="sandbox"
+        ) or "sandbox").strip().lower()
+
+        currency = str(_first(
+            section,
+            "currency",
+            "paypal_currency",
+            "PAYPAL_CURRENCY",
+            default="EUR"
+        ) or "EUR").strip().upper()
+
+        raw_rates = _first(
+            section,
+            "exchange_rates",
+            "rates",
+            default={}
         )
 
-    environment = str(_first(
-        section, "environment", "mode", "env", default="sandbox"
-    ) or "sandbox").strip().lower()
+    if not client_id or not client_secret:
+        raise RuntimeError(
+            "Identifiants PayPal manquants : PAYPAL_CLIENT_ID et "
+            "PAYPAL_CLIENT_SECRET."
+        )
+
     if environment in {"live", "production", "prod"}:
         environment = "live"
         base_url = "https://api-m.paypal.com"
@@ -86,21 +151,19 @@ def load_paypal_config() -> PayPalConfig:
         environment = "sandbox"
         base_url = "https://api-m.sandbox.paypal.com"
 
-    currency = str(_first(
-        section, "currency", "paypal_currency", default="EUR"
-    ) or "EUR").strip().upper()
     if currency not in PAYPAL_TRANSACTION_CURRENCIES:
         raise RuntimeError(
-            f"Devise PayPal non prise en charge par cette intégration : {currency}. "
+            f"Devise PayPal non prise en charge par cette integration : {currency}. "
             "Utilisez notamment EUR ou USD."
         )
 
-    raw_rates = _first(section, "exchange_rates", "rates", default={})
     exchange_rates: Dict[str, float] = {}
     if isinstance(raw_rates, dict):
         for key, value in raw_rates.items():
             try:
-                exchange_rates[str(key).strip().upper()] = float(value)
+                rate = float(value)
+                if rate > 0:
+                    exchange_rates[str(key).strip().upper()] = rate
             except (TypeError, ValueError):
                 continue
 

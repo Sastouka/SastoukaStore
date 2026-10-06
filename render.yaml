@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: sastoukastore
+    runtime: python
+    plan: free
+    branch: main
+    region: frankfurt
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    autoDeployTrigger: commit

@@ -1,0 +1,156 @@
+/* ============================================================
+   SASTOUKASTORE — PANIER VIP & CONVERSION (2026)
+   ============================================================ */
+:root {
+  --cart-vip-navy: #0d2138;
+  --cart-vip-action: #ff6a00;
+  --cart-vip-glow: rgba(255, 106, 0, 0.4);
+}
+
+/* Le conteneur principal centré */
+body.p64 .p64-wrap {
+  max-width: 1200px !important;
+}
+
+/* En-tête de la page Panier (Immersif et cohérent avec le Checkout) */
+body.p64 .p64-head {
+  background: linear-gradient(135deg, #050c16 0%, var(--cart-vip-navy) 100%) !important;
+  border-bottom: 3px solid var(--cart-vip-action) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2) !important;
+  padding: 30px !important;
+}
+
+body.p64 .p64-head h1 {
+  font-size: 42px !important;
+  color: #fff !important;
+  text-transform: uppercase;
+  letter-spacing: -1.5px !important;
+}
+
+/* Zone de la liste des articles */
+body.p64 .p65-items {
+  background: #fff !important;
+  border-radius: 20px !important;
+  border: 1px solid #dce5ee !important;
+  box-shadow: 0 10px 30px rgba(7, 17, 31, 0.05) !important;
+  padding: 10px 25px !important;
+}
+
+body.p64 .p65-item {
+  padding: 22px 0 !important;
+  border-bottom: 1px solid #eef2f6 !important;
+}
+
+body.p64 .p65-thumb {
+  border: 1px solid #e1e8f0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06) !important;
+  background: #f8fafc !important;
+}
+
+body.p64 .p65-name {
+  font-size: 18px !important;
+  font-weight: 900 !important;
+  color: var(--cart-vip-navy) !important;
+  margin-bottom: 4px !important;
+}
+
+body.p64 .p65-item strong {
+  font-size: 18px !important;
+  color: var(--cart-vip-navy) !important;
+}
+
+/* Bouton Supprimer plus élégant */
+body.p64 .p64-remove {
+  color: #d92d20 !important;
+  background: #fdf2f2 !important;
+  border: 1px solid #fad4d4 !important;
+  border-radius: 8px !important;
+  padding: 8px 14px !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  transition: all 0.2s ease !important;
+  margin-top: 10px !important;
+}
+
+body.p64 .p64-remove:hover {
+  background: #d92d20 !important;
+  color: #fff !important;
+  transform: translateY(-1px) !important;
+}
+
+/* --- LE RÉSUMÉ (Panneau de droite ultra-agressif pour la conversion) --- */
+body.p64 .p64-summary {
+  position: sticky !important;
+  top: 90px !important;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+  border: 2px solid var(--cart-vip-navy) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 15px 40px rgba(13, 33, 56, 0.12) !important;
+  padding: 30px !important;
+}
+
+body.p64 .p64-summary .p64-kicker {
+  color: var(--cart-vip-navy) !important;
+  font-weight: 900 !important;
+  font-size: 11px !important;
+}
+
+body.p64 .p64-total {
+  border-top: 2px solid #e1e8f0 !important;
+  padding-top: 20px !important;
+  margin-top: 18px !important;
+}
+
+body.p64 .p64-total strong {
+  color: var(--cart-vip-action) !important;
+  font-size: 36px !important;
+  line-height: 1 !important;
+  letter-spacing: -1px !important;
+}
+
+/* Bouton d'action "Passer la commande" (Pulsation) */
+body.p64 .p64-summary .p64-primary {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: linear-gradient(135deg, var(--cart-vip-action), #ff9e38) !important;
+  color: #fff !important;
+  font-size: 15px !important;
+  font-weight: 900 !important;
+  height: 56px !important;
+  border-radius: 14px !important;
+  animation: cart-pulse 2s infinite !important;
+  border: none !important;
+  margin-top: 25px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+@keyframes cart-pulse {
+  0% { box-shadow: 0 0 0 0 var(--cart-vip-glow); }
+  70% { box-shadow: 0 0 15px 12px rgba(255, 106, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 106, 0, 0); }
+}
+
+body.p64 .p64-secondary {
+  border: 1px solid #dce5ee !important;
+  color: #4f6074 !important;
+  border-radius: 12px !important;
+  font-size: 13px !important;
+}
+
+body.p64 .p64-note {
+  background: #eef3f8 !important;
+  border: 1px solid #dce5ee !important;
+  color: #5b6b82 !important;
+  border-radius: 12px !important;
+  padding: 16px !important;
+  margin-top: 24px !important;
+  font-size: 11px !important;
+}
+
+body.p64 .p64-note b {
+  color: var(--cart-vip-navy) !important;
+}

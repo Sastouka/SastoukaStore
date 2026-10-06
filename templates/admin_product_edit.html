@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="/static/css/sastoukastore_bande_haut_uniforme_vip_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_icon_safety_v2_2026.css?v=20261006">
+{% extends "base.html" %}
+{% block title %}SastoukaStore — Modifier{% endblock %}
+{% block content %}
+<div class="admin-head"><div><span class="section-kicker">CATALOGUE</span><h1>Modifier</h1><p>{{product.name}}</p></div><a class="primary-btn dark-btn" href="{{url_for('admin.dashboard')}}">← Retour</a></div>
+<section class="panel"><form method="post" enctype="multipart/form-data" class="product-form">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><label>Nom<input name="name" value="{{product.name}}" required></label><label>Catégorie<select name="category_id"><option value="">Sans catégorie</option>{% for c in categories %}<option value="{{c.id}}" {% if c.id==product.category_id %}selected{% endif %}>{{c.name}}</option>{% endfor %}</select></label><div class="two-fields"><label>Prix<input type="number" step="0.01" name="price" value="{{product.price}}"></label></div><label>Description<textarea name="description" rows="5">{{product.description}}</textarea>{% if product.image %}<img class="edit-image" src="{{product.image}}" alt="">{% endif %}<label>Nouvelle image<input type="file" name="image" accept=".png,.jpg,.jpeg,.webp,.gif"></label><button class="primary-btn dark-btn">Enregistrer</button></form></section>
+{% endblock %}
+
+<script src="/static/js/admin_access9.js?v=7click-discret-20261005"></script>
+
+<link rel="stylesheet" href="/static/css/sastoukastore_admin_digital_v2.css?v=20261006">
+
+<script src="/static/js/sastoukastore_remove_region_banner_v2.js?v=20261007"></script>

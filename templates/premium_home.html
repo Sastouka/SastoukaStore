@@ -1,0 +1,1048 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#041C41">
+<meta name="description" content="SastoukaStore — Supports scolaires numériques premium.">
+<title>SastoukaStore — Le savoir en 1 clic</title>
+<link rel="stylesheet" href="/static/css/premium17.css?v=700">
+<link rel="stylesheet" href="/static/css/sastoukastore_theme_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_home_2026_v2.css?v=702">
+<link rel="stylesheet" href="/static/css/sastoukastore_catalogue_couvertures_v4_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_contraste_couleurs_vip_v3.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_global_client_admin_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_icon_safety_v2_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_bande_haut_uniforme_vip_2026.css?v=20261006">
+
+<!-- Correctif Boutons -->
+<link rel="stylesheet" href="/static/css/sastoukastore_fix_boutons_blancs.css?v=202610062200">
+
+<!-- Correctif Contraste Global -->
+
+<!-- Correctif Contraste Global -->
+<link rel="stylesheet" href="/static/css/sastoukastore_contraste_global_2026.css?v=202610062242">
+<link rel="stylesheet" href="/static/css/sastoukastore_catalogue_search_v1.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_amazon_density_v3.css?v=20261006">
+
+<link rel="stylesheet" href="/static/css/sastoukastore_home_equilibre_v4.css?v=20261006">
+<style id="SASTOUKASTORE_HOME_EQUILIBRE_V4">
+/* ============================================================
+   SASTOUKASTORE — HOME ÉQUILIBRÉ V4
+   ============================================================ */
+
+/* ---------- HERO : garder l'identité SastoukaStore ---------- */
+
+html body .vip-hero-grid{
+  min-height:410px !important;
+  padding-top:26px !important;
+  padding-bottom:22px !important;
+  gap:28px !important;
+}
+
+html body .vip-hero-copy h1{
+  margin-top:8px !important;
+  margin-bottom:13px !important;
+}
+
+html body .vip-hero-text{
+  margin-bottom:14px !important;
+}
+
+html body .vip-proof-row{
+  margin-top:10px !important;
+  gap:9px !important;
+}
+
+/* ---------- SUPPRESSION DES BLOCS REDONDANTS ---------- */
+
+html body .vip-trust-bar{
+  display:none !important;
+}
+
+html body .ssk-conversion-strip{
+  display:none !important;
+}
+
+/* Ancien bandeau "sélectionne ton support..." :
+   on le neutralise sans toucher au catalogue. */
+html body .vip-catalogue::before{
+  content:none !important;
+  display:none !important;
+}
+
+/* ---------- COLLECTIONS : garder, mais sous forme compacte ---------- */
+
+html body section.vip-section.vip-categories{
+  padding-top:14px !important;
+  padding-bottom:13px !important;
+  margin:0 !important;
+  background:#F4F8FC !important;
+}
+
+html body .vip-categories .vip-section-heading{
+  margin:0 0 8px !important;
+  display:flex !important;
+  align-items:baseline !important;
+  justify-content:space-between !important;
+  gap:16px !important;
+}
+
+html body .vip-categories .vip-section-heading h2{
+  font-size:25px !important;
+  line-height:1 !important;
+  margin:2px 0 0 !important;
+  letter-spacing:-1.1px !important;
+}
+
+html body .vip-categories .vip-kicker{
+  font-size:8px !important;
+  margin:0 !important;
+}
+
+html body .vip-categories .vip-section-note{
+  font-size:9px !important;
+  margin:0 !important;
+}
+
+/* Cartes compactes : plus proches d'une navigation que de grosses
+   "tuiles marketplace". */
+html body .vip-categories .vip-category-grid{
+  display:flex !important;
+  gap:8px !important;
+  overflow-x:auto !important;
+  overflow-y:hidden !important;
+  padding:1px 2px 4px !important;
+  margin:0 !important;
+  scrollbar-width:thin;
+}
+
+html body .vip-categories .vip-category-card{
+  flex:0 0 190px !important;
+  min-height:56px !important;
+  height:56px !important;
+  padding:8px 10px !important;
+  border-radius:13px !important;
+  box-shadow:0 3px 12px rgba(4,28,65,.05) !important;
+}
+
+html body .vip-categories .vip-category-icon{
+  width:30px !important;
+  height:30px !important;
+  min-width:30px !important;
+  border-radius:9px !important;
+}
+
+html body .vip-categories .vip-category-card small{
+  font-size:6px !important;
+}
+
+html body .vip-categories .vip-category-card strong{
+  font-size:11px !important;
+}
+
+/* ---------- CATALOGUE : commence immédiatement ---------- */
+
+html body section.vip-section.vip-catalogue{
+  padding-top:18px !important;
+  margin-top:0 !important;
+}
+
+html body .vip-catalogue .vip-catalogue-heading{
+  margin-top:0 !important;
+  margin-bottom:10px !important;
+}
+
+html body .vip-catalogue .vip-catalogue-heading h2{
+  margin-top:2px !important;
+  margin-bottom:0 !important;
+}
+
+html body #catalogue .vip-product-grid{
+  margin-top:5px !important;
+}
+
+/* ---------- TABLETTE / MOBILE ---------- */
+
+@media(max-width:900px){
+  html body .vip-hero-grid{
+    min-height:370px !important;
+    padding-top:22px !important;
+    padding-bottom:18px !important;
+  }
+
+  html body .vip-categories .vip-section-note{
+    display:none !important;
+  }
+}
+
+@media(max-width:720px){
+  html body .vip-hero-grid{
+    min-height:auto !important;
+    padding-top:24px !important;
+    padding-bottom:20px !important;
+  }
+
+  html body section.vip-section.vip-categories{
+    padding-top:10px !important;
+    padding-bottom:9px !important;
+  }
+
+  html body .vip-categories .vip-section-heading{
+    margin-bottom:7px !important;
+  }
+
+  html body .vip-categories .vip-section-heading h2{
+    font-size:22px !important;
+  }
+
+  html body .vip-categories .vip-category-card{
+    flex-basis:175px !important;
+  }
+
+  html body section.vip-section.vip-catalogue{
+    padding-top:13px !important;
+  }
+}
+
+@media(max-width:460px){
+  html body .vip-hero-copy h1{
+    font-size:40px !important;
+    letter-spacing:-2.6px !important;
+  }
+
+  html body .vip-categories .vip-category-card{
+    flex-basis:165px !important;
+  }
+}
+</style>
+<link rel="stylesheet" href="/static/css/sastoukastore_home_equilibre_v5.css?v=20261006">
+<style id="SASTOUKASTORE_HOME_EQUILIBRE_V5">
+/* ============================================================
+   SASTOUKASTORE — HOME ÉQUILIBRÉ V5
+   Contrôle visuel : compact, premium, original
+   ============================================================ */
+
+/* Le hero reste la pièce forte */
+html body .vip-hero-grid{
+  min-height:410px !important;
+  padding-top:26px !important;
+  padding-bottom:22px !important;
+  gap:28px !important;
+}
+
+html body .vip-hero-copy h1{
+  margin-top:8px !important;
+  margin-bottom:13px !important;
+}
+
+html body .vip-hero-text{
+  margin-bottom:14px !important;
+}
+
+html body .vip-proof-row{
+  margin-top:10px !important;
+  gap:9px !important;
+}
+
+/* Ces anciens blocs sont volontairement supprimés de l'HTML.
+   Le CSS ci-dessous garantit simplement qu'ils ne réapparaissent
+   pas via un ancien fichier/style. */
+html body .vip-trust-bar{
+  display:none !important;
+}
+
+html body .ssk-conversion-strip{
+  display:none !important;
+}
+
+html body .vip-catalogue::before{
+  content:none !important;
+  display:none !important;
+}
+
+/* Collections : présentes mais compactes */
+html body section.vip-section.vip-categories{
+  padding-top:14px !important;
+  padding-bottom:13px !important;
+  margin:0 !important;
+  background:#F4F8FC !important;
+}
+
+html body .vip-categories .vip-section-heading{
+  margin:0 0 8px !important;
+  display:flex !important;
+  align-items:baseline !important;
+  justify-content:space-between !important;
+  gap:16px !important;
+}
+
+html body .vip-categories .vip-section-heading h2{
+  font-size:25px !important;
+  line-height:1 !important;
+  margin:2px 0 0 !important;
+  letter-spacing:-1.1px !important;
+}
+
+html body .vip-categories .vip-kicker{
+  font-size:8px !important;
+  margin:0 !important;
+}
+
+html body .vip-categories .vip-section-note{
+  font-size:9px !important;
+  margin:0 !important;
+}
+
+html body .vip-categories .vip-category-grid{
+  display:flex !important;
+  gap:8px !important;
+  overflow-x:auto !important;
+  overflow-y:hidden !important;
+  padding:1px 2px 4px !important;
+  margin:0 !important;
+  scrollbar-width:thin;
+}
+
+html body .vip-categories .vip-category-card{
+  flex:0 0 190px !important;
+  min-height:56px !important;
+  height:56px !important;
+  padding:8px 10px !important;
+  border-radius:13px !important;
+  box-shadow:0 3px 12px rgba(4,28,65,.05) !important;
+}
+
+html body .vip-categories .vip-category-icon{
+  width:30px !important;
+  height:30px !important;
+  min-width:30px !important;
+  border-radius:9px !important;
+}
+
+html body .vip-categories .vip-category-card small{
+  font-size:6px !important;
+}
+
+html body .vip-categories .vip-category-card strong{
+  font-size:11px !important;
+}
+
+/* Catalogue */
+html body section.vip-section.vip-catalogue{
+  padding-top:18px !important;
+  margin-top:0 !important;
+}
+
+html body .vip-catalogue .vip-catalogue-heading{
+  margin-top:0 !important;
+  margin-bottom:10px !important;
+}
+
+html body .vip-catalogue .vip-catalogue-heading h2{
+  margin-top:2px !important;
+  margin-bottom:0 !important;
+}
+
+html body #catalogue .vip-product-grid{
+  margin-top:5px !important;
+}
+
+@media(max-width:900px){
+  html body .vip-hero-grid{
+    min-height:370px !important;
+    padding-top:22px !important;
+    padding-bottom:18px !important;
+  }
+
+  html body .vip-categories .vip-section-note{
+    display:none !important;
+  }
+}
+
+@media(max-width:720px){
+  html body .vip-hero-grid{
+    min-height:auto !important;
+    padding-top:24px !important;
+    padding-bottom:20px !important;
+  }
+
+  html body section.vip-section.vip-categories{
+    padding-top:10px !important;
+    padding-bottom:9px !important;
+  }
+
+  html body .vip-categories .vip-section-heading{
+    margin-bottom:7px !important;
+  }
+
+  html body .vip-categories .vip-section-heading h2{
+    font-size:22px !important;
+  }
+
+  html body .vip-categories .vip-category-card{
+    flex-basis:175px !important;
+  }
+
+  html body section.vip-section.vip-catalogue{
+    padding-top:13px !important;
+  }
+}
+
+@media(max-width:460px){
+  html body .vip-hero-copy h1{
+    font-size:40px !important;
+    letter-spacing:-2.6px !important;
+  }
+
+  html body .vip-categories .vip-category-card{
+    flex-basis:165px !important;
+  }
+}
+</style>
+<style id="SASTOUKASTORE_SUPPRIMER_ESPACE_CATALOGUE_V6">
+/* ============================================================
+   SASTOUKASTORE — SUPPRESSION ESPACE CATALOGUE V6
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. Aucun espace entre le HERO et la suite de la page
+   ------------------------------------------------------------ */
+
+html body .vip-hero{
+  margin-bottom:0 !important;
+}
+
+html body .vip-trust-bar{
+  display:none !important;
+  height:0 !important;
+  min-height:0 !important;
+  max-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  overflow:hidden !important;
+}
+
+html body section.vip-section.vip-categories{
+  margin-top:0 !important;
+  padding-top:10px !important;
+  padding-bottom:10px !important;
+  border-top:0 !important;
+}
+
+/* ------------------------------------------------------------
+   2. Catégories : passage direct sous le Hero
+   ------------------------------------------------------------ */
+
+html body .vip-categories .vip-section-heading{
+  margin-top:0 !important;
+  margin-bottom:8px !important;
+}
+
+html body .vip-categories .vip-section-heading h2{
+  margin-top:0 !important;
+}
+
+html body .vip-categories .vip-category-grid{
+  margin-top:0 !important;
+  padding-top:0 !important;
+  padding-bottom:2px !important;
+}
+
+/* ------------------------------------------------------------
+   3. Catalogue : pas de marge supérieure excessive
+   ------------------------------------------------------------ */
+
+html body section.vip-section.vip-catalogue{
+  margin-top:0 !important;
+  padding-top:12px !important;
+}
+
+html body .vip-catalogue .vip-catalogue-heading{
+  margin-top:0 !important;
+  margin-bottom:8px !important;
+}
+
+html body #catalogue .vip-product-grid{
+  margin-top:3px !important;
+  padding-top:0 !important;
+}
+
+/* Supprime le pseudo-espace visuel d'anciens patchs */
+html body .vip-catalogue::before{
+  content:none !important;
+  display:none !important;
+  height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* ------------------------------------------------------------
+   4. Au cas où un ancien bandeau de conversion existe encore
+   ------------------------------------------------------------ */
+
+html body .ssk-conversion-strip{
+  display:none !important;
+  height:0 !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+}
+
+/* ------------------------------------------------------------
+   5. Petit filet de séparation très discret à la place d'une
+      grosse zone vide : aucun bloc supplémentaire.
+   ------------------------------------------------------------ */
+
+html body .vip-categories{
+  border-radius:0 !important;
+}
+
+/* ------------------------------------------------------------
+   6. Responsive
+   ------------------------------------------------------------ */
+
+@media(max-width:720px){
+  html body section.vip-section.vip-categories{
+    padding-top:7px !important;
+    padding-bottom:7px !important;
+  }
+
+  html body section.vip-section.vip-catalogue{
+    padding-top:9px !important;
+  }
+}
+</style>
+<style id="SASTOUKASTORE_SUPPRESSION_FORCE_ESPACE_V7">
+/* ============================================================
+   SASTOUKASTORE — SUPPRESSION FORCE ESPACE CATALOGUE V7
+   ============================================================ */
+
+/* 1 — Sécurité absolue : les anciens blocs ne doivent plus
+       occuper aucun pixel. */
+html body .vip-trust-bar,
+html body [class~="vip-trust-bar"],
+html body .ssk-conversion-strip,
+html body [class~="ssk-conversion-strip"]{
+  display:none !important;
+  visibility:hidden !important;
+  opacity:0 !important;
+  width:0 !important;
+  height:0 !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  max-width:0 !important;
+  max-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  overflow:hidden !important;
+}
+
+/* 2 — Aucun pseudo-élément de type bandeau avant catalogue */
+html body .vip-catalogue::before,
+html body .vip-catalogue::after{
+  content:none !important;
+  display:none !important;
+  width:0 !important;
+  height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* 3 — Suppression des espaces hérités entre les sections */
+html body .vip-hero{
+  margin-bottom:0 !important;
+  padding-bottom:0 !important;
+}
+
+html body section.vip-categories,
+html body .vip-categories{
+  margin-top:0 !important;
+  padding-top:8px !important;
+  padding-bottom:8px !important;
+  min-height:0 !important;
+  height:auto !important;
+}
+
+html body .vip-categories > .vip-container{
+  margin-top:0 !important;
+  padding-top:0 !important;
+}
+
+/* 4 — Catalogue directement après les catégories */
+html body section.vip-catalogue,
+html body .vip-catalogue{
+  margin-top:0 !important;
+  padding-top:8px !important;
+  min-height:0 !important;
+}
+
+html body .vip-catalogue > .vip-container{
+  margin-top:0 !important;
+  padding-top:0 !important;
+}
+
+html body .vip-catalogue .vip-catalogue-heading{
+  margin-top:0 !important;
+  padding-top:0 !important;
+  margin-bottom:8px !important;
+}
+
+html body #catalogue .vip-product-grid{
+  margin-top:0 !important;
+  padding-top:0 !important;
+}
+
+/* 5 — Compacte seulement la navigation des catégories,
+       sans toucher aux dimensions des livres */
+html body .vip-category-grid{
+  margin-top:0 !important;
+  padding-top:0 !important;
+}
+
+html body .vip-category-card{
+  margin-top:0 !important;
+}
+
+/* 6 — Responsive */
+@media(max-width:720px){
+  html body section.vip-categories,
+  html body .vip-categories{
+    padding-top:6px !important;
+    padding-bottom:6px !important;
+  }
+
+  html body section.vip-catalogue,
+  html body .vip-catalogue{
+    padding-top:6px !important;
+  }
+}
+</style>
+<link rel="stylesheet" href="/static/css/sastoukastore_catalogue_direct_v8.css?v=20261006">
+<style id="SASTOUKASTORE_CATALOGUE_DIRECT_V8">
+/* ============================================================
+   SASTOUKASTORE — CATALOGUE DIRECT V8
+   Aucun Hero. Le catalogue devient la zone principale.
+   ============================================================ */
+
+/* Sécurité : aucun Hero ne doit occuper d'espace */
+html body .vip-hero,
+html body [class~="vip-hero"]{
+  display:none !important;
+  visibility:hidden !important;
+  opacity:0 !important;
+  width:0 !important;
+  height:0 !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  overflow:hidden !important;
+}
+
+/* Nettoyage des anciens blocs intermédiaires */
+html body .vip-trust-bar,
+html body [class~="vip-trust-bar"],
+html body .ssk-conversion-strip,
+html body [class~="ssk-conversion-strip"]{
+  display:none !important;
+  width:0 !important;
+  height:0 !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  overflow:hidden !important;
+}
+
+html body .vip-catalogue::before,
+html body .vip-catalogue::after{
+  content:none !important;
+  display:none !important;
+}
+
+/* Le catalogue commence juste après le header */
+html body main{
+  margin:0 !important;
+  padding:0 !important;
+}
+
+html body section.vip-catalogue,
+html body .vip-catalogue{
+  margin:0 !important;
+  padding-top:18px !important;
+  padding-bottom:40px !important;
+  min-height:0 !important;
+}
+
+html body .vip-catalogue > .vip-container{
+  margin-top:0 !important;
+  padding-top:0 !important;
+}
+
+/* Titre du catalogue */
+html body .vip-catalogue .vip-catalogue-heading{
+  margin-top:0 !important;
+  margin-bottom:12px !important;
+}
+
+/* Recherche : rapprochée du catalogue */
+html body #sskCatalogSearchWrap{
+  margin-top:0 !important;
+  margin-bottom:10px !important;
+  padding-top:0 !important;
+}
+
+/* Grille */
+html body #catalogue .vip-product-grid{
+  margin-top:0 !important;
+  padding-top:0 !important;
+}
+
+/* Les catégories, lorsqu'elles sont conservées, restent discrètes.
+   Elles ne doivent pas recréer un "Hero bis". */
+html body section.vip-categories{
+  margin:0 !important;
+  padding-top:8px !important;
+  padding-bottom:8px !important;
+}
+
+html body .vip-categories .vip-section-heading{
+  margin-top:0 !important;
+  margin-bottom:7px !important;
+}
+
+html body .vip-categories .vip-category-grid{
+  margin-top:0 !important;
+  padding-top:0 !important;
+}
+
+@media(max-width:720px){
+  html body section.vip-catalogue,
+  html body .vip-catalogue{
+    padding-top:12px !important;
+    padding-bottom:30px !important;
+  }
+
+  html body section.vip-categories{
+    padding-top:6px !important;
+    padding-bottom:6px !important;
+  }
+}
+</style>
+<link rel="stylesheet" href="/static/css/sastoukastore_categories_filtre_centres_v9.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_remove_region_banner_v2.css?v=20261007">
+</head>
+<body class="vip-home">
+
+<div class="vip-announce">
+  <div class="vip-announce-inner">
+    <span class="vip-live-dot"></span>
+    <span>SUPPORTS SCOLAIRES NUMÉRIQUES</span>
+    <span class="vip-sep">•</span>
+    <span>TOGO · AFRIQUE FRANCOPHONE · DIASPORA</span>
+    <span class="vip-announce-right">ACCÈS PDF · PAIEMENT AU CHOIX · ASSISTANCE WHATSAPP</span>
+  </div>
+</div>
+
+<header class="vip-nav">
+  <a class="vip-brand" href="/" aria-label="SastoukaStore accueil">
+    <span class="vip-brand-mark">
+      <img class="sastoukastore-header-logo" src="/static/branding/sastoukastore-header-logo.png?v=700" alt="SastoukaStore">
+    </span>
+    <span class="vip-brand-word">SastoukaStore<small>LE SAVOIR EN 1 CLIC</small></span>
+  </a>
+
+  <nav class="vip-nav-links" aria-label="Navigation">
+    <a href="#catalogue">Catalogue</a>
+    <a href="#categories">Catégories</a>
+    <a href="#experience">Pourquoi SastoukaStore</a>
+    <a href="/suivi-commande">Mes achats</a>
+  </nav>
+
+  <div class="vip-nav-actions">
+    <a class="vip-nav-link" href="https://wa.me/212652084735?text=Bonjour%20SastoukaStore%2C%20je%20souhaite%20des%20informations." target="_blank" rel="noopener">
+      WhatsApp
+    </a>
+    <a class="vip-cart" href="/panier">
+      <span class="vip-cart-icon">🛒</span>
+      <span>Panier</span>
+      <b id="cartCount">{{ products|length if products is defined else 0 }}</b>
+    </a>
+  </div>
+</header>
+
+<main>
+
+
+
+
+
+<section class="vip-section vip-categories" id="categories">
+  <div class="vip-container">
+    <div class="vip-section-heading">
+      <div>
+        <span class="vip-kicker">COLLECTIONS</span>
+        <h2>Choisis ton terrain.</h2>
+      </div>
+      <span class="vip-section-note">Une sélection pensée pour réviser avec efficacité.</span>
+    </div>
+
+    <div class="vip-category-grid">
+      {% for c in categories or [] %}
+      <a class="vip-category-card" data-category-id="{{ c.id }}" data-category-name="{{ c.name|e }}" href="#catalogue">
+        <span class="vip-category-icon">✦</span>
+        <span>
+          <small>COLLECTION</small>
+          <strong>{{ c.name }}</strong>
+        </span>
+        <b>↗</b>
+      </a>
+      {% else %}
+      <a class="vip-category-card active" href="#catalogue">
+        <span class="vip-category-icon">✦</span>
+        <span><small>COLLECTION</small><strong>Terminale</strong></span><b>↗</b>
+      </a>
+      <a class="vip-category-card" href="#catalogue">
+        <span class="vip-category-icon">∑</span>
+        <span><small>COLLECTION</small><strong>Mathématiques</strong></span><b>↗</b>
+      </a>
+      <a class="vip-category-card" href="#catalogue">
+        <span class="vip-category-icon">⚛</span>
+        <span><small>COLLECTION</small><strong>Physique</strong></span><b>↗</b>
+      </a>
+      <a class="vip-category-card" href="#catalogue">
+        <span class="vip-category-icon">Aa</span>
+        <span><small>COLLECTION</small><strong>Français</strong></span><b>↗</b>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<!-- SASTOUKASTORE CATALOG SEARCH V1 -->
+<section class="ssk-catalog-search" aria-label="Recherche dans le catalogue">
+  <div class="ssk-catalog-search-inner">
+    <div class="ssk-catalog-search-heading">
+      <span class="ssk-search-eyebrow">RECHERCHE</span>
+      <h2>Trouve ton support.</h2>
+      <p>Recherchez un livre, un cours, un exercice ou une méthode.</p>
+    </div>
+
+    <form id="sskCatalogSearchForm" class="ssk-search-form" role="search">
+      <div class="ssk-search-input-wrap">
+        <span class="ssk-search-icon" aria-hidden="true">&#9906;</span>
+        <input id="sskCatalogSearch" name="q" type="search"
+               autocomplete="off" spellcheck="false"
+               placeholder="Ex. Mathématiques Terminale, probabilités..."
+               aria-label="Rechercher un livre">
+        <button type="button" id="sskCatalogSearchClear"
+                class="ssk-search-clear" aria-label="Effacer la recherche"
+                title="Effacer" hidden>×</button>
+      </div>
+      <button class="ssk-search-submit" type="submit">Rechercher</button>
+    </form>
+
+    <div class="ssk-search-meta">
+      <span id="sskCatalogSearchResult">Recherche dans le catalogue</span>
+      <span class="ssk-search-hint">Appuyez sur « / » pour rechercher</span>
+    </div>
+  </div>
+</section>
+<!-- FIN SASTOUKASTORE CATALOG SEARCH V1 -->
+<section class="vip-section vip-catalogue" id="catalogue">
+  <div class="vip-container">
+    <div class="vip-section-heading vip-catalogue-heading">
+      <div>
+        <span class="vip-kicker">BOUTIQUE</span>
+        <h2>Les supports disponibles.</h2>
+      </div>
+      <span class="vip-catalog-count">{{ products|length if products is defined else 0 }} support(s)</span>
+    </div>
+
+    <div class="vip-product-grid">
+      {% for p in products or [] %}
+      <article class="vip-product-card" data-category-id="{{ p.category_id or '' }}">
+        <a class="vip-product-media" href="/produit/{{ p.id }}">
+          <div class="vip-product-media-inner">
+            {% if p.image %}
+              {% if p.image.startswith('http://') or p.image.startswith('https://') %}
+                <img src="{{ p.image }}" alt="{{ p.name }}">
+              {% elif p.image.startswith('/static/') %}
+                <img src="{{ p.image }}" alt="{{ p.name }}">
+              {% else %}
+                <img src="/static/{{ p.image.lstrip('/') }}" alt="{{ p.name }}">
+              {% endif %}
+            {% else %}
+              <div class="vip-product-fallback"><strong>PDF</strong><span>SastoukaStore</span></div>
+            {% endif %}
+          </div>
+          <span class="vip-product-tag">PDF</span>
+          {% if p.featured %}<span class="vip-featured">★ POPULAIRE</span>{% endif %}
+        </a>
+
+        <div class="vip-product-body">
+          <div class="vip-product-meta">
+            <span>{{ p.level if p.level else 'SUPPORT SCOLAIRE' }}</span>
+            {% if p.subject %}<span>{{ p.subject }}</span>{% endif %}
+          </div>
+
+          <a class="vip-product-name" href="/produit/{{ p.id }}">{{ p.name }}</a>
+          <p>{{ p.short_description or p.description or "Cours, exercices et méthodes à télécharger." }}</p>
+
+          <div class="vip-product-footer">
+            <div class="vip-price">
+              <strong>{{ "%.2f"|format(p.price or 0) }}</strong>
+              <span>{{ p.currency or "FCFA" }}</span>
+            </div>
+            <div class="vip-product-actions">
+              <button
+                type="button"
+                class="vip-add-cart"
+                data-id="{{ p.id }}"
+                data-name="{{ p.name|e }}"
+                data-price="{{ p.price or 0 }}"
+                data-currency="{{ p.currency or 'FCFA' }}"
+                data-image="{{ p.image or '' }}">
+                Ajouter
+              </button>
+              <a href="/produit/{{ p.id }}" class="vip-view-link">Voir ↗</a>
+            </div>
+          </div>
+        </div>
+      </article>
+      {% else %}
+      <div class="vip-empty">
+        <span>✦</span>
+        <h3>Le prochain support arrive bientôt.</h3>
+        <p>Les nouveaux supports seront publiés ici.</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="vip-experience" id="experience">
+  <div class="vip-container">
+    <div class="vip-experience-card">
+      <div class="vip-experience-copy">
+        <span class="vip-kicker">L'EXPÉRIENCE SastoukaStore</span>
+        <h2>Une vitrine pensée comme une <em>marque premium.</em></h2>
+        <p>Une expérience simple pour choisir un support, commander plusieurs PDF, envoyer son justificatif et recevoir une clé d'accès sécurisée après validation du paiement.</p>
+        <a href="#catalogue" class="vip-btn vip-btn-primary">Choisir un support <span>→</span></a>
+      </div>
+      <div class="vip-experience-steps">
+        <div><b>01</b><span><strong>Choisir</strong><small>Sélectionner un ou plusieurs supports.</small></span></div>
+        <div><b>02</b><span><strong>Commander</strong><small>Finaliser avec ses coordonnées.</small></span></div>
+        <div><b>03</b><span><strong>Envoyer le justificatif</strong><small>Échange direct via WhatsApp.</small></span></div>
+        <div><b>04</b><span><strong>Accéder</strong><small>Clé personnelle après confirmation.</small></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="vip-help">
+  <div class="vip-container vip-help-inner">
+    <div>
+      <span class="vip-kicker">ASSISTANCE DIRECTE</span>
+      <h2>Une question sur un support ?</h2>
+      <p>Parle directement à SastoukaStore sur WhatsApp.</p>
+    </div>
+    <a class="vip-btn vip-btn-light" target="_blank" rel="noopener"
+       href="https://wa.me/212652084735?text=Bonjour%20SastoukaStore%2C%20je%20souhaite%20des%20informations%20sur%20un%20support.">
+       Ouvrir WhatsApp ↗
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="vip-footer">
+  <div class="vip-container vip-footer-grid">
+    <div>
+      <a href="/" class="vip-footer-brand">
+        <img src="/static/branding/sastoukastore-header-logo.png?v=700" alt="SastoukaStore">
+        <span>SastoukaStore</span>
+      </a>
+      <p>Le savoir en 1 clic.</p>
+    </div>
+    <div>
+      <span class="vip-footer-label">NAVIGATION</span>
+      <a href="#catalogue">Catalogue</a>
+      <a href="#categories">Catégories</a>
+      <a href="/suivi-commande">Mes achats</a>
+    </div>
+    <div>
+      <span class="vip-footer-label">CONTACT</span>
+      <a href="https://wa.me/212652084735?text=Bonjour%20SastoukaStore" target="_blank" rel="noopener">WhatsApp</a>
+      <span>Support numérique</span>
+    </div>
+  </div>
+  <div class="vip-footer-bottom">
+    <div class="vip-container">© SastoukaStore · Le savoir en 1 clic</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const KEY="sastoukastore_cart_v1";
+
+  function readCart(){
+    try{
+      const value=JSON.parse(localStorage.getItem(KEY)||"[]");
+      return Array.isArray(value)?value:[];
+    }catch(_){ return []; }
+  }
+
+  function saveCart(cart){
+    localStorage.setItem(KEY,JSON.stringify(cart));
+  }
+
+  function refreshCount(){
+    const count=readCart().length;
+    const badge=document.getElementById("cartCount");
+    if(badge) badge.textContent=count;
+  }
+
+  document.querySelectorAll(".vip-add-cart").forEach(button=>{
+    button.addEventListener("click",function(){
+      const cart=readCart();
+      const id=String(this.dataset.id);
+      if(!cart.some(item=>String(item.id)===id)){
+        cart.push({
+          id:Number(this.dataset.id),
+          name:this.dataset.name,
+          price:Number(this.dataset.price||0),
+          currency:this.dataset.currency||"FCFA",
+          image:this.dataset.image||"",
+          product_type:"digital_pdf",
+          quantity:1
+        });
+        saveCart(cart);
+      }
+      refreshCount();
+
+      const old=this.textContent;
+      this.textContent="Ajouté ✓";
+      this.disabled=true;
+      setTimeout(()=>{
+        this.textContent=old;
+        this.disabled=false;
+      },1200);
+    });
+  });
+
+  refreshCount();
+})();
+</script>
+<script src="/static/js/premium17.js?v=700"></script>
+<script src="/static/js/admin_access9.js?v=7click-discret-20261005"></script>
+<script src="/static/js/sastoukastore_catalogue_search_v1.js?v=20261006"></script>
+<script src="/static/js/sastoukastore_categories_filtre_v9.js?v=20261006"></script>
+<script src="/static/js/sastoukastore_remove_region_banner_v2.js?v=20261007"></script>
+</body>
+</html>

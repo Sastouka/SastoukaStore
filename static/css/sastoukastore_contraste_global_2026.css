@@ -1,0 +1,41 @@
+/* ============================================================
+   SASTOUKASTORE — FIX CONTRASTE GLOBAL (BOUTONS BLANCS)
+   ============================================================ */
+
+/* 1. Boutons de retour sur les pages (Panier, Commande, Suivi, Produit, Admin) */
+html body .p64-back,
+html body .pp-back,
+html body .p62-detail-back,
+html body .back,
+html body .vip-btn-dark {
+  background: #ffffff !important;
+  color: #07111f !important; /* Texte bleu nuit très foncé */
+  border: 1px solid #dce5ee !important;
+  text-shadow: none !important;
+  font-weight: 900 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+  transition: all 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+html body .p64-back:hover,
+html body .pp-back:hover,
+html body .p62-detail-back:hover,
+html body .back:hover,
+html body .vip-btn-dark:hover {
+  background: #f8fafc !important;
+  color: #ff6a00 !important; /* Devient orange au survol */
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* 2. Sécurité : S'assurer que le texte des boutons primaires reste bien blanc */
+html body .p64-primary,
+html body .pp-primary,
+html body .primary-btn,
+html body .save,
+html body .vip-add-cart {
+  color: #ffffff !important;
+}

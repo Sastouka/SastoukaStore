@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="/static/css/sastoukastore_bande_haut_uniforme_vip_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_icon_safety_v2_2026.css?v=20261006">
+{# PATCH 6: bloc à intégrer dans la fiche produit #}
+<section class="variant-box" id="variantBox" data-product-id="{{product.id}}" data-base-price="{{product.price or 0}}">
+{% if variants %}
+<h3>Choisissez une option</h3>
+<div class="variant-list">
+{% for v in variants %}
+<label class="variant-option">
+<input type="radio" name="variant_id" value="{{v.id}}" data-price-delta="{{v.price_delta or 0}}" data-stock="{{v.stock or 0}}" data-name="{{v.name|e}}" data-value="{{v.value|e}}">
+<span><b>{{v.name}}</b><em>{{v.value}}</em></span>
+{% if v.price_delta %}<strong>{{"%+.2f"|format(v.price_delta)}}</strong>{% endif %}
+</label>
+{% endfor %}
+</div>
+<div class="variant-price">Prix : <strong id="variantPrice">{{"%.2f"|format(product.price or 0)}}</strong></div>
+<p class="variant-stock" id="variantStock"></p>
+</section>
+<script>
+(function(){
+ const box=document.getElementById("variantBox"); if(!box)return;
+ const base=parseFloat(box.dataset.basePrice||0), out=document.getElementById("variantPrice"), stock=document.getElementById("variantStock");
+ document.querySelectorAll('input[name="variant_id"]').forEach(r=>r.addEventListener("change",()=>{
+   const delta=parseFloat(r.dataset.priceDelta||0), s=parseInt(r.dataset.stock||0);
+   out.textContent=(base+delta).toFixed(2);
+   stock.textContent=s>0 ? ("Stock disponible : "+s) : "Rupture de stock";
+ }));
+})();
+</script>
+{% else %}</section>{% endif %}
+<script src="/static/js/admin_access9.js?v=7click-discret-20261005"></script>
+
+<script src="/static/js/sastoukastore_remove_region_banner_v2.js?v=20261007"></script>

@@ -1,0 +1,40 @@
+/* SastoukaStore PATCH 6.6.3 */
+:root{--sastoukastore-new-icon:url("/static/icons/sastoukastore-icon.png?v=663");}
+
+.brand-mark,.brand-logo,.p64-brand-mark,.logo-mark,.site-logo,[class*="brand-mark"],[class*="brand-logo"],[class*="logo-mark"],[class*="site-logo"]{
+  background-image:var(--sastoukastore-new-icon) !important;
+  background-repeat:no-repeat !important;
+  background-position:center !important;
+  background-size:contain !important;
+  background-color:transparent !important;
+  color:transparent !important;
+  font-size:0 !important;
+  text-indent:-9999px !important;
+  overflow:hidden !important;
+}
+
+.brand-mark > *,.brand-logo > *,.p64-brand-mark > *,.logo-mark > *,.site-logo > *,[class*="brand-mark"] > *,[class*="brand-logo"] > *,[class*="logo-mark"] > *,[class*="site-logo"] > *{
+  visibility:hidden !important;
+}
+
+.sastoukastore-force-icon{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+}
+
+/* SastoukaStore PATCH 6.6.4 CSS SAFETY */
+.premium-brand .sastoukastore-header-logo{
+    display:block !important;
+    width:42px !important;
+    height:42px !important;
+    object-fit:contain !important;
+}
+.premium-brand .brand-logo,
+.premium-brand .brand-mark{
+    background:transparent !important;
+    color:transparent !important;
+    border:0 !important;
+    box-shadow:none !important;
+}

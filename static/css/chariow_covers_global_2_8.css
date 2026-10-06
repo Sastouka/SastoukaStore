@@ -1,0 +1,241 @@
+/* =====================================================================
+   SastoukaStore — PATCHER 2.8
+   GESTIONNAIRE GLOBAL DES COUVERTURES — A4 PORTRAIT
+   ===================================================================== */
+
+/* A. NOUVELLE STRUCTURE RÉELLEMENT UTILISÉE PAR PREMIUM_HOME
+      .grid > .product > .media
+*/
+html body .grid > .product > .media{
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  aspect-ratio:210 / 297 !important;
+  background:#edf2f5 !important;
+  display:block !important;
+  position:relative !important;
+  overflow:hidden !important;
+}
+
+html body .grid > .product > .media img{
+  width:100% !important;
+  height:100% !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  display:block !important;
+  transform:none !important;
+}
+
+/* B. Catalogue moderne */
+html body .product-grid .premium-product .product-media{
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  aspect-ratio:210 / 297 !important;
+  overflow:hidden !important;
+  display:block !important;
+  position:relative !important;
+  background:#EAF4FC !important;
+}
+
+html body .product-grid .premium-product .product-media img{
+  width:100% !important;
+  height:100% !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  display:block !important;
+  transform:none !important;
+}
+
+/* C. Catalogue historique */
+html body .products-grid .product-card .product-image{
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  aspect-ratio:210 / 297 !important;
+  overflow:hidden !important;
+  display:grid !important;
+  place-items:center !important;
+  background:#EAF4FC !important;
+}
+
+html body .products-grid .product-card .product-image img{
+  width:100% !important;
+  height:100% !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  display:block !important;
+  transform:none !important;
+}
+
+/* D. Fiche produit moderne */
+html body .detail-grid .detail-media{
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  aspect-ratio:210 / 297 !important;
+  overflow:hidden !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  background:#E5EEF7 !important;
+}
+
+html body .detail-grid .detail-media img{
+  width:100% !important;
+  height:100% !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  display:block !important;
+  transform:none !important;
+}
+
+/* E. Fiche produit historique */
+html body .product-layout .product-cover{
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  aspect-ratio:210 / 297 !important;
+  overflow:hidden !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  background:#E5EEF7 !important;
+}
+
+html body .product-layout .product-cover img{
+  width:100% !important;
+  height:100% !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  display:block !important;
+  transform:none !important;
+}
+
+/* F. Administration numérique */
+html body .digital-grid .digital-card .cover{
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  aspect-ratio:210 / 297 !important;
+  overflow:hidden !important;
+  position:relative !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  background:#EAF4FC !important;
+}
+
+html body .digital-grid .digital-card .cover img{
+  width:100% !important;
+  height:100% !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  display:block !important;
+  transform:none !important;
+}
+
+/* G. Panier */
+html body .cart-item .mini-cover{
+  width:76px !important;
+  height:auto !important;
+  min-height:0 !important;
+  aspect-ratio:210 / 297 !important;
+  overflow:hidden !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  background:#EAF4FC !important;
+}
+
+html body .cart-item .mini-cover img{
+  width:100% !important;
+  height:100% !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  display:block !important;
+}
+
+/* H. Ancien catalogue admin */
+html body .admin-products .admin-product .admin-product-image{
+  width:90px !important;
+  height:auto !important;
+  min-height:0 !important;
+  aspect-ratio:210 / 297 !important;
+  overflow:hidden !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+
+html body .admin-products .admin-product .admin-product-image img{
+  width:100% !important;
+  height:100% !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  display:block !important;
+}
+
+/* I. Aperçu édition */
+html body img.edit-image{
+  width:180px !important;
+  height:auto !important;
+  max-width:180px !important;
+  max-height:255px !important;
+  aspect-ratio:210 / 297 !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  display:block !important;
+  background:#EAF4FC !important;
+}
+
+/* J. Responsive */
+@media(max-width:900px){
+  html body .grid > .product > .media,
+  html body .product-grid .premium-product .product-media,
+  html body .products-grid .product-card .product-image{
+    aspect-ratio:210 / 297 !important;
+  }
+}
+
+@media(max-width:720px){
+  html body .grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+}
+
+@media(max-width:480px){
+  html body .grid{
+    grid-template-columns:1fr !important;
+  }
+
+  html body .cart-item .mini-cover{
+    width:64px !important;
+  }
+
+  html body .admin-products .admin-product .admin-product-image{
+    width:60px !important;
+  }
+}
+
+/* FIN PATCHER 2.8 */

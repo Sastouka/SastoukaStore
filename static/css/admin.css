@@ -1,0 +1,188 @@
+.admin-head{display:flex;justify-content:space-between;align-items:center;padding:40px 0 24px}.admin-head h1{font-size:40px;margin:5px 0}.admin-head p{color:var(--muted);margin:0}.dark-btn{background:var(--primary)!important;color:#fff!important;text-decoration:none}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}.stat-card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:20px}.stat-card span,.stat-card small{display:block;color:var(--muted);font-size:12px}.stat-card strong{display:block;font-size:30px;margin:7px 0}.admin-columns{display:grid;grid-template-columns:.8fr 1.2fr;gap:20px}.panel{background:#fff;border:1px solid var(--border);border-radius:22px;padding:22px;margin-bottom:20px}.panel h2{margin-top:0}.inline-form{display:flex;gap:8px}.inline-form input,.product-form input,.product-form select,.product-form textarea,.search-input{width:100%;border:1px solid var(--border);border-radius:12px;padding:12px;font:inherit}.product-form{display:grid;gap:13px}.product-form label{font-size:12px;font-weight:700}.product-form input,.product-form select,.product-form textarea{display:block;margin-top:6px;font-weight:400}.two-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.admin-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #eee}.admin-row small{display:block;color:var(--muted);font-size:11px}.icon-danger{border:0;background:#FDE8E4;color:#CE2A10;width:32px;height:32px;border-radius:9px}.flash{padding:12px;border-radius:12px;margin-bottom:8px}.flash.success{background:#DFF5D9;color:#166534}.flash.error{background:#FDE8E4;color:#991b1b}.admin-products{display:grid;gap:10px}.admin-product{display:grid;grid-template-columns:90px 1fr auto;gap:15px;align-items:center;padding:12px;border:1px solid #edf0f3;border-radius:17px}.admin-product-image{width:90px;height:90px;border-radius:13px;background:#f3f4f6;display:grid;place-items:center;overflow:hidden;color:#71839A}.admin-product-image img{width:100%;height:100%;object-fit:cover}.status-line{font-size:11px;color:var(--muted)}.status{display:inline-block;width:7px;height:7px;border-radius:50%;background:#71839A;margin-right:5px}.status.on{background:#36B331}.price-stock{display:flex;gap:18px;margin-top:8px}.price-stock span{font-size:12px;color:var(--muted)}.admin-actions{display:flex;gap:6px;flex-wrap:wrap}.admin-actions form{margin:0}.admin-actions a,.admin-actions button{border:1px solid var(--border);background:#fff;border-radius:9px;padding:8px 10px;font-size:12px;text-decoration:none;color:var(--text)}.danger-link{color:#CE2A10!important}.edit-image{max-width:180px;border-radius:14px}.muted{color:var(--muted)}@media(max-width:800px){.admin-columns{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}.admin-product{grid-template-columns:70px 1fr}.admin-product-image{width:70px;height:70px}.admin-actions{grid-column:1/-1}}@media(max-width:520px){.admin-head{display:block}.admin-head h1{font-size:32px}.two-fields{grid-template-columns:1fr}.panel{padding:16px}.admin-product{grid-template-columns:60px 1fr}.admin-product-image{width:60px;height:60px}.panel-head{display:block}.search-input{margin-top:8px}}
+
+/* ======================================================================
+   SastoukaStore — PATCH 2.5 : GLOBAL A4 PORTRAIT
+   Toutes les couvertures de supports numériques utilisent le même ratio.
+   A4 = 210 / 297 = 0.70707
+   ====================================================================== */
+
+/* ---------- Catalogue public / premium17 ---------- */
+.product-grid .premium-product .product-media{
+  aspect-ratio:210 / 297;
+  width:100%;
+  height:auto;
+  min-height:0;
+  background:#EAF4FC;
+  position:relative;
+  overflow:hidden;
+  display:block;
+}
+
+.product-grid .premium-product .product-media img{
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  object-position:center center;
+}
+
+/* ---------- Fiche produit / premium16 ---------- */
+.detail-grid .detail-media{
+  width:100%;
+  height:auto;
+  aspect-ratio:210 / 297;
+  min-height:0;
+  background:#E5EEF7;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.detail-grid .detail-media img{
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  object-position:center center;
+}
+
+/* ---------- Panier ---------- */
+.cart-item .mini-cover{
+  width:76px;
+  height:auto;
+  aspect-ratio:210 / 297;
+  min-height:0;
+  background:#EAF4FC;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  border-radius:10px;
+}
+
+.cart-item .mini-cover img{
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  object-position:center center;
+}
+
+/* ---------- Administration numérique ---------- */
+.digital-grid .digital-card .cover{
+  width:100%;
+  height:auto;
+  aspect-ratio:210 / 297;
+  min-height:0;
+  background:#EAF4FC;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.digital-grid .digital-card .cover img{
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  object-position:center center;
+}
+
+/* ---------- Prévisualisation d'une couverture lors de la modification ---------- */
+.edit-image{
+  width:180px;
+  height:auto;
+  aspect-ratio:210 / 297;
+  max-width:180px;
+  max-height:255px;
+  object-fit:contain;
+  object-position:center center;
+  display:block;
+  background:#EAF4FC;
+  border-radius:14px;
+}
+
+/* ---------- Ancien catalogue admin ---------- */
+.admin-product-image{
+  width:90px;
+  height:auto;
+  aspect-ratio:210 / 297;
+  min-height:0;
+  background:#f3f4f6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.admin-product-image img{
+  width:100%;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  object-position:center center;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1100px){
+  .product-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+}
+
+@media (max-width:900px){
+  .product-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+
+  .detail-grid .detail-media{
+    aspect-ratio:210 / 297;
+  }
+
+  .cart-item .mini-cover{
+    width:70px;
+  }
+}
+
+@media (max-width:750px){
+  .product-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .edit-image{
+    width:150px;
+    max-width:150px;
+    max-height:212px;
+  }
+}
+
+@media (max-width:480px){
+  .product-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .cart-item .mini-cover{
+    width:64px;
+  }
+
+  .admin-product-image{
+    width:60px;
+  }
+}
+
+/* ======================================================================
+   FIN SastoukaStore — PATCH 2.5
+   ====================================================================== */

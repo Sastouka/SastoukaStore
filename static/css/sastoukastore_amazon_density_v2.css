@@ -1,0 +1,98 @@
+/* SASTOUKA_AMAZON_DENSITY_V2 */
+
+/* ===== DENSITÉ CATALOGUE / STYLE MARKETPLACE ===== */
+
+/* Réduit l'espace vertical avant la zone catalogue */
+.vip-catalogue {
+    padding-top: 18px !important;
+    margin-top: 0 !important;
+}
+
+.vip-catalogue .vip-container {
+    padding-top: 0 !important;
+}
+
+.vip-catalogue-heading {
+    margin-top: 0 !important;
+    margin-bottom: 12px !important;
+}
+
+.vip-catalogue-heading > * {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Réduit les espaces éventuels créés par la section de recherche */
+#sskCatalogSearchWrap {
+    margin-top: 0 !important;
+    margin-bottom: 12px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+#sskCatalogSearchWrap + .vip-section,
+#sskCatalogSearchWrap + section {
+    margin-top: 0 !important;
+    padding-top: 10px !important;
+}
+
+/* Quand la recherche est intégrée directement avant le catalogue */
+#catalogue {
+    scroll-margin-top: 70px;
+}
+
+#catalogue .vip-product-grid {
+    margin-top: 10px !important;
+    padding-top: 0 !important;
+}
+
+/* Supprime les marges excessives classiques avant le catalogue */
+.premium-products,
+.premium-catalogue,
+.catalogue-section,
+.products-section {
+    margin-top: 12px !important;
+    padding-top: 12px !important;
+}
+
+/* Réduction des gros espacements provenant de divs intermédiaires */
+.vip-catalogue .vip-section-eyebrow {
+    margin-bottom: 4px !important;
+}
+
+.vip-catalogue .vip-section-title {
+    margin-bottom: 6px !important;
+}
+
+/* Densité de la grille */
+.vip-product-grid {
+    row-gap: 16px !important;
+}
+
+.vip-product-card {
+    margin-top: 0 !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .vip-catalogue {
+        padding-top: 10px !important;
+    }
+
+    #sskCatalogSearchWrap {
+        margin-bottom: 8px !important;
+    }
+
+    #sskCatalogSearchWrap + .vip-section,
+    #sskCatalogSearchWrap + section {
+        padding-top: 6px !important;
+    }
+
+    .vip-catalogue-heading {
+        margin-bottom: 8px !important;
+    }
+
+    #catalogue .vip-product-grid {
+        margin-top: 6px !important;
+    }
+}

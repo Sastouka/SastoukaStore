@@ -1,0 +1,25 @@
+.env
+secret.json
+data/chariow.db
+protected_data/
+_PATCH_BACKUPS/
+.venv/
+__pycache__/
+*.pyc
+
+# SASTOUKASTORE - SECURITE GITHUB
+.env.*
+!.env.example
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+venv/
+env/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.log
+instance/
+Thumbs.db
+.DS_Store

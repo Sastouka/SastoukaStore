@@ -1,0 +1,104 @@
+/* ============================================================
+   SASTOUKASTORE — SUPPRESSION FORCE ESPACE CATALOGUE V7
+   ============================================================ */
+
+/* 1 — Sécurité absolue : les anciens blocs ne doivent plus
+       occuper aucun pixel. */
+html body .vip-trust-bar,
+html body [class~="vip-trust-bar"],
+html body .ssk-conversion-strip,
+html body [class~="ssk-conversion-strip"]{
+  display:none !important;
+  visibility:hidden !important;
+  opacity:0 !important;
+  width:0 !important;
+  height:0 !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  max-width:0 !important;
+  max-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  overflow:hidden !important;
+}
+
+/* 2 — Aucun pseudo-élément de type bandeau avant catalogue */
+html body .vip-catalogue::before,
+html body .vip-catalogue::after{
+  content:none !important;
+  display:none !important;
+  width:0 !important;
+  height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* 3 — Suppression des espaces hérités entre les sections */
+html body .vip-hero{
+  margin-bottom:0 !important;
+  padding-bottom:0 !important;
+}
+
+html body section.vip-categories,
+html body .vip-categories{
+  margin-top:0 !important;
+  padding-top:8px !important;
+  padding-bottom:8px !important;
+  min-height:0 !important;
+  height:auto !important;
+}
+
+html body .vip-categories > .vip-container{
+  margin-top:0 !important;
+  padding-top:0 !important;
+}
+
+/* 4 — Catalogue directement après les catégories */
+html body section.vip-catalogue,
+html body .vip-catalogue{
+  margin-top:0 !important;
+  padding-top:8px !important;
+  min-height:0 !important;
+}
+
+html body .vip-catalogue > .vip-container{
+  margin-top:0 !important;
+  padding-top:0 !important;
+}
+
+html body .vip-catalogue .vip-catalogue-heading{
+  margin-top:0 !important;
+  padding-top:0 !important;
+  margin-bottom:8px !important;
+}
+
+html body #catalogue .vip-product-grid{
+  margin-top:0 !important;
+  padding-top:0 !important;
+}
+
+/* 5 — Compacte seulement la navigation des catégories,
+       sans toucher aux dimensions des livres */
+html body .vip-category-grid{
+  margin-top:0 !important;
+  padding-top:0 !important;
+}
+
+html body .vip-category-card{
+  margin-top:0 !important;
+}
+
+/* 6 — Responsive */
+@media(max-width:720px){
+  html body section.vip-categories,
+  html body .vip-categories{
+    padding-top:6px !important;
+    padding-bottom:6px !important;
+  }
+
+  html body section.vip-catalogue,
+  html body .vip-catalogue{
+    padding-top:6px !important;
+  }
+}

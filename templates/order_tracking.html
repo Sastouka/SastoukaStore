@@ -1,0 +1,47 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SastoukaStore — Ma commande</title><link rel="stylesheet" href="{{ url_for('static', filename='css/premium_flow_6_4.css') }}?v=65"><!-- SastoukaStore PATCH 6.6 : ICÔNE / LOGO GLOBAL -->
+<link rel="shortcut icon" href="/static/icons/favicon.ico?v=66">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png?v=66">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png?v=66">
+<link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png?v=66">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png?v=66">
+<link rel="manifest" href="/static/manifest.webmanifest?v=66">
+<meta name="theme-color" content="#041C41">
+<meta property="og:image" content="/static/branding/sastoukastore-logo.png?v=66">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/static/branding/sastoukastore-logo.png?v=66">
+<!-- SastoukaStore PATCH 6.6.1 : ICÔNE / LOGO GLOBAL -->
+<link rel="shortcut icon" href="/static/icons/favicon.ico?v=661">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png?v=661">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png?v=661">
+<link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png?v=661">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png?v=661">
+<link rel="manifest" href="/static/manifest.webmanifest?v=661">
+<meta name="theme-color" content="#041C41">
+<meta property="og:image" content="/static/branding/sastoukastore-logo.png?v=661">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/static/branding/sastoukastore-logo.png?v=661">
+<link rel="stylesheet" href="/static/css/sastoukastore_theme_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_global_client_admin_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_icon_safety_v2_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_bande_haut_uniforme_vip_2026.css?v=20261006">
+
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_checkout_2026.css?v=202610062127">
+
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_tracking_2026.css?v=202610062135">
+
+<!-- Correctif Contraste Global -->
+
+<!-- Correctif Contraste Global -->
+<link rel="stylesheet" href="/static/css/sastoukastore_contraste_global_2026.css?v=202610062242">
+<link rel="stylesheet" href="/static/css/sastoukastore_remove_region_banner_v2.css?v=20261007">
+</head>
+<body class="p64"><header class="p64-nav"><a class="p64-brand" href="/"><img class="sastoukastore-header-logo" src="/static/branding/sastoukastore-header-logo.png?v=664" alt="SastoukaStore"><span class="p64-brand-word">SastoukaStore<small>LE SAVOIR EN 1 CLIC</small></span></a><nav class="p64-nav-links"><a href="/">Catalogue</a><a href="/panier">Panier</a><a href="/suivi-commande">Mes achats</a></nav><a class="p64-cart-btn" href="/panier">🛒 Panier</a></header>
+<main class="p64-wrap"><div class="p64-head"><div><span class="p64-kicker">ESPACE CLIENT</span><h1>Ma commande.</h1><p>Retrouvez le paiement PayPal et vos supports PDF.</p></div><a class="p64-back" href="/">← Boutique</a></div>
+<form class="p64-card p64-form" method="get" style="margin-bottom:20px"><section class="p64-section" style="margin:0;border:0;padding:0"><div class="p64-section-title"><span class="p64-num">⌕</span><div><h2>Rechercher une commande</h2><p>Numéro de commande + téléphone utilisés à l'achat.</p></div></div><div class="p64-two"><label class="p64-label">N° commande<input class="p64-input" name="order_id" value="{{ order_id }}" inputmode="numeric" required></label><label class="p64-label">Téléphone<input class="p64-input" name="phone" value="{{ phone }}" inputmode="tel" required></label></div><button class="p64-primary" type="submit">Afficher ma commande →</button>{% if error %}<div class="p64-message error" style="display:block">{{ error }}</div>{% endif %}</section></form>
+{% if order %}<section class="p64-card p64-track-result"><div class="p64-track-top"><div><span class="p64-kicker">COMMANDE</span><h2>#{{ order.id }}</h2><p>{{ order.created_at }}</p></div><div class="p64-total-track"><span>TOTAL</span><strong>{{ "%.2f"|format(order.total or 0) }} {{ order.currency or "FCFA" }}</strong></div></div>
+<div class="p64-status"><span class="p64-status-dot"></span><div><b>{% if order.payment_status=='paid' %}Paiement PayPal confirmé{% else %}Paiement PayPal en attente{% endif %}</b><p>{% if order.payment_status=='paid' %}Entrez la clé reçue de SastoukaStore pour accéder à vos supports.{% else %}Finalisez le paiement PayPal depuis la page de caisse pour débloquer automatiquement vos PDF.{% endif %}</p></div></div>
+<h3 class="p64-items-title">Supports achetés</h3>{% for item in items %}<div class="p64-track-item"><div class="p64-track-thumb">{% if item.image %}<img src="{{ item.image if item.image.startswith('/static/') or item.image.startswith('http') else '/static/' ~ item.image.lstrip('/') }}" alt="">{% else %}<div style="display:grid;place-items:center;height:100%;font-weight:900;font-size:12px">PDF</div>{% endif %}</div><div><b>{{ item.product_name }}</b><small>Support PDF numérique</small></div></div>{% else %}<p class="muted">Aucun support.</p>{% endfor %}
+{% if order.payment_status=='paid' %}<div class="p64-key-box"><h3>🔑 Accès à vos PDF</h3><p>Collez la clé envoyée par SastoukaStore.</p><div class="p64-key-row"><input id="key" value="{{ request.args.get('key','') }}" placeholder="CHW-XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX" autocomplete="off"><button type="button" onclick="go()">Accéder aux PDF</button></div></div>{% else %}<div class="p64-key-box" style="background:#F4F8FC;color:#041C41"><h3>⏳ Accès verrouillé</h3><p style="color:#6f7d8c">La clé sera fournie après vérification du paiement.</p></div>{% endif %}</section>{% endif %}</main>
+<script>function go(){const k=(document.getElementById("key")?.value||"").trim();if(k)location.href="/telechargements/{{ order.id if order else 0 }}?key="+encodeURIComponent(k)}</script><script src="/static/js/admin_access9.js?v=7click-discret-20261005"></script>
+<script src="/static/js/sastoukastore_remove_region_banner_v2.js?v=20261007"></script>
+</body></html>

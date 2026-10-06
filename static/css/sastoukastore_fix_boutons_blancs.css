@@ -1,0 +1,38 @@
+/* ============================================================
+   SASTOUKASTORE — FIX BOUTONS BLANCS (ACCUEIL)
+   ============================================================ */
+
+/* 1. Bouton "Choisir un support" (Section Expérience) 
+   -> Fond orange vibrant, texte blanc */
+html body.vip-home .vip-experience .vip-btn-primary {
+  background: linear-gradient(135deg, #ff6a00, #ff9e38) !important;
+  color: #ffffff !important;
+  border: none !important;
+  text-shadow: none !important;
+  box-shadow: 0 8px 20px rgba(255, 106, 0, 0.35) !important;
+}
+
+html body.vip-home .vip-experience .vip-btn-primary:hover {
+  transform: translateY(-2px) !important;
+  background: linear-gradient(135deg, #e65c00, #ff6a00) !important;
+  box-shadow: 0 12px 25px rgba(255, 106, 0, 0.45) !important;
+}
+
+/* 2. Bouton "Ouvrir WhatsApp" (Section Assistance / Footer) 
+   -> Fond blanc, texte bleu nuit foncé pour une lisibilité parfaite */
+html body.vip-home .vip-help .vip-btn-light {
+  background: #ffffff !important;
+  color: #07111f !important; 
+  border: none !important;
+  text-shadow: none !important;
+  font-weight: 900 !important;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15) !important;
+  transition: all 0.2s ease !important;
+}
+
+html body.vip-home .vip-help .vip-btn-light:hover {
+  background: #f4f8fc !important;
+  color: #ff6a00 !important; /* Devient orange au survol */
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 25px rgba(255, 255, 255, 0.25) !important;
+}

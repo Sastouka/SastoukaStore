@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#041C41">
+<title>SastoukaStore — Achats LIVE</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin4.css') }}?v=paypal1">
+<link rel="stylesheet" href="/static/css/sastoukastore_theme_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_global_client_admin_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_admin_2026.css?v=202610062146">
+<link rel="stylesheet" href="/static/css/sastoukastore_contraste_global_2026.css?v=202610062212">
+<link rel="stylesheet" href="/static/css/sastoukastore_ventes_live_v1.css?v=202610062230">
+<link rel="stylesheet" href="/static/css/sastoukastore_admin_digital_v2.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_remove_region_banner_v2.css?v=20261007">
+</head>
+<body>
+<main class="ssk-sales-live">
+<header class="ssk-sales-head">
+  <div>
+    <span class="ssk-eyebrow">SASTOUKASTORE ADMIN · VENTES</span>
+    <h1>Ventes <span class="ssk-live-pill"><i></i> LIVE</span></h1>
+    <p>Ventes payées et livres vendus actualisés automatiquement.</p>
+  </div>
+  <div class="ssk-head-actions">
+    <a class="ssk-back" href="/admin/dashboard">← Dashboard</a>
+    <a class="ssk-back" href="/admin/commandes">Achats</a>
+    <a class="ssk-logout" href="/admin/deconnexion">Déconnexion</a>
+  </div>
+</header>
+
+<section class="ssk-live-status">
+  <div><b id="liveState">Connexion au flux…</b><span id="liveClock">Dernière actualisation : —</span></div>
+  <span class="ssk-refresh-dot" id="refreshDot"></span>
+</section>
+
+<section class="ssk-kpis">
+  <article><span>VENTES</span><strong id="salesCount">{{ sales_count }}</strong><small>commandes payées</small></article>
+  <article><span>CHIFFRE D’AFFAIRES</span><strong id="revenue">{{ "%.2f"|format(revenue or 0) }}</strong><small>encaissé</small></article>
+  <article><span>LIVRES VENDUS</span><strong id="booksCount">{{ books_count }}</strong><small>PDF</small></article>
+  <article><span>CLIENTS</span><strong id="customers">{{ customers }}</strong><small>clients concernés</small></article>
+</section>
+
+<section class="ssk-filters">
+  <div class="ssk-filter-title">
+    <div><span>FILTRES</span><h2>Recherche et période</h2></div>
+    <a class="ssk-export" href="/admin/export-commandes.csv">Exporter CSV</a>
+  </div>
+
+  <form id="salesFilterForm" method="get" action="/admin/ventes">
+    <label>Recherche
+      <input type="search" name="q" value="{{ filters.q }}" placeholder="N° achat, client, téléphone ou livre">
+    </label>
+    <label>Du <input type="date" name="date_debut" value="{{ filters.date_debut }}"></label>
+    <label>Au <input type="date" name="date_fin" value="{{ filters.date_fin }}"></label>
+    <div class="ssk-filter-actions">
+      <button type="submit">Appliquer</button>
+      <a class="ssk-clear" href="/admin/ventes">Réinitialiser</a>
+    </div>
+  </form>
+
+  <div class="ssk-presets">
+    <button type="button" data-preset="today">Aujourd’hui</button>
+    <button type="button" data-preset="7d">7 jours</button>
+    <button type="button" data-preset="30d">30 jours</button>
+    <button type="button" data-preset="all">Toutes</button>
+  </div>
+</section>
+
+<section class="ssk-sales-section">
+  <div class="ssk-section-bar">
+    <div><span>VENTES PAYÉES</span><h2>Livres vendus</h2></div>
+    <span class="ssk-count-label" id="resultLabel">{{ sales_count }} vente(s)</span>
+  </div>
+
+  <div id="salesList" class="ssk-sales-list">
+  {% for sale in sales %}
+    <article class="ssk-sale-card" data-sale-id="{{ sale.id }}">
+      <div class="ssk-sale-cover-column">
+        <div class="ssk-cover-stack">
+        {% for item in sale.items[:4] %}
+          <a class="ssk-cover-link" href="{{ item.cover_url }}" target="_blank" rel="noopener">
+            <img src="{{ item.cover_url }}" alt="Page de garde — {{ item.product_name }}" loading="lazy">
+          </a>
+        {% endfor %}
+        {% if not sale.items %}<div class="ssk-cover-empty">PDF</div>{% endif %}
+        {% if sale.items|length > 4 %}<span class="ssk-more-covers">+{{ sale.items|length - 4 }}</span>{% endif %}
+        </div>
+      </div>
+
+      <div class="ssk-sale-main">
+        <div class="ssk-sale-top">
+          <div>
+            <span class="ssk-sale-id">VENTE #{{ sale.id }}</span>
+            <h3>{{ sale.customer_name }}</h3>
+            <p>{{ sale.customer_phone or 'Téléphone non renseigné' }} · {{ sale.created_at }}</p>
+          </div>
+          <div class="ssk-sale-price"><strong>{{ "%.2f"|format(sale.total or 0) }}</strong><span>FCFA</span></div>
+        </div>
+
+        <div class="ssk-books">
+        {% for item in sale.items %}
+          <div class="ssk-book-line">
+            <div>
+              <b>{{ item.product_name }}</b>
+              <small>{% if item.quantity > 1 %}×{{ item.quantity }} · {% endif %}Support PDF numérique{% if item.variant %} · {{ item.variant }}{% endif %}</small>
+            </div>
+            <strong>{{ "%.2f"|format(item.subtotal or 0) }} FCFA</strong>
+          </div>
+        {% else %}
+          <div class="ssk-book-line muted">Aucun détail de livre enregistré.</div>
+        {% endfor %}
+        </div>
+
+        <div class="ssk-sale-footer">
+          <span class="ssk-paid">✓ PAYÉ</span>
+          <span>Mode : {{ sale.payment_method or 'paypal' }}</span>
+          <a href="/admin/commande/{{ sale.id }}">Ouvrir la vente →</a>
+        </div>
+      </div>
+    </article>
+  {% else %}
+    <div class="ssk-empty">
+      <span>✦</span><h3>Aucune vente sur cette période</h3>
+      <p>Les nouvelles ventes payées apparaîtront automatiquement ici.</p>
+    </div>
+  {% endfor %}
+  </div>
+</section>
+
+<div id="newSaleToast" class="ssk-new-sale-toast" hidden>
+  <span>✓</span><div><b>Nouvelle vente reçue</b><small id="newSaleToastText"></small></div>
+</div>
+</main>
+
+<script>
+window.SASTOUKASTORE_SALES_LIVE = {
+  api: "/api/admin/ventes",
+  initialLatestId: {{ latest_sale_id|int }}
+};
+</script>
+<script src="/static/js/sastoukastore_ventes_live_v1.js?v=202610062230"></script>
+<script src="/static/js/sastoukastore_remove_region_banner_v2.js?v=20261007"></script>
+</body>
+</html>

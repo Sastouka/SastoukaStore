@@ -1,0 +1,94 @@
+/* ============================================================
+   SASTOUKASTORE — CONTRASTE VIP V3
+   Corrige les textes foncés placés sur les fonds bleu/nuit.
+   Aucun contenu, produit, prix, paiement ou image n'est modifié.
+   ============================================================ */
+
+/* HERO : le texte principal doit être blanc sur le fond bleu nuit */
+html body.vip-home .vip-hero-copy h1{
+  color:#ffffff !important;
+  text-shadow:0 2px 18px rgba(0,0,0,.16) !important;
+}
+
+html body.vip-home .vip-hero-copy h1 em{
+  color:#7bef42 !important;
+  text-shadow:0 2px 16px rgba(123,239,66,.12) !important;
+}
+
+/* Le paragraphe reste clairement séparé du fond */
+html body.vip-home .vip-hero-text{
+  color:#d6e0ea !important;
+}
+
+/* Preuves en bas du hero */
+html body.vip-home .vip-proof-row,
+html body.vip-home .vip-proof-row span{
+  color:#e7edf3 !important;
+}
+
+html body.vip-home .vip-proof-row b{
+  color:#7bef42 !important;
+}
+
+/* EXPERIENCE : même correction sur le grand titre */
+html body.vip-home .vip-experience-copy h2{
+  color:#ffffff !important;
+  text-shadow:0 2px 18px rgba(0,0,0,.18) !important;
+}
+
+html body.vip-home .vip-experience-copy h2 em{
+  color:#7bef42 !important;
+  text-shadow:0 2px 16px rgba(123,239,66,.12) !important;
+}
+
+/* Texte descriptif de la zone sombre */
+html body.vip-home .vip-experience-copy p{
+  color:#c8d4df !important;
+}
+
+/* Kicker : suffisamment clair sans concurrencer le titre */
+html body.vip-home .vip-experience-copy .vip-kicker,
+html body.vip-home .vip-hero-copy .vip-overline{
+  color:#aebdcc !important;
+}
+
+/* Les titres des étapes restent très lisibles */
+html body.vip-home .vip-experience-steps strong{
+  color:#ffffff !important;
+}
+
+html body.vip-home .vip-experience-steps small{
+  color:#9fb0c0 !important;
+}
+
+/* L'aide en bas garde une hiérarchie claire */
+html body.vip-home .vip-help h2{
+  color:#ffffff !important;
+}
+
+html body.vip-home .vip-help p{
+  color:#b7c4d0 !important;
+}
+
+/* Le bandeau de conversion reste contrasté */
+html body.vip-home .ssk-conversion-strip{
+  color:#ffffff !important;
+}
+
+html body.vip-home .ssk-conversion-strip b{
+  color:#7bef42 !important;
+}
+
+/* Empêche certaines règles héritées de réintroduire le bleu sombre */
+html body.vip-home .vip-hero-copy h1 *,
+html body.vip-home .vip-experience-copy h2 *{
+  opacity:1 !important;
+}
+
+/* Mobile */
+@media(max-width:720px){
+  html body.vip-home .vip-hero-copy h1,
+  html body.vip-home .vip-experience-copy h2{
+    text-shadow:0 2px 14px rgba(0,0,0,.20) !important;
+  }
+}

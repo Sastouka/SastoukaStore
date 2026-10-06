@@ -1,0 +1,1 @@
+(function(){const K="sastoukastore_cart_v1";function r(){try{let x=JSON.parse(localStorage.getItem(K)||"[]");return Array.isArray(x)?x:[]}catch(e){return[]}}function u(){let e=document.getElementById("premiumCartCount");if(e)e.textContent=r().reduce((n,x)=>n+(Number(x.quantity)||0),0)}document.addEventListener("DOMContentLoaded",u);window.addEventListener("storage",u)})();

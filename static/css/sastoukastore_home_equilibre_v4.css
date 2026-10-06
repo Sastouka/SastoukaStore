@@ -1,0 +1,188 @@
+/* ============================================================
+   SASTOUKASTORE — HOME ÉQUILIBRÉ V4
+   ============================================================ */
+
+/* ---------- HERO : garder l'identité SastoukaStore ---------- */
+
+html body .vip-hero-grid{
+  min-height:410px !important;
+  padding-top:26px !important;
+  padding-bottom:22px !important;
+  gap:28px !important;
+}
+
+html body .vip-hero-copy h1{
+  margin-top:8px !important;
+  margin-bottom:13px !important;
+}
+
+html body .vip-hero-text{
+  margin-bottom:14px !important;
+}
+
+html body .vip-proof-row{
+  margin-top:10px !important;
+  gap:9px !important;
+}
+
+/* ---------- SUPPRESSION DES BLOCS REDONDANTS ---------- */
+
+html body .vip-trust-bar{
+  display:none !important;
+}
+
+html body .ssk-conversion-strip{
+  display:none !important;
+}
+
+/* Ancien bandeau "sélectionne ton support..." :
+   on le neutralise sans toucher au catalogue. */
+html body .vip-catalogue::before{
+  content:none !important;
+  display:none !important;
+}
+
+/* ---------- COLLECTIONS : garder, mais sous forme compacte ---------- */
+
+html body section.vip-section.vip-categories{
+  padding-top:14px !important;
+  padding-bottom:13px !important;
+  margin:0 !important;
+  background:#F4F8FC !important;
+}
+
+html body .vip-categories .vip-section-heading{
+  margin:0 0 8px !important;
+  display:flex !important;
+  align-items:baseline !important;
+  justify-content:space-between !important;
+  gap:16px !important;
+}
+
+html body .vip-categories .vip-section-heading h2{
+  font-size:25px !important;
+  line-height:1 !important;
+  margin:2px 0 0 !important;
+  letter-spacing:-1.1px !important;
+}
+
+html body .vip-categories .vip-kicker{
+  font-size:8px !important;
+  margin:0 !important;
+}
+
+html body .vip-categories .vip-section-note{
+  font-size:9px !important;
+  margin:0 !important;
+}
+
+/* Cartes compactes : plus proches d'une navigation que de grosses
+   "tuiles marketplace". */
+html body .vip-categories .vip-category-grid{
+  display:flex !important;
+  gap:8px !important;
+  overflow-x:auto !important;
+  overflow-y:hidden !important;
+  padding:1px 2px 4px !important;
+  margin:0 !important;
+  scrollbar-width:thin;
+}
+
+html body .vip-categories .vip-category-card{
+  flex:0 0 190px !important;
+  min-height:56px !important;
+  height:56px !important;
+  padding:8px 10px !important;
+  border-radius:13px !important;
+  box-shadow:0 3px 12px rgba(4,28,65,.05) !important;
+}
+
+html body .vip-categories .vip-category-icon{
+  width:30px !important;
+  height:30px !important;
+  min-width:30px !important;
+  border-radius:9px !important;
+}
+
+html body .vip-categories .vip-category-card small{
+  font-size:6px !important;
+}
+
+html body .vip-categories .vip-category-card strong{
+  font-size:11px !important;
+}
+
+/* ---------- CATALOGUE : commence immédiatement ---------- */
+
+html body section.vip-section.vip-catalogue{
+  padding-top:18px !important;
+  margin-top:0 !important;
+}
+
+html body .vip-catalogue .vip-catalogue-heading{
+  margin-top:0 !important;
+  margin-bottom:10px !important;
+}
+
+html body .vip-catalogue .vip-catalogue-heading h2{
+  margin-top:2px !important;
+  margin-bottom:0 !important;
+}
+
+html body #catalogue .vip-product-grid{
+  margin-top:5px !important;
+}
+
+/* ---------- TABLETTE / MOBILE ---------- */
+
+@media(max-width:900px){
+  html body .vip-hero-grid{
+    min-height:370px !important;
+    padding-top:22px !important;
+    padding-bottom:18px !important;
+  }
+
+  html body .vip-categories .vip-section-note{
+    display:none !important;
+  }
+}
+
+@media(max-width:720px){
+  html body .vip-hero-grid{
+    min-height:auto !important;
+    padding-top:24px !important;
+    padding-bottom:20px !important;
+  }
+
+  html body section.vip-section.vip-categories{
+    padding-top:10px !important;
+    padding-bottom:9px !important;
+  }
+
+  html body .vip-categories .vip-section-heading{
+    margin-bottom:7px !important;
+  }
+
+  html body .vip-categories .vip-section-heading h2{
+    font-size:22px !important;
+  }
+
+  html body .vip-categories .vip-category-card{
+    flex-basis:175px !important;
+  }
+
+  html body section.vip-section.vip-catalogue{
+    padding-top:13px !important;
+  }
+}
+
+@media(max-width:460px){
+  html body .vip-hero-copy h1{
+    font-size:40px !important;
+    letter-spacing:-2.6px !important;
+  }
+
+  html body .vip-categories .vip-category-card{
+    flex-basis:165px !important;
+  }
+}

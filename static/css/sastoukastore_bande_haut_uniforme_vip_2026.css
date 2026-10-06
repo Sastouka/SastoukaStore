@@ -1,0 +1,412 @@
+/* ============================================================
+   SASTOUKASTORE — BANDE DU HAUT UNIFORME VIP
+   Client et administrateur : même identité visuelle,
+   navigation adaptée aux droits existants.
+   Aucun contrôle d'accès n'est ajouté ou retiré.
+   ============================================================ */
+
+:root{
+  --ssk-ink:#07111f;
+  --ssk-navy:#0d2138;
+  --ssk-blue:#0b63c7;
+  --ssk-blue2:#1678dc;
+  --ssk-orange:#ff7600;
+  --ssk-orange2:#ff9d35;
+  --ssk-green:#7bef42;
+  --ssk-paper:#f3f6fa;
+  --ssk-line:#dce5ee;
+  --ssk-muted:#748397;
+}
+
+/* ============================================================
+   1 — RESET DE LA ZONE SUPÉRIEURE
+   ============================================================ */
+
+html,
+body{
+  margin:0 !important;
+  padding:0 !important;
+  min-width:0 !important;
+  max-width:100% !important;
+  overflow-x:hidden !important;
+}
+
+/* ============================================================
+   2 — BANDE ANNONCE : même hauteur, même rendu
+   ============================================================ */
+
+.vip-announce,
+.p64-topbar,
+.top-announcement,
+.admin-topbar{
+  width:100% !important;
+  min-height:32px !important;
+  height:32px !important;
+  display:flex !important;
+  align-items:center !important;
+  box-sizing:border-box !important;
+  padding:0 16px !important;
+  background:#050c16 !important;
+  color:#dfffa2 !important;
+  border-bottom:1px solid rgba(255,255,255,.07) !important;
+  font-size:9px !important;
+  line-height:1 !important;
+  font-weight:900 !important;
+  letter-spacing:1.15px !important;
+}
+
+.vip-announce-inner,
+.p64-topbar-inner,
+.top-announcement-inner,
+.admin-topbar-inner{
+  width:min(1280px,100%) !important;
+  margin:0 auto !important;
+  display:flex !important;
+  align-items:center !important;
+  gap:10px !important;
+  min-width:0 !important;
+}
+
+/* ============================================================
+   3 — HEADER PRINCIPAL : structure unique visuellement
+   ============================================================ */
+
+.vip-nav,
+.p64-nav,
+.topbar,
+.premium-nav,
+.admin-nav{
+  width:100% !important;
+  height:78px !important;
+  min-height:78px !important;
+  max-height:78px !important;
+  box-sizing:border-box !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:22px !important;
+  padding:0 max(18px,calc((100% - 1280px)/2)) !important;
+  background:rgba(255,255,255,.97) !important;
+  border-bottom:1px solid var(--ssk-line) !important;
+  box-shadow:0 7px 24px rgba(7,17,31,.055) !important;
+  backdrop-filter:blur(15px) !important;
+  position:sticky !important;
+  top:0 !important;
+  z-index:1200 !important;
+  overflow:hidden !important;
+}
+
+/* ============================================================
+   4 — MARQUE : même dimensions partout
+   ============================================================ */
+
+.vip-brand,
+.p64-brand,
+.topbar .brand,
+.premium-brand,
+.admin-brand,
+.brand{
+  display:flex !important;
+  align-items:center !important;
+  gap:10px !important;
+  width:auto !important;
+  height:50px !important;
+  min-width:0 !important;
+  max-width:360px !important;
+  flex:0 0 auto !important;
+  position:relative !important;
+  overflow:visible !important;
+  text-decoration:none !important;
+}
+
+.vip-brand-mark,
+.p64-brand-mark,
+.premium-brand .brand-mark,
+.topbar .brand-mark,
+.brand-mark{
+  width:45px !important;
+  height:45px !important;
+  min-width:45px !important;
+  min-height:45px !important;
+  max-width:45px !important;
+  max-height:45px !important;
+  flex:0 0 45px !important;
+  display:grid !important;
+  place-items:center !important;
+  position:relative !important;
+  overflow:hidden !important;
+  border-radius:13px !important;
+  background:#fff !important;
+  border:1px solid #d6e0e9 !important;
+  box-shadow:0 7px 18px rgba(7,17,31,.08) !important;
+}
+
+/* Logo réel */
+.vip-brand-mark img.chariow-header-logo,
+.p64-brand img.chariow-header-logo,
+.topbar .brand img.chariow-header-logo,
+.premium-brand img.chariow-header-logo,
+.admin-brand img.chariow-header-logo,
+.brand img.chariow-header-logo,
+img.chariow-header-logo{
+  display:block !important;
+  width:42px !important;
+  height:42px !important;
+  min-width:42px !important;
+  min-height:42px !important;
+  max-width:42px !important;
+  max-height:42px !important;
+  flex:0 0 42px !important;
+  position:static !important;
+  inset:auto !important;
+  transform:none !important;
+  float:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  visibility:visible !important;
+  opacity:1 !important;
+}
+
+.vip-brand-word,
+.p64-brand-word,
+.premium-brand .brand-word,
+.topbar .brand strong,
+.admin-brand-word,
+.brand strong{
+  display:block !important;
+  color:var(--ssk-ink) !important;
+  font-size:18px !important;
+  line-height:1.05 !important;
+  font-weight:1000 !important;
+  white-space:nowrap !important;
+}
+
+.vip-brand-word small,
+.p64-brand-word small,
+.premium-brand .brand-word small,
+.topbar .brand small,
+.admin-brand-word small,
+.brand small{
+  display:block !important;
+  margin-top:3px !important;
+  color:#8795a5 !important;
+  font-size:8px !important;
+  letter-spacing:1.25px !important;
+  font-weight:800 !important;
+}
+
+/* ============================================================
+   5 — NAVIGATION : même typographie
+   ============================================================ */
+
+.vip-nav-links,
+.p64-nav-links,
+.topbar nav,
+.premium-nav-links,
+.admin-nav-links{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:24px !important;
+  min-width:0 !important;
+}
+
+.vip-nav-links a,
+.p64-nav-links a,
+.topbar nav a,
+.premium-nav-links a,
+.admin-nav-links a{
+  color:#506176 !important;
+  font-size:11px !important;
+  font-weight:950 !important;
+  text-decoration:none !important;
+  white-space:nowrap !important;
+  transition:color .16s ease,transform .16s ease !important;
+}
+
+.vip-nav-links a:hover,
+.p64-nav-links a:hover,
+.topbar nav a:hover,
+.premium-nav-links a:hover,
+.admin-nav-links a:hover{
+  color:var(--ssk-ink) !important;
+  transform:translateY(-1px) !important;
+}
+
+/* ============================================================
+   6 — ACTIONS À DROITE
+   ============================================================ */
+
+.vip-nav-actions,
+.p64-nav-actions,
+.top-actions{
+  display:flex !important;
+  align-items:center !important;
+  gap:8px !important;
+  min-width:0 !important;
+  flex:0 0 auto !important;
+}
+
+.vip-nav-link,
+.p64-back,
+.p64-cart-btn,
+.desktop-cart,
+.install-btn,
+.admin-nav a.action,
+.top-actions a{
+  border:1px solid #d6e1eb !important;
+  background:#fff !important;
+  color:var(--ssk-ink) !important;
+  border-radius:11px !important;
+  font-size:10px !important;
+  font-weight:1000 !important;
+}
+
+/* Panier client : accent foncé */
+.vip-cart,
+.vip-nav-actions .vip-cart,
+.p64-cart-btn{
+  background:var(--ssk-ink) !important;
+  color:#fff !important;
+  border-color:var(--ssk-ink) !important;
+}
+
+/* ============================================================
+   7 — ADMIN : même bande, mais liens/commandes existants restent
+       ceux de l'administrateur. Aucun affichage de privilège côté client.
+   ============================================================ */
+
+body.admin-page .admin-nav,
+body.admin .admin-nav,
+body[class*="admin"] .admin-nav{
+  background:#081321 !important;
+  border-bottom-color:#1c344e !important;
+}
+
+body.admin-page .admin-brand-word,
+body.admin-page .admin-brand-word small,
+body.admin .admin-brand-word,
+body.admin .admin-brand-word small,
+body[class*="admin"] .admin-brand-word,
+body[class*="admin"] .admin-brand-word small{
+  color:#fff !important;
+}
+
+body.admin-page .admin-nav-links a,
+body.admin .admin-nav-links a,
+body[class*="admin"] .admin-nav-links a{
+  color:#c2ceda !important;
+}
+
+body.admin-page .admin-nav-links a:hover,
+body.admin .admin-nav-links a:hover,
+body[class*="admin"] .admin-nav-links a:hover{
+  color:#fff !important;
+}
+
+/* ============================================================
+   8 — AUCUN ÉLÉMENT DE SÉCURITÉ VISUEL
+       ne doit apparaître automatiquement.
+   ============================================================ */
+
+.chariow-admin-access-22,
+.chariow-admin-trigger,
+#chariowAdminAccess22,
+#chariowAdminTrigger,
+.chariow-admin-logo-indicator{
+  /* L'accès admin reste piloté par admin_access9.js et n'est pas affiché. */
+}
+
+/* Logo hors zone header : neutralisé */
+body > img.chariow-header-logo,
+body > img.chariow-brand-icon,
+body > .chariow-header-logo,
+body > .chariow-brand-icon{
+  display:none !important;
+}
+
+/* ============================================================
+   9 — MOBILE
+   ============================================================ */
+
+@media(max-width:850px){
+  .vip-nav,
+  .p64-nav,
+  .topbar,
+  .premium-nav,
+  .admin-nav{
+    height:70px !important;
+    min-height:70px !important;
+    max-height:70px !important;
+    padding:0 13px !important;
+  }
+
+  .vip-nav-links,
+  .p64-nav-links,
+  .premium-nav-links,
+  .admin-nav-links{
+    display:none !important;
+  }
+
+  .vip-brand-mark,
+  .p64-brand-mark,
+  .premium-brand .brand-mark,
+  .topbar .brand-mark,
+  .brand-mark{
+    width:42px !important;
+    height:42px !important;
+    min-width:42px !important;
+    min-height:42px !important;
+    max-width:42px !important;
+    max-height:42px !important;
+    flex-basis:42px !important;
+  }
+
+  .vip-brand-mark img.chariow-header-logo,
+  .p64-brand img.chariow-header-logo,
+  .topbar .brand img.chariow-header-logo,
+  .premium-brand img.chariow-header-logo,
+  .admin-brand img.chariow-header-logo,
+  .brand img.chariow-header-logo,
+  img.chariow-header-logo{
+    width:40px !important;
+    height:40px !important;
+    min-width:40px !important;
+    min-height:40px !important;
+    max-width:40px !important;
+    max-height:40px !important;
+    flex-basis:40px !important;
+  }
+
+  .vip-brand-word,
+  .p64-brand-word,
+  .premium-brand .brand-word,
+  .topbar .brand strong,
+  .admin-brand-word,
+  .brand strong{
+    font-size:16px !important;
+  }
+
+  .vip-nav-actions,
+  .p64-nav-actions{
+    gap:6px !important;
+  }
+}
+
+@media(max-width:460px){
+  .vip-brand-word small,
+  .p64-brand-word small,
+  .premium-brand .brand-word small,
+  .topbar .brand small,
+  .admin-brand-word small,
+  .brand small{
+    font-size:7px !important;
+    letter-spacing:1px !important;
+  }
+
+  .vip-nav-link{
+    display:none !important;
+  }
+}

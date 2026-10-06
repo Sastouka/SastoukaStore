@@ -1,0 +1,62 @@
+
+<style id="SASTOUKASTORE_ADMIN_DELETE_PRODUCT_UI_V2">
+.ssk-admin-delete-form{
+  display:inline-block !important;
+  margin:0 !important;
+}
+.ssk-admin-delete-book{
+  appearance:none !important;
+  border:1px solid #dc2626 !important;
+  background:#fff !important;
+  color:#b91c1c !important;
+  border-radius:9px !important;
+  padding:8px 12px !important;
+  font:inherit !important;
+  font-size:12px !important;
+  font-weight:900 !important;
+  cursor:pointer !important;
+}
+.ssk-admin-delete-book:hover{
+  background:#dc2626 !important;
+  color:#fff !important;
+}
+</style>
+<script>
+function sskConfirmDeleteBookV2(form){
+  var name = form.getAttribute("data-product-name") || "ce livre";
+  return window.confirm(
+    "Supprimer définitivement « " + name + " » ?\n\n" +
+    "Un livre déjà acheté sera protégé automatiquement."
+  );
+}
+</script>
+
+<link rel="stylesheet" href="/static/css/sastoukastore_bande_haut_uniforme_vip_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_icon_safety_v2_2026.css?v=20261006">
+{% extends "base.html" %}
+{% block title %}SastoukaStore — Catalogue{% endblock %}
+{% block content %}
+<div class="admin-head"><div><span class="section-kicker">ADMINISTRATION</span><h1>Catalogue</h1><p>Gérez catégories, supports numériques et prix.</p></div><a class="primary-btn dark-btn" href="/">← Boutique</a></div>
+{% with ms=get_flashed_messages(with_categories=true) %}{% if ms %}<div class="flash-zone">{% for cat,msg in ms %}<div class="flash {{cat}}">{{msg}}</div>{% endfor %}</div>{% endif %}{% endwith %}
+<section class="stats-grid"><div class="stat-card"><span>Produits</span><strong>{{stats.products}}</strong><small>Total</small></div><div class="stat-card"><span>Actifs</span><strong>{{stats.active}}</strong><small>Visibles</small></div><div class="stat-card"><span>Stock</span><strong>{{stats.stock}}</strong><small>Unités</small></div><div class="stat-card"><span>Catégories</span><strong>{{stats.categories}}</strong><small>Total</small></div></section>
+<div class="admin-columns">
+<section class="panel"><h2>Catégories</h2><form method="post" action="{{url_for('admin.category_add')}}" class="inline-form">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><input name="name" placeholder="Nouvelle catégorie" required><button class="primary-btn small-btn">Ajouter</button></form>
+<div class="category-admin-list">{% for c in categories %}<div class="admin-row"><div><strong>{{c.name}}</strong><small>{{c.slug}}</small></div><form method="post" action="{{url_for('admin.category_delete',cid=c.id)}}" onsubmit="return confirm('Supprimer ?')">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="icon-danger">×</button></form></div>{% else %}<p class="muted">Aucune catégorie.</p>{% endfor %}</div></section>
+<section class="panel"><h2>Ajouter un produit</h2><form method="post" action="{{url_for('admin.product_add')}}" enctype="multipart/form-data" class="product-form">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+<label>Nom<input name="name" required placeholder="Ex. Support de mathématiques"></label><label>Catégorie<select name="category_id"><option value="">Sans catégorie</option>{% for c in categories %}<option value="{{c.id}}">{{c.name}}</option>{% endfor %}</select></label>
+<div class="two-fields"><label>Prix<input type="number" step="0.01" min="0" name="price" value="0"></label></div>
+<label>Description<textarea name="description" rows="3"></textarea></label><label>Image<input type="file" name="image" accept=".png,.jpg,.jpeg,.webp,.gif"></label><button class="primary-btn dark-btn">+ Ajouter</button></form></section></div>
+<section class="panel"><div class="panel-head"><h2>Produits</h2><input id="productSearch" class="search-input" placeholder="Rechercher…"></div>
+<div class="admin-products">{% for p in products %}<article class="admin-product" data-search="{{(p.name ~ ' ' ~ (p.category_name or ''))|lower}}"><div class="admin-product-image">{% if p.image %}<img src="{{p.image}}" alt="{{p.name}}">{% else %}<span>IMAGE</span>{% endif %}</div><div><div class="status-line"><span class="status {% if p.active %}on{% endif %}"></span>{% if p.active %}Publié{% else %}Masqué{% endif %}</div><h3>{{p.name}}</h3><small>{{p.category_name or 'Sans catégorie'}}</small><div class="price-stock"><strong>{{"%.0f"|format(p.price)}} FCFA</strong></div></div><div class="admin-actions"><a href="{{url_for('admin.edit',pid=p.id)}}">Modifier</a><form method="post" action="{{url_for('admin.toggle',pid=p.id)}}">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button>{% if p.active %}Masquer{% else %}Publier{% endif %}</button></form><form method="post" action="{{ url_for('admin_catalog.supprimer', product_id=p.id) }}" onsubmit="return confirm('Supprimer ?')">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button class="danger-link">Supprimer</button></form></div></article>{% else %}<div class="empty-products"><div class="empty-icon">🛍️</div><h3>Aucun produit</h3><p>Ajoutez votre premier produit.</p></div>{% endfor %}</div></section>
+<script>const s=document.getElementById("productSearch");if(s)s.addEventListener("input",()=>{let q=s.value.toLowerCase();document.querySelectorAll(".admin-product").forEach(x=>x.style.display=x.dataset.search.includes(q)?"grid":"none")});</script>
+{% endblock %}
+
+
+<link rel="stylesheet" href="/static/css/sastoukastore_admin_digital_v2.css?v=20261006">
+
+<script src="/static/js/sastoukastore_remove_region_banner_v2.js?v=20261007"></script>

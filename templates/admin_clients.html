@@ -1,0 +1,42 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Clients — SastoukaStore</title><link rel="stylesheet" href="{{url_for('static',filename='css/admin4.css')}}"><!-- SastoukaStore-A4-FORCE-2-6 -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/a4_covers_force_2_6.css') }}?v=20261004061930">
+<!-- SastoukaStore PATCH 6.6 : ICÔNE / LOGO GLOBAL -->
+<link rel="shortcut icon" href="/static/icons/favicon.ico?v=66">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png?v=66">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png?v=66">
+<link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png?v=66">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png?v=66">
+<link rel="manifest" href="/static/manifest.webmanifest?v=66">
+<meta name="theme-color" content="#041C41">
+<meta property="og:image" content="/static/branding/sastoukastore-logo.png?v=66">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/static/branding/sastoukastore-logo.png?v=66">
+<!-- SastoukaStore PATCH 6.6.1 : ICÔNE / LOGO GLOBAL -->
+<link rel="shortcut icon" href="/static/icons/favicon.ico?v=661">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png?v=661">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png?v=661">
+<link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png?v=661">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png?v=661">
+<link rel="manifest" href="/static/manifest.webmanifest?v=661">
+<meta name="theme-color" content="#041C41">
+<meta property="og:image" content="/static/branding/sastoukastore-logo.png?v=661">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/static/branding/sastoukastore-logo.png?v=661">
+<link rel="stylesheet" href="/static/css/sastoukastore_theme_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_global_client_admin_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_icon_safety_v2_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_bande_haut_uniforme_vip_2026.css?v=20261006">
+
+<!-- SastoukaStore ADMIN VIP THEME -->
+
+<!-- SastoukaStore ADMIN VIP THEME -->
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_admin_2026.css?v=202610062146">
+
+<!-- Correctif Contraste Global -->
+
+<!-- Correctif Contraste Global -->
+<link rel="stylesheet" href="/static/css/sastoukastore_contraste_global_2026.css?v=202610062242">
+<link rel="stylesheet" href="/static/css/sastoukastore_admin_digital_v2.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_remove_region_banner_v2.css?v=20261007">
+</head><body><div class="admin-shell"><header class="admin-head"><div><span class="eyebrow">SastoukaStore ADMIN</span><h1>Clients</h1></div><a class="back" href="{{url_for('admin_orders.commandes')}}">← Achats</a></header><section class="toolbar"><form><input name="q" value="{{q}}" placeholder="Nom, téléphone ou email"><button>Rechercher</button></form></section><div class="table-wrap"><table><thead><tr><th>Client</th><th>Téléphone</th><th>Email</th><th>Ville</th><th>Achats</th><th>Total</th></tr></thead><tbody>{% for c in clients %}<tr><td><b>{{c.name}}</b></td><td>{{c.phone}}</td><td>{{c.email}}</td><td>{{c.city}}</td><td>{{c.orders_count}}</td><td>{{"%.2f"|format(c.total_spent or 0)}}</td></tr>{% else %}<tr><td colspan="6" class="empty">Aucun client.</td></tr>{% endfor %}</tbody></table></div></div><script src="/static/js/sastoukastore_remove_region_banner_v2.js?v=20261007"></script>
+</body></html>

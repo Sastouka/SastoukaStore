@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ product.name }} — SastoukaStore</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/premium16.css') }}?v=62">
+<!-- SastoukaStore PATCH 6.6 : ICÔNE / LOGO GLOBAL -->
+<link rel="shortcut icon" href="/static/icons/favicon.ico?v=66">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png?v=66">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png?v=66">
+<link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png?v=66">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png?v=66">
+<link rel="manifest" href="/static/manifest.webmanifest?v=66">
+<meta name="theme-color" content="#041C41">
+<meta property="og:image" content="/static/branding/sastoukastore-logo.png?v=66">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/static/branding/sastoukastore-logo.png?v=66">
+<!-- SastoukaStore PATCH 6.6.1 : ICÔNE / LOGO GLOBAL -->
+<link rel="shortcut icon" href="/static/icons/favicon.ico?v=661">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png?v=661">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png?v=661">
+<link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png?v=661">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png?v=661">
+<link rel="manifest" href="/static/manifest.webmanifest?v=661">
+<meta name="theme-color" content="#041C41">
+<meta property="og:image" content="/static/branding/sastoukastore-logo.png?v=661">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/static/branding/sastoukastore-logo.png?v=661">
+<link rel="stylesheet" href="/static/css/sastoukastore_theme_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_product_preview_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_catalogue_couvertures_v4_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_fiche_produit_vip_v5.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_global_client_admin_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_icon_safety_v2_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_bande_haut_uniforme_vip_2026.css?v=20261006">
+
+<!-- Correctif Contraste Global -->
+
+<!-- Correctif Contraste Global -->
+<link rel="stylesheet" href="/static/css/sastoukastore_contraste_global_2026.css?v=202610062242">
+<link rel="stylesheet" href="/static/css/sastoukastore_remove_region_banner_v2.css?v=20261007">
+</head>
+<body class="premium-site">
+<!-- SastoukaStore PATCH 6.2 : PRODUCT DETAIL MODERN -->
+<header class="premium-nav">
+  <a class="premium-brand" href="/">
+    <img class="sastoukastore-header-logo" src="/static/branding/sastoukastore-header-logo.png?v=664" alt="SastoukaStore">
+    <span class="brand-word">SastoukaStore<small>LE SAVOIR EN 1 CLIC</small></span>
+  </a>
+  <nav class="desktop-nav">
+    <a href="/">Catalogue</a>
+    <a href="/suivi-commande">Mes achats</a>
+  </nav>
+  <div class="nav-actions">
+    <a class="nav-cart" href="/panier">🛒 <span>Panier</span><b id="premiumCartCount">0</b></a>
+  </div>
+</header>
+
+<main class="p62-detail-page">
+  <a class="p62-detail-back" href="/">← Retour au catalogue</a>
+  <section class="p62-detail-grid">
+
+    <div class="p62-cover-stage">
+      <div class="p62-cover-sheet">
+        {% if product.image %}
+          {% if product.image.startswith('http://') or product.image.startswith('https://') %}
+            <img src="{{ product.image }}" alt="{{ product.name }}">
+          {% elif product.image.startswith('/static/') %}
+            <img src="{{ product.image }}" alt="{{ product.name }}">
+          {% else %}
+            <img src="/static/{{ product.image.lstrip('/') }}" alt="{{ product.name }}">
+          {% endif %}
+        {% else %}
+          <div class="p62-cover-fallback">
+            <b>PDF</b><span>SUPPORT ÉDUCATIF</span>
+          </div>
+        {% endif %}
+      </div>
+      <span class="p62-badge">PDF NUMÉRIQUE</span>
+
+<div class="ssk-preview-launch">
+  <div class="ssk-preview-copy">
+    <strong>Feuilletez avant d’acheter</strong>
+    <span>Aperçu de 10 pages du PDF • filigrane SastoukaStore • document original protégé</span>
+  </div>
+  <button type="button" class="ssk-preview-btn" id="sskOpenPreview">Voir 10 pages</button>
+</div>
+
+<div class="ssk-preview-modal" id="sskPreviewModal" hidden>
+  <div class="ssk-preview-dialog" role="dialog" aria-modal="true" aria-labelledby="sskPreviewTitle">
+    <div class="ssk-preview-head">
+      <div>
+        <strong id="sskPreviewTitle">Aperçu du support</strong>
+        <span>10 pages de démonstration avec filigrane • le fichier original n’est pas exposé.</span>
+      </div>
+      <button type="button" class="ssk-preview-close" id="sskClosePreview" aria-label="Fermer">×</button>
+    </div>
+
+    <div class="ssk-preview-pages">
+      {% for page in range(1, 11) %}
+      <figure class="ssk-preview-page">
+        <img src="{{ url_for('shop.pdf_preview', product_id=product.id, page=page) }}"
+             alt="Aperçu page {{ page }}" loading="lazy"
+             onerror="this.closest('figure').hidden=true">
+        <figcaption class="ssk-preview-caption">PAGE {{ "%02d"|format(page) }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+
+    <div class="ssk-preview-foot">
+      Aperçu limité aux 10 premières pages disponibles. Chaque page est rendue en image avec filigrane afin de protéger le PDF original.
+    </div>
+  </div>
+</div>    </div>
+
+    <div class="p62-detail-copy">
+      <div class="p62-tags">
+        {% if product.level %}<span>{{ product.level }}</span>{% endif %}
+        {% if product.subject %}<span>{{ product.subject }}</span>{% endif %}
+        <span>DOCUMENT TÉLÉCHARGEABLE</span>
+      </div>
+
+      <h1 class="p62-title">{{ product.name }}</h1>
+
+      <p class="p62-lead">{{ product.short_description or "Cours, exercices et méthodes pédagogiques à télécharger." }}</p>
+
+      <div class="p62-price">
+        <span class="p62-price-label">Prix du support</span>
+        <div class="p62-price-value">
+          <strong>{{ "%.2f"|format(product.price or 0) }}</strong>
+          <b>{{ product.currency or "FCFA" }}</b>
+        </div>
+
+        <div class="p62-actions">
+          <button id="buyNow" class="p62-buy" type="button">Acheter maintenant <span>→</span></button>
+          <button id="addToCartP63" class="p63-add-cart" type="button">Ajouter au panier</button>
+          <a class="p62-cart-link" href="/panier">Voir le panier</a>
+        </div>
+
+        <p class="p62-note">✓ Livraison numérique · ✓ Téléchargement après confirmation du paiement</p>
+
+<div class="ssk-value-points" aria-label="Ce que vous recevez">
+  <div><b>✓ PDF numérique</b><span>Accès à votre support après confirmation du paiement.</span></div>
+  <div><b>✓ Aperçu 10 pages</b><span>Feuilletez le contenu avant votre achat.</span></div>
+  <div><b>✓ Format original</b><span>La couverture est présentée sans recadrage.</span></div>
+</div>
+      </div>
+
+      <section class="p62-description">
+        <h2>À propos du support</h2>
+        <div>{{ product.description or "Support pédagogique numérique." }}</div>
+      </section>
+
+      <a class="p62-wa" target="_blank"
+         href="https://wa.me/?text={{ ('Bonjour, je suis intéressé par le support « ' ~ product.name ~ ' » sur SastoukaStore.')|urlencode }}">
+        💬 Contacter SastoukaStore sur WhatsApp
+      </a>
+    </div>
+  </section>
+<script>
+(function(){
+  const modal=document.getElementById("sskPreviewModal");
+  const open=document.getElementById("sskOpenPreview");
+  const close=document.getElementById("sskClosePreview");
+  if(!modal || !open || !close) return;
+  function show(){modal.hidden=false;document.body.style.overflow="hidden";}
+  function hide(){modal.hidden=true;document.body.style.overflow="";}
+  open.addEventListener("click",show);
+  close.addEventListener("click",hide);
+  modal.addEventListener("click",function(e){if(e.target===modal)hide();});
+  document.addEventListener("keydown",function(e){
+    if(e.key==="Escape" && !modal.hidden) hide();
+  });
+})();
+</script>
+</main>
+
+<script src="/static/js/premium17.js?v=62"></script>
+<script>
+(function(){
+  const KEY="sastoukastore_cart_v1";
+  const product={
+    id:Number({{ product.id }}),
+    name:{{ product.name|tojson }},
+    price:Number({{ product.price or 0 }}),
+    currency:{{ (product.currency or "FCFA")|tojson }},
+    image:{{ (product.image or "")|tojson }},
+    product_type:"digital_pdf",
+    quantity:1
+  };
+  function read(){
+    try{
+      const v=JSON.parse(localStorage.getItem(KEY)||"[]");
+      return Array.isArray(v)?v:[];
+    }catch(e){return [];}
+  }
+  function write(v){localStorage.setItem(KEY,JSON.stringify(v));}
+  function addOne(){
+    const cart=read();
+    const item=cart.find(x=>String(x.id)===String(product.id));
+    if(item){item.quantity=1;}else{cart.push(product);}
+    write(cart);
+    window.location.href="/commande";
+  }
+  const buy=document.getElementById("buyNow");
+  if(buy) buy.addEventListener("click",addOne);
+  const add=document.getElementById("addToCartP63");
+  if(add){
+    add.addEventListener("click",function(){
+      const cart=read();
+      const item=cart.find(x=>String(x.id)===String(product.id));
+      if(item) item.quantity=Math.max(1,Number(item.quantity)||1)+1;
+      else cart.push({...product,quantity:1});
+      write(cart);
+      if(badge) badge.textContent=cart.reduce((n,x)=>n+(Number(x.quantity)||0),0);
+      add.textContent="✓ Ajouté au panier";
+      setTimeout(()=>add.textContent="Ajouter au panier",1400);
+    });
+  }
+
+  const badge=document.getElementById("premiumCartCount");
+  if(badge) badge.textContent=read().reduce((n,x)=>n+(Number(x.quantity)||0),0);
+})();
+</script>
+<script src="/static/js/admin_access9.js?v=7click-discret-20261005"></script>
+<script src="/static/js/sastoukastore_remove_region_banner_v2.js?v=20261007"></script>
+</body>
+</html>

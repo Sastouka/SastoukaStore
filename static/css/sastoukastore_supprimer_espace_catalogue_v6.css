@@ -1,0 +1,113 @@
+/* ============================================================
+   SASTOUKASTORE — SUPPRESSION ESPACE CATALOGUE V6
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. Aucun espace entre le HERO et la suite de la page
+   ------------------------------------------------------------ */
+
+html body .vip-hero{
+  margin-bottom:0 !important;
+}
+
+html body .vip-trust-bar{
+  display:none !important;
+  height:0 !important;
+  min-height:0 !important;
+  max-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  overflow:hidden !important;
+}
+
+html body section.vip-section.vip-categories{
+  margin-top:0 !important;
+  padding-top:10px !important;
+  padding-bottom:10px !important;
+  border-top:0 !important;
+}
+
+/* ------------------------------------------------------------
+   2. Catégories : passage direct sous le Hero
+   ------------------------------------------------------------ */
+
+html body .vip-categories .vip-section-heading{
+  margin-top:0 !important;
+  margin-bottom:8px !important;
+}
+
+html body .vip-categories .vip-section-heading h2{
+  margin-top:0 !important;
+}
+
+html body .vip-categories .vip-category-grid{
+  margin-top:0 !important;
+  padding-top:0 !important;
+  padding-bottom:2px !important;
+}
+
+/* ------------------------------------------------------------
+   3. Catalogue : pas de marge supérieure excessive
+   ------------------------------------------------------------ */
+
+html body section.vip-section.vip-catalogue{
+  margin-top:0 !important;
+  padding-top:12px !important;
+}
+
+html body .vip-catalogue .vip-catalogue-heading{
+  margin-top:0 !important;
+  margin-bottom:8px !important;
+}
+
+html body #catalogue .vip-product-grid{
+  margin-top:3px !important;
+  padding-top:0 !important;
+}
+
+/* Supprime le pseudo-espace visuel d'anciens patchs */
+html body .vip-catalogue::before{
+  content:none !important;
+  display:none !important;
+  height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* ------------------------------------------------------------
+   4. Au cas où un ancien bandeau de conversion existe encore
+   ------------------------------------------------------------ */
+
+html body .ssk-conversion-strip{
+  display:none !important;
+  height:0 !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+}
+
+/* ------------------------------------------------------------
+   5. Petit filet de séparation très discret à la place d'une
+      grosse zone vide : aucun bloc supplémentaire.
+   ------------------------------------------------------------ */
+
+html body .vip-categories{
+  border-radius:0 !important;
+}
+
+/* ------------------------------------------------------------
+   6. Responsive
+   ------------------------------------------------------------ */
+
+@media(max-width:720px){
+  html body section.vip-section.vip-categories{
+    padding-top:7px !important;
+    padding-bottom:7px !important;
+  }
+
+  html body section.vip-section.vip-catalogue{
+    padding-top:9px !important;
+  }
+}

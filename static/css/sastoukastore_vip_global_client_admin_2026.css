@@ -1,0 +1,468 @@
+/* ============================================================
+   SASTOUKASTORE — VIP GLOBAL CLIENT + ADMIN V1
+   Couche visuelle globale uniquement.
+   Aucun contenu métier, produit, prix, paiement ou SQLite.
+   ============================================================ */
+
+:root{
+  --ssk-ink:#07111f;
+  --ssk-navy:#10243b;
+  --ssk-blue:#0b63c7;
+  --ssk-blue2:#1678dc;
+  --ssk-orange:#ff7600;
+  --ssk-orange2:#ff9e38;
+  --ssk-green:#7bef42;
+  --ssk-bg:#eef3f8;
+  --ssk-card:#ffffff;
+  --ssk-line:#dce5ee;
+  --ssk-muted:#718197;
+}
+
+/* ===== 1. RESET VISUEL DE BASE ===== */
+html,body{
+  min-width:0 !important;
+  max-width:100% !important;
+  overflow-x:hidden !important;
+}
+
+body{
+  color:var(--ssk-ink);
+}
+
+/* ===== 2. LOGO : verrouillage global =====
+   Neutralise les anciennes règles qui forçaient l'image à 100%.
+*/
+header img.chariow-header-logo,
+header img.chariow-brand-icon,
+header .chariow-header-logo,
+.topbar img.chariow-header-logo,
+.premium-nav img.chariow-header-logo,
+.vip-nav img.chariow-header-logo,
+.p64-nav img.chariow-header-logo,
+.p64-brand img.chariow-brand-icon,
+.p64-brand img.chariow-header-logo,
+.premium-brand img.chariow-brand-icon,
+.premium-brand img.chariow-header-logo{
+  display:block !important;
+  width:42px !important;
+  height:42px !important;
+  min-width:42px !important;
+  min-height:42px !important;
+  max-width:42px !important;
+  max-height:42px !important;
+  flex:0 0 42px !important;
+  position:static !important;
+  inset:auto !important;
+  float:none !important;
+  transform:none !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden !important;
+}
+
+/* Parents de logo */
+.p64-brand,
+.premium-brand,
+.topbar .brand,
+.vip-brand{
+  min-width:0 !important;
+  max-width:360px !important;
+  overflow:visible !important;
+}
+
+.p64-brand,
+.premium-brand,
+.topbar .brand,
+.vip-brand{
+  display:flex !important;
+  align-items:center !important;
+  gap:10px !important;
+}
+
+/* ===== 3. NAVIGATIONS ===== */
+.p64-nav,
+.premium-nav,
+.topbar{
+  box-sizing:border-box !important;
+  width:100% !important;
+  max-width:100% !important;
+  overflow:hidden !important;
+}
+
+.p64-nav{
+  height:76px !important;
+  min-height:76px !important;
+  max-height:76px !important;
+  background:rgba(255,255,255,.97) !important;
+  border-bottom:1px solid var(--ssk-line) !important;
+  box-shadow:0 8px 26px rgba(7,17,31,.055) !important;
+}
+
+.p64-brand-word,
+.brand-word,
+.topbar .brand strong{
+  color:var(--ssk-ink) !important;
+  font-weight:1000 !important;
+}
+
+.p64-brand-word small,
+.brand-word small,
+.topbar .brand small{
+  color:#8593a4 !important;
+}
+
+/* ===== 4. HEADERS DE PAGES ===== */
+.p64-head,
+.pp-head,
+.admin-head,
+.head{
+  border-radius:22px !important;
+}
+
+.p64-head,
+.pp-head{
+  background:
+    radial-gradient(circle at 90% 5%,rgba(123,239,66,.10),transparent 23%),
+    linear-gradient(120deg,#07111f,#102a45 70%,#123f70) !important;
+  color:#fff !important;
+  box-shadow:0 18px 45px rgba(7,17,31,.13) !important;
+}
+
+.p64-head h1,
+.pp-head h1{
+  color:#fff !important;
+  font-weight:1000 !important;
+}
+
+.p64-head p,
+.pp-head p{
+  color:#c9d6e3 !important;
+}
+
+.p64-kicker,
+.pp-kicker,
+.section-kicker{
+  color:#aabbd0 !important;
+  font-weight:1000 !important;
+  letter-spacing:1.5px !important;
+}
+
+/* ===== 5. CARTES CLIENT ===== */
+.p64-card,
+.pp-card,
+.p65-card,
+.panel,
+.card,
+.stat-card{
+  border:1px solid var(--ssk-line) !important;
+  background:var(--ssk-card) !important;
+  box-shadow:0 14px 34px rgba(7,17,31,.055) !important;
+}
+
+.p64-card,
+.pp-card,
+.panel{
+  border-radius:20px !important;
+}
+
+/* ===== 6. CHAMPS / FORMULAIRES ===== */
+.p64-input,
+.pp-input,
+.product-form input,
+.product-form select,
+.product-form textarea,
+.form-card input,
+.form-card select,
+.form-card textarea,
+.inline-form input{
+  box-sizing:border-box !important;
+  border:1px solid #cfdbe7 !important;
+  border-radius:11px !important;
+  background:#fff !important;
+  color:#12233a !important;
+  outline:none !important;
+  transition:border-color .15s,box-shadow .15s !important;
+}
+
+.p64-input:focus,
+.pp-input:focus,
+.product-form input:focus,
+.product-form select:focus,
+.product-form textarea:focus,
+.form-card input:focus,
+.form-card select:focus,
+.form-card textarea:focus,
+.inline-form input:focus{
+  border-color:#4c92d9 !important;
+  box-shadow:0 0 0 4px rgba(11,99,199,.09) !important;
+}
+
+/* ===== 7. BOUTONS ===== */
+.primary-btn,
+.p64-primary,
+.pp-primary,
+.dark-btn,
+.card-actions a,
+.card-actions button{
+  font-weight:1000 !important;
+  border-radius:11px !important;
+  transition:transform .16s,box-shadow .16s,filter .16s !important;
+}
+
+.primary-btn,
+.p64-primary{
+  background:linear-gradient(135deg,var(--ssk-orange),var(--ssk-orange2)) !important;
+  color:#fff !important;
+  border:0 !important;
+  box-shadow:0 10px 23px rgba(255,118,0,.20) !important;
+}
+
+.primary-btn:hover,
+.p64-primary:hover{
+  transform:translateY(-2px) !important;
+  box-shadow:0 15px 30px rgba(255,118,0,.27) !important;
+}
+
+.dark-btn,
+.pp-primary{
+  background:var(--ssk-ink) !important;
+  color:#fff !important;
+  border:0 !important;
+}
+
+/* ===== 8. CATALOGUE CLIENT / PRODUITS ===== */
+.product-card,
+.vip-product-card,
+.product,
+.admin-product{
+  border:1px solid var(--ssk-line) !important;
+  box-shadow:0 12px 30px rgba(7,17,31,.055) !important;
+  border-radius:18px !important;
+  background:#fff !important;
+}
+
+.product-card:hover,
+.vip-product-card:hover,
+.admin-product:hover{
+  box-shadow:0 20px 42px rgba(7,17,31,.12) !important;
+}
+
+/* Images catalogue : jamais déformées */
+.product-card img,
+.admin-product-image img,
+.edit-image,
+.mini-cover,
+.p65-thumb img,
+.p65-cover img{
+  object-fit:contain !important;
+  object-position:center !important;
+}
+
+/* ===== 9. ADMIN : DASHBOARD ===== */
+.shell,
+.admin-shell{
+  max-width:1450px !important;
+  margin:0 auto !important;
+  padding:26px !important;
+}
+
+.stats-grid{
+  gap:15px !important;
+}
+
+.stat-card{
+  border-radius:16px !important;
+  padding:18px !important;
+}
+
+.stat-card strong{
+  color:var(--ssk-blue) !important;
+  font-weight:1000 !important;
+}
+
+.admin-columns{
+  gap:18px !important;
+}
+
+.admin-columns .panel,
+.admin-head + .panel,
+.admin-head ~ .panel{
+  border-radius:18px !important;
+}
+
+.category-admin-list,
+.admin-row{
+  border-color:#e8eef3 !important;
+}
+
+.admin-row{
+  border-radius:11px !important;
+  padding:11px 12px !important;
+}
+
+.admin-row:hover{
+  background:#f7fafc !important;
+}
+
+/* ===== 10. ADMIN : FORMULAIRE PRODUIT ===== */
+.product-form{
+  display:grid !important;
+  gap:15px !important;
+}
+
+.product-form label{
+  color:#24364c !important;
+  font-size:12px !important;
+  font-weight:900 !important;
+}
+
+.product-form textarea{
+  resize:vertical !important;
+  min-height:120px !important;
+}
+
+.two-fields{
+  gap:13px !important;
+}
+
+/* ===== 11. ADMIN : LISTE PRODUITS ===== */
+.products-grid,
+.admin-products{
+  gap:16px !important;
+}
+
+.admin-product{
+  padding:15px !important;
+}
+
+.admin-product .card-actions{
+  gap:8px !important;
+  flex-wrap:wrap !important;
+}
+
+.card-actions a,
+.card-actions button{
+  background:#f3f7fb !important;
+  color:#17395e !important;
+  border:1px solid #d8e3ed !important;
+  padding:9px 11px !important;
+}
+
+.card-actions a:first-child{
+  background:linear-gradient(135deg,var(--ssk-orange),var(--ssk-orange2)) !important;
+  border-color:transparent !important;
+  color:#fff !important;
+}
+
+/* ===== 12. PAGE PANIER / CHECKOUT / SUIVI ===== */
+.pp-grid,
+.p64-checkout-grid{
+  gap:18px !important;
+}
+
+.pp-total strong,
+.p64-total-track strong{
+  color:#0b5fae !important;
+  font-weight:1000 !important;
+}
+
+.p65-item,
+.p64-track-item,
+.item-row{
+  border-bottom:1px solid #e6edf3 !important;
+}
+
+.pp-key,
+.p64-key-box,
+.key-help{
+  border-radius:14px !important;
+}
+
+/* ===== 13. MOBILE ===== */
+@media(max-width:900px){
+  .shell,
+  .admin-shell{
+    padding:18px !important;
+  }
+
+  .admin-columns{
+    grid-template-columns:1fr !important;
+  }
+
+  .pp-grid,
+  .p64-checkout-grid{
+    grid-template-columns:1fr !important;
+  }
+
+  #mainContent > aside.pp-card{
+    position:static !important;
+  }
+}
+
+@media(max-width:650px){
+  .shell,
+  .admin-shell{
+    padding:13px !important;
+  }
+
+  .p64-nav{
+    height:70px !important;
+    min-height:70px !important;
+    max-height:70px !important;
+    padding:0 13px !important;
+  }
+
+  .p64-brand img.chariow-header-logo,
+  .premium-brand img.chariow-header-logo,
+  .vip-brand img.chariow-header-logo,
+  .topbar .brand img.chariow-header-logo{
+    width:40px !important;
+    height:40px !important;
+    min-width:40px !important;
+    min-height:40px !important;
+    max-width:40px !important;
+    max-height:40px !important;
+    flex-basis:40px !important;
+  }
+
+  .p64-nav-links,
+  .desktop-nav{
+    display:none !important;
+  }
+
+  .p64-head,
+  .pp-head,
+  .admin-head,
+  .head{
+    padding:18px !important;
+    border-radius:18px !important;
+  }
+
+  .p64-head h1,
+  .pp-head h1{
+    font-size:30px !important;
+  }
+
+  .pp-card,
+  .p64-card,
+  .panel{
+    padding:16px !important;
+    border-radius:17px !important;
+  }
+
+  .pp-two,
+  .p64-two,
+  .two-fields{
+    grid-template-columns:1fr !important;
+  }
+}
+
+/* ===== 14. SÉCURITÉ CONTRE LES IMAGES GÉANTES HORS HEADER ===== */
+body > img.chariow-header-logo,
+body > img.chariow-brand-icon,
+body > .chariow-header-logo,
+body > .chariow-brand-icon{
+  display:none !important;
+}

@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="/static/css/sastoukastore_bande_haut_uniforme_vip_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_icon_safety_v2_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/admin9.css">
+{% extends "base.html" %}
+{% block title %}SastoukaStore — Accueil{% endblock %}
+{% block content %}
+<section class="hero">
+  <div>
+    <span class="eyebrow">BIENVENUE</span>
+    <h1>Découvrez nos produits<br>en toute simplicité.</h1>
+    <p>Commandez en ligne et choisissez votre mode de paiement et de livraison.</p>
+    <button class="primary-btn">Découvrir les produits</button>
+  </div>
+  <div class="hero-shape">
+    <div class="hero-card"><span>SastoukaStore</span><strong>Votre boutique</strong><small>simple • rapide • pratique</small></div>
+  </div>
+</section>
+<section class="section">
+  <div class="section-heading"><div><span class="section-kicker">EXPLORER</span><h2>Catégories</h2></div></div>
+  <div class="categories">
+    {% if categories %}
+      {% for category in categories %}
+      <button class="category-card"><span class="category-icon">◈</span><strong>{{ category["name"] }}</strong></button>
+      {% endfor %}
+    {% else %}
+      <div class="empty-state"><span>◈</span><strong>Vos catégories apparaîtront ici</strong><p>La gestion des catégories sera ajoutée dans la Partie 2.</p></div>
+    {% endif %}
+  </div>
+</section>
+<section class="section">
+  <div class="section-heading"><div><span class="section-kicker">BOUTIQUE</span><h2>Produits</h2></div><button class="text-btn">Voir tout</button></div>
+  <div class="products-grid">
+    {% if products %}
+      {% for product in products %}
+      <article class="product-card">
+        <div class="product-image">
+          {% if product["image"] %}<img src="{{ product['image'] }}" alt="{{ product['name'] }}">{% else %}<span>IMAGE</span>{% endif %}
+        </div>
+        <div class="product-body">
+          <h3>{{ product["name"] }}</h3>
+          <p>{{ product["description"] }}</p>
+          <div class="product-footer"><strong>{{ "%.0f"|format(product["price"]) }} FCFA</strong><button>+</button></div>
+        </div>
+      </article>
+      {% endfor %}
+    {% else %}
+      <div class="empty-products"><div class="empty-icon">🛍️</div><h3>Votre catalogue commence ici</h3><p>Les produits seront ajoutés dans la <strong>Partie 2</strong>.</p></div>
+    {% endif %}
+  </div>
+</section>
+<section class="trust-section">
+  <div><span>✓</span><strong>Commande simple</strong><small>Quelques étapes seulement</small></div>
+  <div><span>✓</span><strong>Paiement flexible</strong><small>Plusieurs moyens de paiement</small></div>
+  <div><span>✓</span><strong>Contact WhatsApp</strong><small>Échange direct avec le vendeur</small></div>
+</section>
+{% endblock %}
+
+
+
+<script src="/static/js/admin_access9.js?v=7click-discret-20261005"></script>
+
+<script src="/static/js/sastoukastore_remove_region_banner_v2.js?v=20261007"></script>

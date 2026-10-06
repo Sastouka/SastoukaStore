@@ -1,0 +1,160 @@
+/* ============================================================
+   SASTOUKASTORE — GLOBAL VIP / ICON SAFETY V2
+   Corrige définitivement les logos/images géantes causées par
+   les anciens injecteurs d'icône.
+   ============================================================ */
+
+:root{
+  --ssk-ink:#07111f;
+  --ssk-blue:#0b63c7;
+  --ssk-orange:#ff7600;
+  --ssk-green:#7bef42;
+  --ssk-line:#dce5ee;
+}
+
+/* ---------- VERROUILLAGE GLOBAL DES LOGOS ---------- */
+html body img.chariow-header-logo,
+html body img.chariow-brand-icon,
+html body .chariow-header-logo,
+html body .chariow-brand-icon{
+  display:block !important;
+  width:42px !important;
+  height:42px !important;
+  min-width:42px !important;
+  min-height:42px !important;
+  max-width:42px !important;
+  max-height:42px !important;
+  flex:0 0 42px !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  position:static !important;
+  inset:auto !important;
+  transform:none !important;
+  float:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  visibility:visible !important;
+  opacity:1 !important;
+}
+
+/* ---------- CONTENEURS DE MARQUE ---------- */
+html body .vip-brand,
+html body .premium-brand,
+html body .p64-brand,
+html body .brand,
+html body .topbar .brand{
+  display:flex !important;
+  align-items:center !important;
+  gap:10px !important;
+  width:auto !important;
+  min-width:0 !important;
+  max-width:360px !important;
+  height:auto !important;
+  max-height:58px !important;
+  flex:0 0 auto !important;
+  position:relative !important;
+  overflow:visible !important;
+}
+
+/* Les anciens injecteurs mettaient l'image en background du conteneur.
+   Nous neutralisons ces backgrounds sans supprimer le logo réel <img>. */
+html body .vip-brand-mark,
+html body .premium-brand .brand-mark,
+html body .premium-brand .brand-logo,
+html body .p64-brand-mark,
+html body .brand-mark,
+html body .brand-logo{
+  background-image:none !important;
+  background-color:transparent !important;
+  background-repeat:no-repeat !important;
+  color:inherit !important;
+  text-indent:0 !important;
+  overflow:visible !important;
+  position:relative !important;
+}
+
+/* Les wrappers de logo visuels restent petits. */
+html body .vip-brand-mark{
+  width:47px !important;
+  height:47px !important;
+  min-width:47px !important;
+  min-height:47px !important;
+  max-width:47px !important;
+  max-height:47px !important;
+  display:grid !important;
+  place-items:center !important;
+  border-radius:15px !important;
+}
+
+/* ---------- HEADER COMMUN ---------- */
+html body header,
+html body .vip-nav,
+html body .premium-nav,
+html body .p64-nav,
+html body .topbar{
+  box-sizing:border-box !important;
+  max-width:100% !important;
+  overflow:hidden !important;
+}
+
+/* Aucun logo flottant directement dans le body. */
+html body > img.chariow-header-logo,
+html body > img.chariow-brand-icon,
+html body > .chariow-header-logo,
+html body > .chariow-brand-icon{
+  display:none !important;
+}
+
+/* ---------- ÉVITER LES HAUTEURS/POSITIONS QUI EXPOSENT L'IMAGE ---------- */
+html body img{
+  max-inline-size:100% !important;
+}
+
+html body header img.chariow-header-logo,
+html body header img.chariow-brand-icon{
+  max-inline-size:42px !important;
+}
+
+/* ---------- IDENTITÉ VIP GÉNÉRALE ---------- */
+html body{
+  color:var(--ssk-ink);
+}
+
+html body .primary-btn,
+html body .p64-primary,
+html body .p62-buy,
+html body .vip-add-cart{
+  font-weight:1000 !important;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:680px){
+  html body img.chariow-header-logo,
+  html body img.chariow-brand-icon{
+    width:40px !important;
+    height:40px !important;
+    min-width:40px !important;
+    min-height:40px !important;
+    max-width:40px !important;
+    max-height:40px !important;
+    flex-basis:40px !important;
+  }
+
+  html body .vip-brand,
+  html body .premium-brand,
+  html body .p64-brand,
+  html body .brand,
+  html body .topbar .brand{
+    max-width:250px !important;
+    max-height:52px !important;
+  }
+
+  html body .vip-brand-mark{
+    width:42px !important;
+    height:42px !important;
+    min-width:42px !important;
+    min-height:42px !important;
+    max-width:42px !important;
+    max-height:42px !important;
+  }
+}

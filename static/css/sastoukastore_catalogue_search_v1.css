@@ -1,0 +1,33 @@
+/* SastoukaStore - Catalogue Search V1 */
+.ssk-catalog-search{width:min(1180px,calc(100% - 32px));margin:0 auto 8px;padding:6px 0 22px;position:relative;z-index:5}
+.ssk-catalog-search-inner{background:#fff;border:1px solid #dbe6ef;border-radius:18px;padding:18px 20px 15px;box-shadow:0 12px 28px rgba(7,17,31,.055)}
+.ssk-catalog-search-heading{margin-bottom:12px}
+.ssk-search-eyebrow{display:block;font-size:9px;line-height:1;font-weight:1000;letter-spacing:1.8px;color:#8090a0}
+.ssk-catalog-search-heading h2{margin:5px 0 3px;font-size:20px;line-height:1.1;color:#041c41}
+.ssk-catalog-search-heading p{margin:0;color:#748496;font-size:10px}
+.ssk-search-form{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:9px;align-items:center}
+.ssk-search-input-wrap{position:relative}
+.ssk-search-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:20px;line-height:1;color:#7890a5;pointer-events:none}
+.ssk-search-input-wrap input{width:100%;height:48px;box-sizing:border-box;padding:0 42px 0 40px;border:1px solid #cddae6;border-radius:11px;background:#fff;color:#10243d;font:inherit;font-size:12px;outline:none}
+.ssk-search-input-wrap input::placeholder{color:#95a2af}
+.ssk-search-input-wrap input:focus{border-color:#4c92d2;box-shadow:0 0 0 4px rgba(11,99,199,.08)}
+.ssk-search-clear{position:absolute;right:8px;top:50%;width:30px;height:30px;transform:translateY(-50%);border:0;border-radius:8px;background:#eef3f7;color:#5e7183;font-size:18px;line-height:1;cursor:pointer}
+.ssk-search-submit{height:48px;padding:0 18px;border:0;border-radius:11px;background:#041c41;color:#fff;font-size:10px;font-weight:1000;cursor:pointer;white-space:nowrap}
+.ssk-search-submit:hover{background:#0b63c7}
+.ssk-search-meta{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:10px}
+.ssk-search-meta span{color:#718193;font-size:9px}.ssk-search-hint{text-align:right}
+.ssk-search-no-result{grid-column:1/-1;padding:52px 20px;text-align:center;color:#748292}
+.ssk-search-no-result .icon{display:block;margin-bottom:8px;font-size:30px}
+.ssk-search-no-result strong{display:block;color:#041c41;font-size:16px}
+.ssk-search-no-result p{margin:6px 0 0;font-size:10px}
+.ssk-search-match{animation:sskSearchMatch .3s ease}
+@keyframes sskSearchMatch{from{opacity:.25;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media(max-width:650px){
+  .ssk-catalog-search{width:calc(100% - 22px);padding-bottom:15px}
+  .ssk-catalog-search-inner{padding:15px 13px 13px;border-radius:15px}
+  .ssk-search-form{grid-template-columns:1fr}
+  .ssk-search-submit{width:100%}
+  .ssk-search-meta{align-items:flex-start;flex-direction:column}
+  .ssk-search-hint{text-align:left}
+}
+[hidden]{display:none!important}

@@ -1,0 +1,169 @@
+/* ============================================================
+   SASTOUKASTORE — SUIVI DE COMMANDE VIP & COFFRE-FORT (2026)
+   ============================================================ */
+:root {
+  --track-vip-navy: #0d2138;
+  --track-vip-dark: #050c16;
+  --track-vip-action: #ff6a00;
+  --track-vip-glow: rgba(255, 106, 0, 0.4);
+  --track-vip-success: #7bef42;
+}
+
+/* En-tête de la page Suivi */
+body.p64 .p64-head {
+  background: linear-gradient(135deg, var(--track-vip-dark) 0%, var(--track-vip-navy) 100%) !important;
+  border-bottom: 3px solid var(--track-vip-action) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2) !important;
+  padding: 30px !important;
+}
+
+body.p64 .p64-head h1 {
+  font-size: 42px !important;
+  color: #fff !important;
+  text-transform: uppercase !important;
+  letter-spacing: -1.5px !important;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
+}
+
+/* Formulaire de recherche (Portail d'accès) */
+body.p64 .p64-form {
+  background: #fff !important;
+  border: 2px solid #e1e8f0 !important;
+  border-radius: 20px !important;
+  padding: 30px !important;
+  box-shadow: 0 15px 35px rgba(13, 33, 56, 0.08) !important;
+}
+
+body.p64 .p64-form .p64-primary {
+  background: linear-gradient(135deg, var(--track-vip-action), #ff9e38) !important;
+  color: #fff !important;
+  font-size: 15px !important;
+  font-weight: 900 !important;
+  height: 54px !important;
+  border-radius: 12px !important;
+  border: none !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 8px 20px var(--track-vip-glow) !important;
+  transition: transform 0.2s ease !important;
+}
+
+body.p64 .p64-form .p64-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 25px var(--track-vip-glow) !important;
+}
+
+/* Carte de Résultat (Le Dashboard Client) */
+body.p64 .p64-track-result {
+  background: #fff !important;
+  border: 1px solid var(--track-vip-navy) !important;
+  border-top: 5px solid var(--track-vip-navy) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 25px 50px rgba(7,17,31,0.1) !important;
+  padding: 30px !important;
+  margin-top: 30px !important;
+}
+
+body.p64 .p64-track-top h2 {
+  color: var(--track-vip-navy) !important;
+  font-size: 36px !important;
+  letter-spacing: -1px !important;
+}
+
+body.p64 .p64-total-track strong {
+  color: var(--track-vip-action) !important;
+  font-size: 28px !important;
+}
+
+/* Statut de la commande */
+body.p64 .p64-status {
+  background: var(--track-vip-dark) !important;
+  color: #fff !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+  border-left: 4px solid var(--track-vip-success) !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+}
+
+body.p64 .p64-status b {
+  color: var(--track-vip-success) !important;
+  font-size: 18px !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+}
+
+body.p64 .p64-status p {
+  color: #aab7c5 !important;
+  font-size: 13px !important;
+  margin-top: 8px !important;
+}
+
+/* Le Coffre-fort numérique (Zone Clé d'accès) */
+body.p64 .p64-key-box {
+  background: linear-gradient(135deg, var(--track-vip-navy), #041224) !important;
+  border: 1px solid #1c3554 !important;
+  border-radius: 16px !important;
+  padding: 28px !important;
+  box-shadow: inset 0 2px 15px rgba(0,0,0,0.5), 0 15px 30px rgba(7,17,31,0.15) !important;
+  margin-top: 25px !important;
+}
+
+body.p64 .p64-key-box h3 {
+  color: var(--track-vip-success) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  font-size: 18px !important;
+  margin-bottom: 12px !important;
+}
+
+body.p64 .p64-key-row input {
+  background: #020812 !important;
+  color: var(--track-vip-success) !important;
+  border: 1px solid #1c3554 !important;
+  font-size: 15px !important;
+  text-align: center !important;
+  letter-spacing: 2px !important;
+  font-family: Consolas, monospace !important;
+  height: 54px !important;
+  border-radius: 12px !important;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.3) !important;
+}
+
+/* Bouton d'accès final avec animation */
+body.p64 .p64-key-row button {
+  background: var(--track-vip-action) !important;
+  color: #fff !important;
+  text-transform: uppercase !important;
+  font-weight: 900 !important;
+  font-size: 13px !important;
+  border-radius: 12px !important;
+  height: 54px !important;
+  padding: 0 25px !important;
+  transition: all 0.2s ease !important;
+  animation: track-pulse 2s infinite !important;
+  border: none !important;
+}
+
+body.p64 .p64-key-row button:hover {
+  transform: scale(1.02) !important;
+  background: #e65c00 !important;
+}
+
+@keyframes track-pulse {
+  0% { box-shadow: 0 0 0 0 var(--track-vip-glow); }
+  70% { box-shadow: 0 0 15px 10px rgba(255, 106, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 106, 0, 0); }
+}
+
+/* Style des produits listés dans le suivi */
+body.p64 .p64-track-item {
+  border-bottom: 1px solid #eef2f6 !important;
+  padding: 16px 0 !important;
+}
+
+body.p64 .p64-track-thumb {
+  border: 1px solid #e1e8f0 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05) !important;
+}

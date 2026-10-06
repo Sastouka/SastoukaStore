@@ -1,0 +1,7 @@
+/* SASTOUKASTORE ADMIN DIGITAL V2 */
+input[name="stock"],select[name="stock"],textarea[name="stock"],
+input[name="delivery_status"],select[name="delivery_status"],textarea[name="delivery_status"],
+[data-ssk-hidden-digital="1"]{display:none!important}
+label:has(input[name="stock"]),label:has(select[name="stock"]),
+label:has(input[name="delivery_status"]),label:has(select[name="delivery_status"]){
+display:none!important}

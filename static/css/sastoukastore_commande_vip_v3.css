@@ -1,0 +1,443 @@
+/* ============================================================
+   SASTOUKASTORE — COMMANDE VIP V3
+   Correction du logo géant + redesign premium du checkout.
+   Aucune logique PayPal / panier / commande n'est remplacée.
+   ============================================================ */
+
+:root{
+  --ssk-ink:#07111f;
+  --ssk-ink2:#102238;
+  --ssk-blue:#0b63c7;
+  --ssk-blue2:#1675dc;
+  --ssk-orange:#ff7600;
+  --ssk-orange2:#ff9c35;
+  --ssk-green:#7bef42;
+  --ssk-bg:#eef3f8;
+  --ssk-card:#ffffff;
+  --ssk-line:#dbe4ed;
+  --ssk-muted:#718197;
+}
+
+/* ---------- Base ---------- */
+html,body{
+  margin:0 !important;
+  padding:0 !important;
+  width:100% !important;
+  min-width:0 !important;
+  overflow-x:hidden !important;
+}
+html body.p64{
+  background:
+    radial-gradient(circle at 8% 14%,rgba(22,117,220,.07),transparent 24%),
+    radial-gradient(circle at 94% 26%,rgba(255,118,0,.055),transparent 22%),
+    var(--ssk-bg) !important;
+  color:var(--ssk-ink) !important;
+  font-family:Inter,Segoe UI,Arial,sans-serif !important;
+}
+
+/* ---------- Header : logo verrouillé ---------- */
+html body.p64 .p64-nav{
+  width:100% !important;
+  height:76px !important;
+  min-height:76px !important;
+  max-height:76px !important;
+  padding:0 max(20px,calc((100% - 1280px)/2)) !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:24px !important;
+  position:sticky !important;
+  top:0 !important;
+  z-index:1000 !important;
+  background:rgba(255,255,255,.96) !important;
+  backdrop-filter:blur(16px) !important;
+  border-bottom:1px solid var(--ssk-line) !important;
+  overflow:hidden !important;
+}
+
+html body.p64 .p64-brand{
+  display:flex !important;
+  align-items:center !important;
+  gap:10px !important;
+  width:auto !important;
+  height:48px !important;
+  flex:0 0 auto !important;
+  min-width:0 !important;
+  position:relative !important;
+  overflow:visible !important;
+  text-decoration:none !important;
+}
+
+html body.p64 .p64-brand img.chariow-header-logo{
+  width:42px !important;
+  height:42px !important;
+  min-width:42px !important;
+  min-height:42px !important;
+  max-width:42px !important;
+  max-height:42px !important;
+  flex:0 0 42px !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  display:block !important;
+  position:static !important;
+  transform:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  float:none !important;
+}
+
+html body.p64 .p64-brand-word{
+  font-size:18px !important;
+  line-height:1.05 !important;
+  font-weight:1000 !important;
+  color:var(--ssk-ink) !important;
+  white-space:nowrap !important;
+}
+html body.p64 .p64-brand-word small{
+  display:block !important;
+  margin-top:3px !important;
+  font-size:8px !important;
+  letter-spacing:1.25px !important;
+  color:#8592a2 !important;
+}
+
+html body.p64 .p64-nav-links{
+  display:flex !important;
+  align-items:center !important;
+  gap:27px !important;
+}
+html body.p64 .p64-nav-links a{
+  color:#46566a !important;
+  font-size:12px !important;
+  font-weight:900 !important;
+}
+html body.p64 .p64-cart-btn{
+  border:1px solid #d4dfeb !important;
+  background:#fff !important;
+  color:var(--ssk-ink) !important;
+  border-radius:12px !important;
+  padding:10px 14px !important;
+  font-weight:1000 !important;
+}
+
+/* ---------- Contenu ---------- */
+html body.p64 .pp-wrap{
+  max-width:1260px !important;
+  margin:0 auto !important;
+  padding:28px 22px 72px !important;
+}
+
+html body.p64 .pp-head{
+  position:relative !important;
+  display:flex !important;
+  justify-content:space-between !important;
+  align-items:center !important;
+  gap:24px !important;
+  margin-bottom:20px !important;
+  padding:24px 26px !important;
+  border-radius:24px !important;
+  overflow:hidden !important;
+  color:#fff !important;
+  background:
+    radial-gradient(circle at 84% 10%,rgba(123,239,66,.12),transparent 24%),
+    linear-gradient(125deg,#07111f 0%,#10243b 68%,#103864 100%) !important;
+  box-shadow:0 22px 55px rgba(7,17,31,.16) !important;
+}
+
+html body.p64 .pp-head::after{
+  content:"P";
+  position:absolute;
+  right:36px;
+  top:-42px;
+  font-size:220px;
+  line-height:1;
+  font-weight:1000;
+  color:rgba(255,255,255,.025);
+  pointer-events:none;
+}
+
+html body.p64 .pp-kicker{
+  color:#b7c5d5 !important;
+  font-size:9px !important;
+  letter-spacing:1.9px !important;
+  font-weight:1000 !important;
+}
+
+html body.p64 .pp-head h1{
+  position:relative !important;
+  z-index:1 !important;
+  margin:7px 0 5px !important;
+  color:#fff !important;
+  font-size:39px !important;
+  line-height:.98 !important;
+  letter-spacing:-1.4px !important;
+  font-weight:1000 !important;
+}
+
+html body.p64 .pp-head p{
+  position:relative !important;
+  z-index:1 !important;
+  margin:0 !important;
+  color:#cbd7e3 !important;
+  font-size:12px !important;
+  line-height:1.5 !important;
+}
+
+html body.p64 .pp-back{
+  position:relative !important;
+  z-index:2 !important;
+  flex:0 0 auto !important;
+  border:1px solid rgba(255,255,255,.16) !important;
+  background:rgba(255,255,255,.07) !important;
+  color:#fff !important;
+  border-radius:12px !important;
+  padding:11px 14px !important;
+  font-size:11px !important;
+  font-weight:1000 !important;
+}
+
+/* ---------- Grille ---------- */
+html body.p64 .pp-grid{
+  display:grid !important;
+  grid-template-columns:minmax(0,1.12fr) minmax(330px,.78fr) !important;
+  gap:18px !important;
+  align-items:start !important;
+}
+
+html body.p64 .pp-card{
+  background:var(--ssk-card) !important;
+  border:1px solid var(--ssk-line) !important;
+  border-radius:22px !important;
+  padding:21px !important;
+  box-shadow:0 15px 35px rgba(7,17,31,.065) !important;
+}
+
+/* ---------- Sections ---------- */
+html body.p64 .pp-section{
+  padding-bottom:18px !important;
+  margin-bottom:18px !important;
+  border-bottom:1px solid #e9eef3 !important;
+}
+html body.p64 .pp-section:last-child{
+  border-bottom:0 !important;
+  margin-bottom:0 !important;
+  padding-bottom:0 !important;
+}
+
+html body.p64 .pp-title{
+  display:flex !important;
+  gap:11px !important;
+  align-items:flex-start !important;
+}
+html body.p64 .pp-num{
+  width:32px !important;
+  height:32px !important;
+  min-width:32px !important;
+  border-radius:10px !important;
+  display:grid !important;
+  place-items:center !important;
+  background:linear-gradient(135deg,var(--ssk-orange),var(--ssk-orange2)) !important;
+  color:#fff !important;
+  font-size:10px !important;
+  font-weight:1000 !important;
+  box-shadow:0 8px 18px rgba(255,118,0,.18) !important;
+}
+html body.p64 .pp-title h2{
+  margin:1px 0 0 !important;
+  font-size:18px !important;
+  color:var(--ssk-ink) !important;
+  font-weight:1000 !important;
+}
+html body.p64 .pp-title p{
+  margin:4px 0 0 !important;
+  color:#7a8898 !important;
+  font-size:11px !important;
+  line-height:1.45 !important;
+}
+
+/* ---------- Inputs ---------- */
+html body.p64 .pp-two{
+  display:grid !important;
+  grid-template-columns:1fr 1fr !important;
+  gap:12px !important;
+  margin-top:15px !important;
+}
+html body.p64 .pp-label{
+  display:grid !important;
+  gap:7px !important;
+  color:#22334a !important;
+  font-size:11px !important;
+  font-weight:900 !important;
+}
+html body.p64 .pp-input{
+  width:100% !important;
+  height:47px !important;
+  border:1px solid #cfdae5 !important;
+  border-radius:11px !important;
+  background:#fff !important;
+  padding:0 12px !important;
+  font-size:12px !important;
+  color:#142238 !important;
+  outline:none !important;
+  transition:border-color .15s,box-shadow .15s !important;
+}
+html body.p64 .pp-input:focus{
+  border-color:#4d91d7 !important;
+  box-shadow:0 0 0 4px rgba(11,99,199,.10) !important;
+}
+
+/* ---------- PayPal ---------- */
+html body.p64 .pp-paybox{
+  margin-top:15px !important;
+  border:1px solid #dfe7ee !important;
+  border-radius:16px !important;
+  padding:16px !important;
+  background:linear-gradient(145deg,#fbfcfe,#f3f7fa) !important;
+}
+
+html body.p64 .pp-pay-title b{
+  color:#142238 !important;
+  font-size:15px !important;
+  font-weight:1000 !important;
+}
+html body.p64 .pp-pay-title span{
+  color:#7e8b9b !important;
+  font-size:10px !important;
+}
+
+html body.p64 .paypal-btn{
+  min-height:50px !important;
+}
+
+/* ---------- Notes ---------- */
+html body.p64 .pp-note{
+  margin-top:13px !important;
+  padding:12px 13px !important;
+  border:1px solid #e0e8ef !important;
+  border-radius:12px !important;
+  background:#f7fafc !important;
+  color:#69798b !important;
+  font-size:10px !important;
+  line-height:1.55 !important;
+}
+html body.p64 .pp-note b{
+  color:#17375f !important;
+}
+
+html body.p64 .pp-message{
+  font-size:11px !important;
+}
+
+/* ---------- Résumé commande ---------- */
+html body.p64 #mainContent > aside.pp-card{
+  position:sticky !important;
+  top:96px !important;
+}
+
+html body.p64 #mainContent > aside.pp-card > h2{
+  margin:6px 0 0 !important;
+  font-size:22px !important;
+  color:var(--ssk-ink) !important;
+  letter-spacing:-.4px !important;
+}
+
+html body.p64 .pp-list{
+  display:grid !important;
+  gap:0 !important;
+  margin-top:13px !important;
+}
+
+html body.p64 .pp-item{
+  padding:12px 0 !important;
+  border-bottom:1px solid #e8edf2 !important;
+  display:flex !important;
+  justify-content:space-between !important;
+  gap:12px !important;
+  font-size:11px !important;
+}
+
+html body.p64 .pp-item small{
+  color:#8794a3 !important;
+  font-size:9px !important;
+}
+
+html body.p64 .pp-total{
+  padding-top:15px !important;
+  margin-top:15px !important;
+  border-top:2px solid #e3e9ef !important;
+}
+
+html body.p64 .pp-total span{
+  color:#788797 !important;
+  font-size:11px !important;
+}
+html body.p64 .pp-total strong{
+  color:#0a559f !important;
+  font-size:27px !important;
+  letter-spacing:-.7px !important;
+}
+
+/* ---------- Succes paiement ---------- */
+html body.p64 .pp-status{
+  margin-top:18px !important;
+}
+html body.p64 .pp-status h2{
+  color:var(--ssk-ink) !important;
+}
+html body.p64 .pp-key{
+  border-radius:14px !important;
+  background:linear-gradient(135deg,#07111f,#15345a) !important;
+  color:#fff !important;
+  box-shadow:0 18px 35px rgba(7,17,31,.16) !important;
+}
+
+/* ---------- Mobile ---------- */
+@media(max-width:900px){
+  html body.p64 .pp-head{
+    align-items:flex-start !important;
+    flex-direction:column !important;
+  }
+  html body.p64 .pp-grid{
+    grid-template-columns:1fr !important;
+  }
+  html body.p64 #mainContent > aside.pp-card{
+    position:static !important;
+  }
+}
+
+@media(max-width:650px){
+  html body.p64 .p64-nav{
+    height:70px !important;
+    min-height:70px !important;
+    max-height:70px !important;
+    padding:0 13px !important;
+  }
+  html body.p64 .p64-brand img.chariow-header-logo{
+    width:40px !important;
+    height:40px !important;
+    min-width:40px !important;
+    min-height:40px !important;
+    max-width:40px !important;
+    max-height:40px !important;
+  }
+  html body.p64 .p64-nav-links{
+    display:none !important;
+  }
+  html body.p64 .pp-wrap{
+    padding:16px 12px 48px !important;
+  }
+  html body.p64 .pp-head{
+    padding:20px 18px !important;
+    border-radius:19px !important;
+  }
+  html body.p64 .pp-head h1{
+    font-size:31px !important;
+  }
+  html body.p64 .pp-card{
+    padding:16px !important;
+    border-radius:18px !important;
+  }
+  html body.p64 .pp-two{
+    grid-template-columns:1fr !important;
+  }
+}

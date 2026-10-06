@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% if product %}Modifier{% else %}Nouveau support{% endif %} — SastoukaStore</title>
+<link rel="stylesheet" href="/static/css/digital10.css">
+<!-- SastoukaStore-COVERS-GLOBAL-2-7 -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/sastoukastore_covers_global_2_7.css') }}?v=20261004062747">
+<!-- SastoukaStore PATCH 6.6 : ICÔNE / LOGO GLOBAL -->
+<link rel="shortcut icon" href="/static/icons/favicon.ico?v=66">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png?v=66">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png?v=66">
+<link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png?v=66">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png?v=66">
+<link rel="manifest" href="/static/manifest.webmanifest?v=66">
+<meta name="theme-color" content="#041C41">
+<meta property="og:image" content="/static/branding/sastoukastore-logo.png?v=66">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/static/branding/sastoukastore-logo.png?v=66">
+<!-- SastoukaStore PATCH 6.6.1 : ICÔNE / LOGO GLOBAL -->
+<link rel="shortcut icon" href="/static/icons/favicon.ico?v=661">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png?v=661">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png?v=661">
+<link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png?v=661">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png?v=661">
+<link rel="manifest" href="/static/manifest.webmanifest?v=661">
+<meta name="theme-color" content="#041C41">
+<meta property="og:image" content="/static/branding/sastoukastore-logo.png?v=661">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/static/branding/sastoukastore-logo.png?v=661">
+<link rel="stylesheet" href="/static/css/sastoukastore_theme_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_global_client_admin_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_icon_safety_v2_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_bande_haut_uniforme_vip_2026.css?v=20261006">
+
+<!-- SastoukaStore ADMIN VIP THEME -->
+
+<!-- SastoukaStore ADMIN VIP THEME -->
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_admin_2026.css?v=202610062146">
+
+<!-- Correctif Contraste Global -->
+
+<!-- Correctif Contraste Global -->
+<link rel="stylesheet" href="/static/css/sastoukastore_contraste_global_2026.css?v=202610062242">
+<link rel="stylesheet" href="/static/css/sastoukastore_admin_digital_v2.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_remove_region_banner_v2.css?v=20261007">
+</head>
+<body>
+<main class="digital-admin">
+<header class="page-head">
+  <div>
+    <span class="eyebrow">SastoukaStore ADMIN · PRODUITS NUMÉRIQUES</span>
+    <h1>{% if product %}Modifier le support{% else %}Ajouter un support PDF{% endif %}</h1>
+    <p>Création d'un produit destiné à la vente de documents éducatifs numériques.</p>
+  </div>
+  <a class="back" href="/admin/produits">← Produits</a>
+</header>
+
+<form class="product-editor" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <section class="editor-main">
+    <div class="card">
+      <div class="section-title"><span>01</span><div><h2>Informations du support</h2><p>Présentation commerciale visible par l'élève ou l'étudiant.</p></div></div>
+
+      <label>Titre du support
+        <input name="name" required value="{{ product.name if product else '' }}" placeholder="Ex. Mathématiques Terminale — Probabilités">
+      </label>
+
+      <div class="two">
+        <label>Niveau
+          <select name="level">
+            {% set current_level = product.level if product else '' %}
+            <option value="">Sélectionner</option>
+            <option value="Terminale" {% if current_level=='Terminale' %}selected{% endif %}>Terminale</option>
+            <option value="Université" {% if current_level=='Université' %}selected{% endif %}>Université</option>
+            <option value="Prépa" {% if current_level=='Prépa' %}selected{% endif %}>Prépa</option>
+            <option value="Autre" {% if current_level=='Autre' %}selected{% endif %}>Autre</option>
+          </select>
+        </label>
+        <label>Matière
+          <input name="subject" value="{{ product.subject if product else '' }}" placeholder="Mathématiques, Physique, Français...">
+        </label>
+      </div>
+
+      <label>Catégorie
+        <select name="category_id">
+          <option value="">Sans catégorie</option>
+          {% for c in categories %}
+          <option value="{{ c.id }}" {% if product and product.category_id==c.id %}selected{% endif %}>{{ c.name }}</option>
+          {% endfor %}
+        </select>
+      </label>
+
+      <label>Présentation courte
+        <textarea name="short_description" rows="3" maxlength="300" placeholder="Expliquez rapidement ce que l'élève va recevoir.">{{ product.short_description if product else '' }}</textarea>
+      </label>
+
+      <label>Description détaillée
+        <textarea name="description" rows="8" placeholder="Contenu, chapitres, objectifs pédagogiques, nombre de pages, niveau...">{{ product.description if product else '' }}</textarea>
+      </label>
+    </div>
+
+    <div class="card">
+      <div class="section-title"><span>02</span><div><h2>Prix</h2><p>Devise adaptée à votre clientèle au Togo et à la diaspora.</p></div></div>
+      <div class="two">
+        <label>Prix
+          <input type="number" min="0" step="0.01" name="price" required value="{{ product.price if product else 0 }}">
+        </label>
+        <label>Devise
+          {% set cur = product.currency if product else 'FCFA' %}
+          <select name="currency">
+            <option value="FCFA" {% if cur=='FCFA' %}selected{% endif %}>FCFA</option>
+            <option value="€" {% if cur=='€' %}selected{% endif %}>Euro (€)</option>
+            <option value="$" {% if cur=='$' %}selected{% endif %}>Dollar ($)</option>
+          </select>
+        </label>
+      </div>
+      <div class="digital-note"><b>Produit numérique</b><br>Pas de stock physique à gérer. Le document est livré après confirmation du paiement.</div>
+    </div>
+  </section>
+
+  <aside class="editor-side">
+    <section class="card upload-card">
+      <div class="section-title"><span>03</span><div><h2>Couverture</h2><p>Image affichée dans le catalogue.</p></div></div>
+      <label class="upload">
+        <input type="file" name="cover_image" accept=".png,.jpg,.jpeg,.webp">
+<div class="sastoukastore-cover-preview-27" id="sastoukastoreCoverPreview27" hidden>
+  <img id="sastoukastoreCoverPreviewImg27" alt="Aperçu de la couverture">
+</div>
+<script>
+(function(){
+  const input=document.querySelector('input[name="cover_image"]');
+  const box=document.getElementById("sastoukastoreCoverPreview27");
+  const img=document.getElementById("sastoukastoreCoverPreviewImg27");
+  if(!input||!box||!img)return;
+
+  input.addEventListener("change",function(){
+    const file=this.files&&this.files[0];
+    if(!file){
+      box.hidden=true;
+      img.removeAttribute("src");
+      return;
+    }
+
+    if(!/^(image\/)(png|jpeg|webp)$/.test(file.type)){
+      box.hidden=true;
+      img.removeAttribute("src");
+      return;
+    }
+
+    const reader=new FileReader();
+    reader.onload=function(e){
+      img.src=e.target.result;
+      box.hidden=false;
+    };
+    reader.readAsDataURL(file);
+  });
+})();
+</script>
+
+        <strong>Choisir une image</strong>
+        <small>PNG, JPG ou WEBP</small>
+      </label>
+      {% if product and product.image %}
+      <div class="existing-file">Image actuelle : {{ product.image }}</div>
+      {% endif %}
+    </section>
+
+    <section class="card upload-card pdf">
+      <div class="section-title"><span>04</span><div><h2>Fichier PDF</h2><p>Le fichier vendu au client.</p></div></div>
+      <label class="upload">
+        <input type="file" name="pdf_file" accept=".pdf" {% if not product %}required{% endif %}>
+        <strong>Importer le PDF</strong>
+        <small>Format PDF uniquement</small>
+      </label>
+      {% if product and product.pdf_file %}
+      <div class="existing-file success">PDF actuel : {{ product.pdf_file }}</div>
+      {% endif %}
+    </section>
+
+    <section class="card">
+      <div class="section-title"><span>05</span><div><h2>Publication</h2><p>Contrôle de visibilité.</p></div></div>
+      <label class="check"><input type="checkbox" name="featured" {% if not product or product.featured %}checked{% endif %}> Mettre en avant</label>
+      <label class="check"><input type="checkbox" name="active" {% if not product or product.active %}checked{% endif %}> Visible dans la boutique</label>
+    </section>
+
+    <button class="save" type="submit">{% if product %}Enregistrer les modifications{% else %}Publier le support{% endif %}</button>
+  </aside>
+</form>
+</main>
+<script src="/static/js/admin_access9.js?v=7click-discret-20261005"></script>
+<script src="/static/js/sastoukastore_remove_region_banner_v2.js?v=20261007"></script>
+</body>
+</html>

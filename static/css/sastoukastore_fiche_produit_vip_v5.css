@@ -1,0 +1,421 @@
+/* ============================================================
+   SASTOUKASTORE — FICHE PRODUIT VIP V5
+   Objectif : fiche produit plus premium, plus lisible et plus
+   orientée conversion, sans toucher aux données ni au panier.
+   ============================================================ */
+
+:root{
+  --ssk-navy:#07111f;
+  --ssk-navy2:#102238;
+  --ssk-blue:#0b5fbd;
+  --ssk-orange:#ff7800;
+  --ssk-orange2:#ff9e38;
+  --ssk-green:#7bef42;
+  --ssk-bg:#f4f7fb;
+  --ssk-line:#dde5ee;
+  --ssk-muted:#718095;
+}
+
+/* ===== Page ===== */
+html body.premium-site{
+  background:
+    radial-gradient(circle at 6% 18%,rgba(11,95,189,.045),transparent 28%),
+    radial-gradient(circle at 95% 26%,rgba(255,120,0,.045),transparent 26%),
+    var(--ssk-bg) !important;
+}
+
+html body.premium-site .p62-detail-page{
+  max-width:1320px !important;
+  padding:24px 24px 70px !important;
+}
+
+html body.premium-site .p62-detail-back{
+  margin:0 0 14px !important;
+  color:#66778b !important;
+  font-size:11px !important;
+}
+
+/* ===== Grand bloc produit ===== */
+html body.premium-site .p62-detail-grid{
+  grid-template-columns:minmax(440px,.92fr) minmax(470px,1.08fr) !important;
+  gap:28px !important;
+  padding:20px !important;
+  border-radius:28px !important;
+  border:1px solid rgba(214,224,234,.95) !important;
+  background:rgba(255,255,255,.94) !important;
+  box-shadow:0 24px 70px rgba(7,17,31,.09) !important;
+  align-items:stretch !important;
+}
+
+/* ===== Zone couverture ===== */
+html body.premium-site .p62-cover-stage{
+  min-height:650px !important;
+  height:auto !important;
+  padding:24px !important;
+  border-radius:24px !important;
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  grid-template-rows:auto auto !important;
+  align-content:center !important;
+  justify-items:center !important;
+  gap:18px !important;
+  position:relative !important;
+  overflow:hidden !important;
+  background:
+    radial-gradient(circle at 50% 18%,rgba(255,255,255,.12),transparent 25%),
+    radial-gradient(circle at 80% 80%,rgba(255,120,0,.12),transparent 30%),
+    linear-gradient(145deg,#081321 0%,#102840 58%,#0a1930 100%) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08) !important;
+}
+
+html body.premium-site .p62-cover-stage::before{
+  content:"PREMIUM • PDF NUMÉRIQUE";
+  position:absolute;
+  left:22px;
+  top:20px;
+  padding:7px 10px;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:999px;
+  color:#cbd8e6;
+  background:rgba(255,255,255,.05);
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:1.4px;
+}
+
+html body.premium-site .p62-cover-sheet{
+  width:min(100%,400px) !important;
+  height:auto !important;
+  max-height:590px !important;
+  aspect-ratio:auto !important;
+  overflow:hidden !important;
+  border:7px solid rgba(255,255,255,.96) !important;
+  border-radius:5px !important;
+  background:#fff !important;
+  box-shadow:
+    0 28px 55px rgba(0,0,0,.34),
+    0 0 0 1px rgba(255,255,255,.32) !important;
+  transform:translateY(-4px) !important;
+}
+
+html body.premium-site .p62-cover-sheet img{
+  width:100% !important;
+  height:auto !important;
+  max-height:576px !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  display:block !important;
+}
+
+/* badge existant : plus discret */
+html body.premium-site .p62-badge{
+  left:24px !important;
+  top:58px !important;
+  background:var(--ssk-orange) !important;
+  border:0 !important;
+  color:#fff !important;
+  font-size:8px !important;
+  padding:8px 11px !important;
+  box-shadow:0 10px 24px rgba(255,120,0,.25) !important;
+}
+
+/* ===== Bloc aperçu ===== */
+html body.premium-site .ssk-preview-launch{
+  width:min(100%,400px) !important;
+  margin:0 !important;
+  padding:13px 14px !important;
+  border:1px solid rgba(255,255,255,.12) !important;
+  border-radius:16px !important;
+  background:rgba(5,14,25,.72) !important;
+  box-shadow:0 14px 28px rgba(0,0,0,.18) !important;
+}
+
+html body.premium-site .ssk-preview-copy strong{
+  color:#fff !important;
+  font-size:13px !important;
+}
+
+html body.premium-site .ssk-preview-copy span{
+  color:#aab9c8 !important;
+  font-size:9px !important;
+}
+
+html body.premium-site .ssk-preview-btn{
+  min-height:42px !important;
+  padding:0 15px !important;
+  border-radius:10px !important;
+  background:linear-gradient(135deg,var(--ssk-orange),var(--ssk-orange2)) !important;
+  box-shadow:0 10px 24px rgba(255,120,0,.24) !important;
+}
+
+/* ===== Partie texte / achat ===== */
+html body.premium-site .p62-detail-copy{
+  padding:6px 18px 10px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:flex-start !important;
+}
+
+html body.premium-site .p62-tags{
+  gap:6px !important;
+}
+
+html body.premium-site .p62-tags span{
+  background:#edf4fb !important;
+  color:#135596 !important;
+  border:1px solid #d9e8f7 !important;
+  padding:7px 10px !important;
+  font-size:8px !important;
+  letter-spacing:.4px !important;
+}
+
+html body.premium-site .p62-title{
+  max-width:760px !important;
+  font-size:clamp(40px,4.15vw,61px) !important;
+  line-height:.96 !important;
+  letter-spacing:-2.5px !important;
+  margin:17px 0 12px !important;
+  color:var(--ssk-navy) !important;
+}
+
+html body.premium-site .p62-lead{
+  max-width:720px !important;
+  color:#697b90 !important;
+  font-size:15px !important;
+  line-height:1.55 !important;
+}
+
+/* Prix : véritable bloc premium */
+html body.premium-site .p62-price{
+  margin-top:20px !important;
+  padding:20px !important;
+  border:1px solid #e0e7ef !important;
+  border-radius:20px !important;
+  background:linear-gradient(145deg,#f9fbfd,#eef3f7) !important;
+  box-shadow:0 12px 30px rgba(7,17,31,.06) !important;
+}
+
+html body.premium-site .p62-price-label{
+  color:#7b8999 !important;
+  font-size:9px !important;
+  letter-spacing:1.5px !important;
+}
+
+html body.premium-site .p62-price-value{
+  margin-top:6px !important;
+  gap:8px !important;
+}
+
+html body.premium-site .p62-price-value strong{
+  color:#084e9f !important;
+  font-size:44px !important;
+  letter-spacing:-1.5px !important;
+}
+
+html body.premium-site .p62-price-value b{
+  color:var(--ssk-orange) !important;
+  font-size:14px !important;
+  font-weight:1000 !important;
+}
+
+/* ===== CTA ===== */
+html body.premium-site .p62-actions{
+  grid-template-columns:minmax(0,1.45fr) minmax(150px,.72fr) !important;
+  gap:9px !important;
+  margin-top:15px !important;
+}
+
+html body.premium-site .p62-buy{
+  min-height:56px !important;
+  height:56px !important;
+  border:0 !important;
+  border-radius:13px !important;
+  background:linear-gradient(135deg,#ff6f00,#ff9d32) !important;
+  color:#fff !important;
+  font-size:13px !important;
+  font-weight:1000 !important;
+  letter-spacing:.1px !important;
+  box-shadow:0 14px 28px rgba(255,111,0,.22) !important;
+  transition:transform .18s ease,box-shadow .18s ease,filter .18s ease !important;
+}
+
+html body.premium-site .p62-buy:hover{
+  transform:translateY(-2px) !important;
+  filter:saturate(1.08) !important;
+  box-shadow:0 19px 34px rgba(255,111,0,.30) !important;
+}
+
+html body.premium-site .p63-add-cart{
+  min-height:56px !important;
+  height:56px !important;
+  border:1px solid #cfdbe7 !important;
+  border-radius:13px !important;
+  background:#fff !important;
+  color:#0a3f79 !important;
+  font-weight:1000 !important;
+}
+
+html body.premium-site .p63-add-cart:hover{
+  background:#f3f7fb !important;
+  border-color:#a9bfd4 !important;
+}
+
+html body.premium-site .p62-cart-link{
+  grid-column:1 / -1 !important;
+  width:100% !important;
+  height:46px !important;
+  background:#fff !important;
+  border:1px solid #dfe6ee !important;
+  color:#516275 !important;
+  font-size:10px !important;
+}
+
+html body.premium-site .p62-note{
+  margin:11px 0 0 !important;
+  color:#7b8998 !important;
+  font-size:9px !important;
+}
+
+/* ===== Bloc valeur ===== */
+html body.premium-site .ssk-value-points{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+  margin-top:13px;
+}
+
+html body.premium-site .ssk-value-points > div{
+  min-height:68px;
+  padding:11px 10px;
+  border-radius:13px;
+  background:#fff;
+  border:1px solid #e2e8ee;
+}
+
+html body.premium-site .ssk-value-points b{
+  display:block;
+  color:#0a559f;
+  font-size:11px;
+  margin-bottom:4px;
+}
+
+html body.premium-site .ssk-value-points span{
+  display:block;
+  color:#778698;
+  font-size:8px;
+  line-height:1.35;
+}
+
+/* ===== Description ===== */
+html body.premium-site .p62-description{
+  margin-top:19px !important;
+  padding-top:17px !important;
+  border-top:1px solid #e8edf2 !important;
+}
+
+html body.premium-site .p62-description h2{
+  color:#0b3158 !important;
+  font-size:20px !important;
+  margin-bottom:7px !important;
+}
+
+html body.premium-site .p62-description div{
+  color:#627286 !important;
+  font-size:12px !important;
+  line-height:1.7 !important;
+}
+
+/* ===== WhatsApp ===== */
+html body.premium-site .p62-wa{
+  margin-top:15px !important;
+  border-radius:12px !important;
+  padding:13px !important;
+  background:var(--ssk-navy) !important;
+  box-shadow:0 10px 25px rgba(7,17,31,.12) !important;
+}
+
+/* ===== Mobile ===== */
+@media(max-width:1050px){
+  html body.premium-site .p62-detail-grid{
+    grid-template-columns:1fr !important;
+  }
+
+  html body.premium-site .p62-cover-stage{
+    min-height:620px !important;
+  }
+
+  html body.premium-site .p62-detail-copy{
+    padding:10px 6px 6px !important;
+  }
+}
+
+@media(max-width:720px){
+  html body.premium-site .p62-detail-page{
+    padding:16px 13px 50px !important;
+  }
+
+  html body.premium-site .p62-detail-grid{
+    padding:12px !important;
+    border-radius:20px !important;
+  }
+
+  html body.premium-site .p62-cover-stage{
+    min-height:560px !important;
+    padding:18px !important;
+    border-radius:18px !important;
+  }
+
+  html body.premium-site .p62-cover-sheet{
+    width:min(100%,340px) !important;
+    max-height:490px !important;
+  }
+
+  html body.premium-site .p62-cover-sheet img{
+    max-height:476px !important;
+  }
+
+  html body.premium-site .p62-title{
+    font-size:38px !important;
+    line-height:.98 !important;
+    letter-spacing:-1.7px !important;
+  }
+
+  html body.premium-site .p62-lead{
+    font-size:14px !important;
+  }
+
+  html body.premium-site .p62-actions{
+    grid-template-columns:1fr !important;
+  }
+
+  html body.premium-site .p62-cart-link{
+    grid-column:auto !important;
+  }
+
+  html body.premium-site .ssk-value-points{
+    grid-template-columns:1fr !important;
+  }
+}
+
+@media(max-width:450px){
+  html body.premium-site .p62-cover-stage{
+    min-height:500px !important;
+  }
+
+  html body.premium-site .p62-cover-sheet{
+    width:min(100%,300px) !important;
+    max-height:430px !important;
+  }
+
+  html body.premium-site .p62-cover-sheet img{
+    max-height:416px !important;
+  }
+
+  html body.premium-site .p62-title{
+    font-size:33px !important;
+  }
+
+  html body.premium-site .p62-price-value strong{
+    font-size:37px !important;
+  }
+}

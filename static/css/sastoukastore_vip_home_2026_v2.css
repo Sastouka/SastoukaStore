@@ -1,0 +1,230 @@
+
+/* ============================================================
+   SASTOUKASTORE — HOME VIP CONVERSION V2
+   Objectif : hero compact, catalogue visible plus tôt,
+   rendu premium + CTA plus puissant.
+   Ce fichier est un SURCHARGE CSS uniquement.
+   ============================================================ */
+
+:root{
+  --ssk-orange:#ff7a00;
+  --ssk-orange2:#ff9e2f;
+  --ssk-red:#d92d20;
+  --ssk-neon:#7bef42;
+}
+
+/* HERO compact */
+.vip-hero{overflow:hidden}
+.vip-hero-grid{
+  min-height:380px !important;
+  padding-top:34px !important;
+  padding-bottom:28px !important;
+  gap:34px !important;
+  align-items:center !important;
+}
+.vip-hero-copy{padding:0 !important}
+.vip-hero-copy h1{
+  font-size:58px !important;
+  line-height:.91 !important;
+  letter-spacing:-3.8px !important;
+  margin:12px 0 18px !important;
+  max-width:760px;
+}
+.vip-hero-text{
+  font-size:14px !important;
+  line-height:1.45 !important;
+  max-width:680px;
+  margin:0 0 18px !important;
+}
+.vip-proof-row{margin-top:14px !important;gap:10px !important}
+
+/* CTA plus visible */
+.vip-cta{gap:10px !important;margin-top:18px !important}
+.vip-cta .primary,
+.vip-cta .vip-primary,
+.vip-cta a[class*="primary"]{
+  background:linear-gradient(135deg,var(--ssk-orange),var(--ssk-orange2)) !important;
+  color:#fff !important;
+  border:none !important;
+  box-shadow:0 12px 28px rgba(255,122,0,.28) !important;
+  font-weight:1000 !important;
+}
+.vip-cta .primary:hover,
+.vip-cta .vip-primary:hover,
+.vip-cta a[class*="primary"]:hover{
+  background:linear-gradient(135deg,var(--ssk-red),var(--ssk-orange)) !important;
+  transform:translateY(-2px) !important;
+  box-shadow:0 16px 34px rgba(217,45,32,.28) !important;
+}
+
+/* Scène droite compacte */
+.vip-hero-stage{
+  min-height:350px !important;
+  height:350px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+.vip-stage-main{
+  min-height:300px !important;
+  height:300px !important;
+  border-radius:30px !important;
+  padding:24px !important;
+}
+.vip-stage-logo{width:108px !important;height:108px !important}
+.vip-stage-logo img{width:92px !important;height:92px !important}
+.vip-stage-title{
+  font-size:27px !important;
+  line-height:.98 !important;
+  margin-top:16px !important;
+}
+.vip-stage-copy{font-size:11px !important;line-height:1.45 !important}
+.vip-float{transform:scale(.82) !important}
+.vip-float-left{left:-10px !important}
+.vip-float-right{right:-12px !important}
+
+/* Trust bar compacte */
+.vip-trust-bar{padding:10px 0 !important}
+.vip-trust-grid{min-height:58px !important}
+.vip-trust-grid > div{padding:9px 14px !important}
+.vip-trust-grid strong{font-size:15px !important}
+
+/* Catégories plus compactes */
+.vip-categories{
+  padding-top:28px !important;
+  padding-bottom:26px !important;
+}
+.vip-category-grid{gap:12px !important}
+.vip-category-card{min-height:92px !important;padding:16px !important}
+
+/* Catalogue remonté */
+.vip-catalogue{
+  padding-top:24px !important;
+  padding-bottom:46px !important;
+}
+.vip-section-heading{margin-bottom:18px !important}
+.vip-section-heading h2{
+  margin-bottom:6px !important;
+  letter-spacing:-1.8px !important;
+}
+.vip-section-note{margin-top:0 !important}
+.vip-product-grid{gap:16px !important}
+.vip-product-card{border-radius:18px !important}
+.vip-product-media{height:230px !important}
+.vip-product-card:hover{
+  transform:translateY(-5px) !important;
+  box-shadow:0 22px 48px rgba(7,17,31,.16) !important;
+}
+
+/* Badges et boutons d'achat */
+.vip-product-card .badge,
+.vip-product-card [class*="badge"],
+.vip-product-card .vip-featured,
+.vip-product-card [class*="featured"]{
+  background:var(--ssk-orange) !important;
+  color:#fff !important;
+  border-color:var(--ssk-orange) !important;
+}
+.vip-add-cart,
+.vip-product-card button,
+.vip-product-card .add-cart{
+  background:linear-gradient(135deg,var(--ssk-orange),var(--ssk-orange2)) !important;
+  color:#fff !important;
+  border:none !important;
+  font-weight:1000 !important;
+  box-shadow:0 9px 20px rgba(255,122,0,.20) !important;
+}
+.vip-add-cart:hover,
+.vip-product-card button:hover,
+.vip-product-card .add-cart:hover{
+  background:linear-gradient(135deg,var(--ssk-red),var(--ssk-orange)) !important;
+  transform:translateY(-1px) !important;
+}
+
+/* Bandeau parcours d'achat */
+.ssk-conversion-strip{
+  width:min(1280px,calc(100% - 40px));
+  margin:0 auto 12px;
+  min-height:48px;
+  padding:10px 16px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  background:linear-gradient(90deg,#08111f,#11223a);
+  color:#fff;
+  text-align:center;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1.15px;
+}
+.ssk-conversion-strip b{color:#7bef42}
+.ssk-conversion-strip .ssk-step{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  white-space:nowrap;
+}
+.ssk-conversion-strip .ssk-arrow{opacity:.38}
+
+/* Tablette */
+@media(max-width:1050px){
+  .vip-hero-grid{
+    min-height:auto !important;
+    padding:34px 0 22px !important;
+    gap:18px !important;
+  }
+  .vip-hero-stage{
+    min-height:285px !important;
+    height:285px !important;
+  }
+  .vip-stage-main{
+    min-height:245px !important;
+    height:245px !important;
+  }
+  .vip-category-grid{gap:10px !important}
+}
+
+/* Mobile */
+@media(max-width:720px){
+  .vip-hero-grid{padding:34px 0 18px !important}
+  .vip-hero-copy h1{
+    font-size:48px !important;
+    line-height:.93 !important;
+    letter-spacing:-2.8px !important;
+    margin-bottom:14px !important;
+  }
+  .vip-hero-text{font-size:14px !important}
+  .vip-hero-stage{display:none !important}
+  .vip-trust-bar{padding:7px 0 !important}
+  .vip-categories{
+    padding-top:18px !important;
+    padding-bottom:18px !important;
+  }
+  .vip-catalogue{
+    padding-top:18px !important;
+    padding-bottom:32px !important;
+  }
+  .vip-section-heading{margin-bottom:14px !important}
+  .vip-product-media{height:300px !important}
+  .ssk-conversion-strip{
+    width:calc(100% - 26px);
+    margin:0 auto 8px;
+    padding:9px 10px;
+    gap:7px;
+    font-size:8px;
+    letter-spacing:.65px;
+    flex-wrap:wrap;
+  }
+}
+
+/* Très petit écran */
+@media(max-width:460px){
+  .vip-hero-copy h1{
+    font-size:42px !important;
+    line-height:.94 !important;
+  }
+  .vip-product-media{height:275px !important}
+  .ssk-conversion-strip .ssk-arrow{display:none}
+}

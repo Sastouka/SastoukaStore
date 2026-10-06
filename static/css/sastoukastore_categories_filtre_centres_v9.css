@@ -1,0 +1,123 @@
+/* ============================================================
+   SASTOUKASTORE — CATÉGORIES CENTRÉES + FILTRE V9
+   ============================================================ */
+
+html body .vip-categories .vip-category-grid{
+  display:flex !important;
+  flex-wrap:wrap !important;
+  justify-content:center !important;
+  align-items:stretch !important;
+  gap:9px !important;
+  overflow:visible !important;
+  margin:0 auto !important;
+  padding:2px 0 !important;
+}
+
+html body .vip-categories .vip-category-card{
+  flex:0 0 190px !important;
+  width:190px !important;
+  min-height:56px !important;
+  height:56px !important;
+  margin:0 !important;
+  cursor:pointer !important;
+  transition:transform .18s ease, box-shadow .18s ease,
+             border-color .18s ease, background .18s ease !important;
+}
+
+html body .vip-categories .vip-category-card:hover{
+  transform:translateY(-2px) !important;
+}
+
+html body .vip-categories .vip-category-card.ssk-category-active{
+  border-color:#035AB5 !important;
+  background:#EAF4FC !important;
+  box-shadow:0 6px 18px rgba(3,90,181,.14) !important;
+}
+
+html body .vip-categories .vip-category-card.ssk-category-active .vip-category-icon{
+  background:#035AB5 !important;
+  color:#fff !important;
+  border-color:#035AB5 !important;
+}
+
+/* Bouton Tous les supports */
+html body .ssk-category-all{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:7px !important;
+  width:auto !important;
+  min-width:190px !important;
+  height:40px !important;
+  margin:8px auto 6px !important;
+  padding:8px 15px !important;
+  border:1px solid #C9DBEC !important;
+  border-radius:999px !important;
+  background:#fff !important;
+  color:#03387F !important;
+  font:inherit !important;
+  font-size:10px !important;
+  font-weight:900 !important;
+  cursor:pointer !important;
+  box-shadow:0 3px 10px rgba(4,28,65,.04) !important;
+}
+
+html body .ssk-category-all:hover{
+  border-color:#035AB5 !important;
+  transform:translateY(-1px);
+}
+
+html body .ssk-category-all.ssk-category-active{
+  background:#041C41 !important;
+  color:#fff !important;
+  border-color:#041C41 !important;
+}
+
+/* État du filtre au-dessus du catalogue */
+html body .ssk-category-filter-state{
+  display:none;
+  width:min(1180px,calc(100% - 32px));
+  margin:0 auto 7px;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  font-size:10px;
+  color:#64758A;
+  text-align:center;
+}
+
+html body .ssk-category-filter-state.is-visible{
+  display:flex !important;
+}
+
+html body .ssk-category-filter-state strong{
+  color:#03387F;
+  font-weight:950;
+}
+
+@media(max-width:720px){
+  html body .vip-categories .vip-category-grid{
+    justify-content:center !important;
+    gap:7px !important;
+  }
+
+  html body .vip-categories .vip-category-card{
+    flex-basis:175px !important;
+    width:175px !important;
+  }
+
+  html body .ssk-category-all{
+    min-width:175px !important;
+  }
+}
+
+@media(max-width:460px){
+  html body .vip-categories .vip-category-card{
+    flex-basis:160px !important;
+    width:160px !important;
+  }
+
+  html body .ssk-category-all{
+    min-width:160px !important;
+  }
+}

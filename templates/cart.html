@@ -1,0 +1,91 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SastoukaStore — Mon panier</title><link rel="stylesheet" href="{{ url_for('static', filename='css/premium_flow_6_4.css') }}?v=65">
+<style>.p65-items{padding:0 18px}.p65-item{display:grid;grid-template-columns:82px minmax(0,1fr) auto;gap:15px;align-items:center;padding:16px 0;border-bottom:1px solid #E5EEF7}.p65-item:last-child{border-bottom:0}.p65-thumb{width:82px;aspect-ratio:210/297;border:1px solid #dbe2e9;border-radius:5px;overflow:hidden;background:#fff;display:grid;place-items:center;font-weight:900}.p65-thumb img{width:100%;height:100%;object-fit:contain}.p65-name{font-weight:900;font-size:14px}.p65-sub{display:block;color:#5B6B82;font-size:10px;margin-top:5px}.p65-remove{border:0;background:#FDE8E4;color:#8f3038;border-radius:8px;padding:8px 10px;font-size:10px;font-weight:900;cursor:pointer}@media(max-width:600px){.p65-item{grid-template-columns:62px minmax(0,1fr)}.p65-thumb{width:62px}.p65-remove{grid-column:2;width:max-content}}</style><!-- SastoukaStore PATCH 6.6 : ICÔNE / LOGO GLOBAL -->
+<link rel="shortcut icon" href="/static/icons/favicon.ico?v=66">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png?v=66">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png?v=66">
+<link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png?v=66">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png?v=66">
+<link rel="manifest" href="/static/manifest.webmanifest?v=66">
+<meta name="theme-color" content="#041C41">
+<meta property="og:image" content="/static/branding/sastoukastore-logo.png?v=66">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/static/branding/sastoukastore-logo.png?v=66">
+<!-- SastoukaStore PATCH 6.6.1 : ICÔNE / LOGO GLOBAL -->
+<link rel="shortcut icon" href="/static/icons/favicon.ico?v=661">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png?v=661">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png?v=661">
+<link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png?v=661">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png?v=661">
+<link rel="manifest" href="/static/manifest.webmanifest?v=661">
+<meta name="theme-color" content="#041C41">
+<meta property="og:image" content="/static/branding/sastoukastore-logo.png?v=661">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/static/branding/sastoukastore-logo.png?v=661">
+<link rel="stylesheet" href="/static/css/sastoukastore_theme_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_global_client_admin_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_icon_safety_v2_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_header_client_v6.css?v=20261006"><link rel="stylesheet" href="/static/css/sastoukastore_header_reconstruction_v7.css?v=20261006">
+
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_cart_2026.css?v=202610062132">
+
+<!-- Correctif Contraste Global -->
+
+<!-- Correctif Contraste Global -->
+<link rel="stylesheet" href="/static/css/sastoukastore_contraste_global_2026.css?v=202610062242">
+<link rel="stylesheet" href="/static/css/sastoukastore_remove_region_banner_v2.css?v=20261007">
+</head>
+<body class="p64">
+<div class="ssk7-strip">
+  SUPPORTS NUMÉRIQUES • PAIEMENT SÉCURISÉ • ACCÈS APRÈS CONFIRMATION
+</div>
+<header class="ssk7-header">
+  <a class="ssk7-brand p64-brand" href="/" aria-label="SastoukaStore — Accueil">
+    <span class="ssk7-logo-wrap">
+      <img class="ssk7-logo chariow-header-logo" src="/static/branding/sastoukastore-header-logo.png?v=20261006" alt="SastoukaStore">
+    </span>
+    <span class="ssk7-brand-text">SastoukaStore<small>LE SAVOIR EN 1 CLIC</small></span>
+  </a>
+  <nav class="ssk7-nav" aria-label="Navigation boutique">
+    <a href="/">Catalogue</a>
+    <a href="/panier">Panier</a>
+    <a href="/suivi-commande">Mes achats</a>
+  </nav>
+  <div class="ssk7-actions">
+    <a class="ssk7-wa" href="https://wa.me/212652084735?text=Bonjour%20SastoukaStore%2C%20je%20souhaite%20des%20informations." target="_blank" rel="noopener">WhatsApp</a>
+    <a class="ssk7-cart" href="/panier">🛒 Panier <b class="ssk7-count" id="ssk7CartCount">0</b></a>
+  </div>
+</header>
+<main class="p64-wrap"><div class="p64-head"><div><span class="p64-kicker">VOTRE SÉLECTION</span><h1>Mon panier.</h1><p>Une sélection de supports numériques, sans quantité et sans livraison.</p></div><a class="p64-back" href="/">← Continuer mes achats</a></div><div id="root"></div></main>
+<script>
+(function(){const K="sastoukastore_cart_v1",root=document.getElementById("root");function read(){try{const v=JSON.parse(localStorage.getItem(K)||"[]");return Array.isArray(v)?v:[]}catch(e){return[]}}function save(v){localStorage.setItem(K,JSON.stringify(v))}function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}function money(n,c){return Number(n||0).toLocaleString("fr-FR")+" "+(c||"FCFA")}function badge(){const n=read().length;document.querySelectorAll("#p64Badge,#cartCount,#premiumCartCount,#ssk7CartCount,#ssk6CartCount").forEach(e=>e.textContent=n)}function render(){const raw=read(),seen=new Map();raw.forEach(x=>{if(!seen.has(String(x.id)))seen.set(String(x.id),{...x,quantity:1})});const c=[...seen.values()];if(c.length!==raw.length)save(c);badge();if(!c.length){root.innerHTML='<section class="p64-card p64-empty"><div class="p64-empty-icon">🛒</div><h2>Votre panier est vide.</h2><p>Choisissez un support numérique dans le catalogue.</p><a class="p64-primary" href="/">Explorer les supports →</a></section>';return}let total=0,rows="";c.forEach((x,i)=>{const p=Math.max(0,Number(x.price)||0);total+=p;let src=String(x.image||"");if(src&&!/^https?:\/\//.test(src)&&!src.startsWith("/static/"))src="/static/"+src.replace(/^\/+/, "");rows+=`<article class="p65-item"><div class="p65-thumb">${src?`<img src="${esc(src)}" alt="">`:"PDF"}</div><div><div class="p65-name">${esc(x.name||"Support numérique")}</div><span class="p65-sub">PDF numérique · accès après confirmation du paiement</span></div><div><strong>${money(p,x.currency)}</strong><br><button class="p65-remove" type="button" data-r="${i}">Supprimer</button></div></article>`});const cur=c[0].currency||"FCFA";root.innerHTML=`<div class="p64-grid"><section class="p64-card p65-items">${rows}</section><aside class="p64-card p64-summary"><span class="p64-kicker">RÉCAPITULATIF</span><h2>${c.length} support(s)</h2><div class="p64-total"><span>Total</span><strong>${money(total,cur)}</strong></div><a class="p64-primary" href="/commande">Passer la commande →</a><a class="p64-secondary" href="/">Ajouter des supports</a><div class="p64-note"><b>100% numérique :</b> aucun frais de livraison et aucun besoin de quantité. Chaque support est acheté une seule fois.</div></aside></div>`;root.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>{const x=read(),i=Number(b.dataset.r);x.splice(i,1);save(x);render()})}render()})();
+</script><script src="/static/js/admin_access9.js?v=7click-discret-20261005"></script>
+<script id="ssk6-cart-counter-v6">
+(function(){
+  function update(){
+    try{
+      var raw=JSON.parse(localStorage.getItem("sastoukastore_cart_v1")||"[]");
+      var n=Array.isArray(raw)?raw.length:0;
+      document.querySelectorAll("#ssk6CartCount").forEach(function(el){el.textContent=n});
+    }catch(e){}
+  }
+  update();
+  window.addEventListener("storage",update);
+  document.addEventListener("DOMContentLoaded",update);
+})();
+</script><script id="ssk7-cart-counter">
+(function(){
+  function update(){
+    try{
+      var raw=JSON.parse(localStorage.getItem("sastoukastore_cart_v1")||"[]");
+      var n=Array.isArray(raw)?raw.length:0;
+      document.querySelectorAll("#ssk7CartCount").forEach(function(el){
+        el.textContent=n;
+      });
+    }catch(e){}
+  }
+  update();
+  window.addEventListener("storage",update);
+})();
+</script>
+<script src="/static/js/sastoukastore_remove_region_banner_v2.js?v=20261007"></script>
+</body></html>

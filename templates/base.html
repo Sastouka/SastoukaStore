@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#041C41">
+<meta name="description" content="SastoukaStore - Boutique en ligne">
+<link rel="manifest" href="/static/manifest.webmanifest">
+<link rel="icon" href="/static/icons/icon-192.png">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<title>{% block title %}SastoukaStore{% endblock %}</title>
+<link rel="stylesheet" href="{ url_for("static", filename="css/admin.css") }">
+<!-- SastoukaStore-A4-FORCE-2-6-1 -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/a4_covers_force_2_6.css') }}?v=20261004062328">
+<!-- SastoukaStore-COVERS-GLOBAL-2-7 -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/sastoukastore_covers_global_2_7.css') }}?v=20261004062747">
+<!-- SastoukaStore-COVERS-GLOBAL-2-8 -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/sastoukastore_covers_global_2_8.css') }}?v=20261004063848">
+<!-- SastoukaStore PATCH 6.6 : ICÔNE / LOGO GLOBAL -->
+<link rel="shortcut icon" href="/static/icons/favicon.ico?v=66">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png?v=66">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png?v=66">
+<link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png?v=66">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png?v=66">
+<link rel="manifest" href="/static/manifest.webmanifest?v=66">
+<meta name="theme-color" content="#041C41">
+<meta property="og:image" content="/static/branding/sastoukastore-logo.png?v=66">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/static/branding/sastoukastore-logo.png?v=66">
+<!-- SastoukaStore PATCH 6.6.1 : ICÔNE / LOGO GLOBAL -->
+<link rel="shortcut icon" href="/static/icons/favicon.ico?v=661">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png?v=661">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png?v=661">
+<link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png?v=661">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png?v=661">
+<link rel="manifest" href="/static/manifest.webmanifest?v=661">
+<meta name="theme-color" content="#041C41">
+<meta property="og:image" content="/static/branding/sastoukastore-logo.png?v=661">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/static/branding/sastoukastore-logo.png?v=661">
+<link rel="stylesheet" href="/static/css/sastoukastore_theme_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_global_client_admin_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_icon_safety_v2_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_bande_haut_uniforme_vip_2026.css?v=20261006">
+
+<!-- Correctif Contraste Global -->
+
+<!-- Correctif Contraste Global -->
+<link rel="stylesheet" href="/static/css/sastoukastore_contraste_global_2026.css?v=202610062242">
+<link rel="stylesheet" href="/static/css/sastoukastore_remove_region_banner_v2.css?v=20261007">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <img class="sastoukastore-header-logo" src="/static/branding/sastoukastore-header-logo.png?v=664" alt="SastoukaStore">
+    <div><strong>SastoukaStore</strong><small>Boutique en ligne</small></div>
+  </div>
+  <button class="install-btn" id="installBtn" hidden>Installer</button>
+</header>
+<main>{% block content %}{% endblock %}</main>
+<nav class="mobile-nav">
+  <a href="/" class="active"><span>⌂</span><small>Accueil</small></a>
+  <a href="#"><span>⌕</span><small>Recherche</small></a>
+  <a href="#"><span>🛒</span><small>Panier</small><b id="cartBadge">0</b></a>
+  <a href="#"><span>♙</span><small>Compte</small></a>
+</nav>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="/static/js/admin_access9.js?v=7click-discret-20261005"></script>
+<script src="/static/js/sastoukastore_remove_region_banner_v2.js?v=20261007"></script>
+</body>
+</html>

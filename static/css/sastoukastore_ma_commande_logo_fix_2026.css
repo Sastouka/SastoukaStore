@@ -1,0 +1,104 @@
+/* ============================================================
+   SASTOUKASTORE — CORRECTION PAGE "MA COMMANDE"
+   Empêche le logo de prendre toute la largeur/hauteur de la page.
+   ============================================================ */
+
+html, body.p64{
+  width:100% !important;
+  min-height:100% !important;
+  margin:0 !important;
+  overflow-x:hidden !important;
+}
+
+body.p64 .p64-nav{
+  width:100% !important;
+  min-height:78px !important;
+  height:78px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  position:sticky !important;
+  top:0 !important;
+  z-index:100 !important;
+}
+
+body.p64 .p64-brand{
+  display:flex !important;
+  width:auto !important;
+  height:auto !important;
+  min-width:0 !important;
+  max-width:none !important;
+  flex:0 0 auto !important;
+  align-items:center !important;
+  gap:10px !important;
+  overflow:visible !important;
+}
+
+body.p64 .p64-brand .chariow-header-logo,
+body.p64 .p64-nav .chariow-header-logo{
+  display:block !important;
+  width:42px !important;
+  height:42px !important;
+  min-width:42px !important;
+  min-height:42px !important;
+  max-width:42px !important;
+  max-height:42px !important;
+  aspect-ratio:1 / 1 !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  position:static !important;
+  inset:auto !important;
+  transform:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  float:none !important;
+}
+
+body.p64 .p64-brand > *{
+  position:static !important;
+  transform:none !important;
+}
+
+body.p64 .p64-brand-word{
+  display:block !important;
+  width:auto !important;
+  height:auto !important;
+  min-width:0 !important;
+  max-width:240px !important;
+  overflow:visible !important;
+  white-space:nowrap !important;
+}
+
+body.p64 .p64-brand-word small{
+  display:block !important;
+}
+
+body.p64 .p64-wrap{
+  position:relative !important;
+  z-index:1 !important;
+}
+
+/* Sécurité contre une éventuelle image logo injectée hors du header. */
+body.p64 > img.chariow-header-logo{
+  display:none !important;
+}
+
+@media(max-width:680px){
+  body.p64 .p64-nav{
+    height:70px !important;
+    min-height:70px !important;
+  }
+  body.p64 .p64-brand .chariow-header-logo,
+  body.p64 .p64-nav .chariow-header-logo{
+    width:40px !important;
+    height:40px !important;
+    min-width:40px !important;
+    min-height:40px !important;
+    max-width:40px !important;
+    max-height:40px !important;
+  }
+  body.p64 .p64-brand-word{
+    max-width:190px !important;
+    font-size:16px !important;
+  }
+}

@@ -1,0 +1,73 @@
+/* SASTOUKASTORE — THEME GLOBAL */
+:root{
+  --bg:#F4F8FC !important;
+  --surface:#FFFFFF !important;
+  --text:#041C41 !important;
+  --muted:#5B6B82 !important;
+  --border:#D9E4F1 !important;
+  --primary:#035AB5 !important;
+  --primary-dark:#03387F !important;
+  --accent:#FA7908 !important;
+  --accent-yellow:#F3C327 !important;
+  --info:#07A5F0 !important;
+  --success:#36B331 !important;
+  --danger:#CE2A10 !important;
+  --purple:#9744CF !important;
+}
+html,body{background:var(--bg) !important;color:var(--text) !important}
+h1,h2,h3,h4,h5,h6{color:var(--text)}
+.topbar,.premium-nav,.vip-nav,.p64-nav{
+  background:rgba(255,255,255,.97) !important;
+  border-color:var(--border) !important;
+}
+.hero,.vip-hero{
+  background:linear-gradient(135deg,#041C41 0%,#03387F 58%,#035AB5 100%) !important;
+}
+.hero-card{
+  background:linear-gradient(145deg,#07A5F0 0%,#035AB5 55%,#03387F 100%) !important;
+}
+button,.primary-btn,.install-btn,.save,.search-card button{
+  background:#035AB5 !important;color:#fff !important;
+}
+button:hover,.primary-btn:hover,.install-btn:hover,.save:hover{
+  background:#03387F !important;
+}
+.product-footer button,.p63-add-cart{
+  background:#03387F !important;color:#fff !important;
+}
+.category-card,.product-card,.trust-section,.card,.panel,.form-card,
+.search-card,.result,.upload-card{
+  background:#fff !important;border-color:var(--border) !important;
+}
+.product-image{background:#EAF4FC !important}
+.price,.p62-price-value b,.accent-text{color:#FA7908 !important}
+.p62-price-value strong{color:#03387F !important}
+.p62-tags span{
+  background:#EAF4FC !important;color:#03387F !important;
+  border-color:#BFDDF3 !important;
+}
+.p62-wa{background:#36B331 !important;color:#fff !important}
+.mobile-nav{
+  background:rgba(255,255,255,.98) !important;
+  border-top-color:var(--border) !important;
+}
+.mobile-nav a.active{color:#035AB5 !important}
+.mobile-nav b{background:#FA7908 !important}
+input:focus,select:focus,textarea:focus{
+  border-color:#07A5F0 !important;
+  box-shadow:0 0 0 3px rgba(7,165,240,.12) !important;
+}
+.error,.cancelled{
+  background:#FDE8E4 !important;border-color:#F2C2BA !important;
+  color:#CE2A10 !important;
+}
+.current-status{background:#EAF4FC !important}
+.status-dot{background:#07A5F0 !important}
+.step.done .circle{
+  background:#035AB5 !important;border-color:#035AB5 !important;
+}
+.line.done{background:#07A5F0 !important}
+.existing-file.success{
+  background:#DFF5D9 !important;color:#287D24 !important;
+}
+a:hover{color:#FA7908}

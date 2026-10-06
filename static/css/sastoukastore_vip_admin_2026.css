@@ -1,0 +1,151 @@
+/* ============================================================
+   SASTOUKASTORE — ADMIN VIP DASHBOARD (2026)
+   ============================================================ */
+:root {
+  --admin-navy: #0d2138;
+  --admin-dark: #050c16;
+  --admin-action: #ff6a00;
+  --admin-success: #7bef42;
+}
+
+/* 1. EN-TÊTES DE PAGES ADMIN (Dark Mode Premium) */
+.admin-head, .head, .catalog-head, .page-head {
+  background: linear-gradient(135deg, var(--admin-dark) 0%, var(--admin-navy) 100%) !important;
+  color: #fff !important;
+  padding: 30px 35px !important;
+  border-radius: 20px !important;
+  box-shadow: 0 15px 35px rgba(13, 33, 56, 0.15) !important;
+  border-bottom: 3px solid var(--admin-action) !important;
+  margin-bottom: 30px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Effet de reflet dans l'en-tête */
+.admin-head::before, .head::before, .catalog-head::before, .page-head::before {
+  content: "";
+  position: absolute;
+  top: -50px; left: -50px;
+  width: 150px; height: 150px;
+  background: rgba(123, 239, 66, 0.08);
+  filter: blur(30px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.admin-head h1, .head h1, .catalog-head h1, .page-head h1 {
+  color: #fff !important;
+  font-size: 34px !important;
+  letter-spacing: -1px !important;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
+  margin: 8px 0 !important;
+}
+
+.admin-head p, .head p, .catalog-head p, .page-head p {
+  color: #b0c4d9 !important;
+  font-size: 13px !important;
+}
+
+.eyebrow, .section-kicker, .kicker {
+  color: var(--admin-success) !important;
+  letter-spacing: 2px !important;
+  font-weight: 900 !important;
+  font-size: 10px !important;
+}
+
+/* 2. BOUTONS SECONDAIRES DANS L'EN-TÊTE (Style Glassmorphism) */
+.admin-head a.back, .head nav a, .catalog-head .actions a:not(.primary), .page-head a.back {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 10px !important;
+  backdrop-filter: blur(10px) !important;
+  transition: all 0.2s ease !important;
+}
+
+.admin-head a.back:hover, .head nav a:hover, .catalog-head .actions a:not(.primary):hover, .page-head a.back:hover {
+  background: rgba(255, 255, 255, 0.18) !important;
+  transform: translateY(-2px) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2) !important;
+}
+
+/* Garder le bouton "Déconnexion" Rouge bien visible */
+.admin-head a.back[href*="deconnexion"], .head nav a[href*="deconnexion"] {
+  background: rgba(217, 45, 32, 0.15) !important;
+  color: #ff8a80 !important;
+  border-color: rgba(217, 45, 32, 0.4) !important;
+}
+.admin-head a.back[href*="deconnexion"]:hover, .head nav a[href*="deconnexion"]:hover {
+  background: rgba(217, 45, 32, 0.8) !important;
+  color: #fff !important;
+}
+
+/* 3. CARTES DE STATISTIQUES (Effet Lift) */
+.stat-card, .stat, .metrics article {
+  border-left: 4px solid var(--admin-navy) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.stat-card:hover, .stat:hover, .metrics article:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 15px 35px rgba(7, 17, 31, 0.08) !important;
+  border-left-color: var(--admin-action) !important;
+}
+
+.stat-card strong, .stat b, .metrics strong {
+  color: var(--admin-navy) !important;
+  font-size: 28px !important;
+  font-weight: 900 !important;
+}
+
+/* 4. BARRE D'OUTILS ET RECHERCHE */
+.toolbar, .search, .search-card {
+  box-shadow: 0 8px 20px rgba(7, 17, 31, 0.03) !important;
+  padding: 15px !important;
+}
+
+/* 5. TABLES DE DONNÉES (Style SaaS) */
+.table-wrap {
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  border: 1px solid #dce5ee !important;
+  box-shadow: 0 10px 30px rgba(7, 17, 31, 0.04) !important;
+}
+
+table th {
+  background: var(--admin-navy) !important;
+  color: #fff !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1px !important;
+  padding: 16px 14px !important;
+  border-bottom: none !important;
+}
+
+table tr:hover td {
+  background: #f8fafc !important;
+}
+
+/* 6. BADGES DE STATUT DANS L'ADMIN */
+.pay.paid, .status.paid, .pdf-status.ok, .state.on {
+  background: #e7faef !important;
+  color: #166534 !important;
+  border: 1px solid #bbf7d0 !important;
+  font-weight: 900 !important;
+  box-shadow: 0 2px 5px rgba(22, 101, 52, 0.1) !important;
+}
+
+.pay.pending, .status.pending {
+  background: #fffbeb !important;
+  color: #92400e !important;
+  border: 1px solid #fef08a !important;
+  font-weight: 900 !important;
+}
+
+.pay.failed, .pdf-status.missing, .state.off, .danger, .icon-danger {
+  background: #fef2f2 !important;
+  color: #991b1b !important;
+  border: 1px solid #fecaca !important;
+  font-weight: 900 !important;
+}

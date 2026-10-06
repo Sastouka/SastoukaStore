@@ -1,0 +1,109 @@
+/* ============================================================
+   SASTOUKASTORE — CATALOGUE DIRECT V8
+   Aucun Hero. Le catalogue devient la zone principale.
+   ============================================================ */
+
+/* Sécurité : aucun Hero ne doit occuper d'espace */
+html body .vip-hero,
+html body [class~="vip-hero"]{
+  display:none !important;
+  visibility:hidden !important;
+  opacity:0 !important;
+  width:0 !important;
+  height:0 !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  overflow:hidden !important;
+}
+
+/* Nettoyage des anciens blocs intermédiaires */
+html body .vip-trust-bar,
+html body [class~="vip-trust-bar"],
+html body .ssk-conversion-strip,
+html body [class~="ssk-conversion-strip"]{
+  display:none !important;
+  width:0 !important;
+  height:0 !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  overflow:hidden !important;
+}
+
+html body .vip-catalogue::before,
+html body .vip-catalogue::after{
+  content:none !important;
+  display:none !important;
+}
+
+/* Le catalogue commence juste après le header */
+html body main{
+  margin:0 !important;
+  padding:0 !important;
+}
+
+html body section.vip-catalogue,
+html body .vip-catalogue{
+  margin:0 !important;
+  padding-top:18px !important;
+  padding-bottom:40px !important;
+  min-height:0 !important;
+}
+
+html body .vip-catalogue > .vip-container{
+  margin-top:0 !important;
+  padding-top:0 !important;
+}
+
+/* Titre du catalogue */
+html body .vip-catalogue .vip-catalogue-heading{
+  margin-top:0 !important;
+  margin-bottom:12px !important;
+}
+
+/* Recherche : rapprochée du catalogue */
+html body #sskCatalogSearchWrap{
+  margin-top:0 !important;
+  margin-bottom:10px !important;
+  padding-top:0 !important;
+}
+
+/* Grille */
+html body #catalogue .vip-product-grid{
+  margin-top:0 !important;
+  padding-top:0 !important;
+}
+
+/* Les catégories, lorsqu'elles sont conservées, restent discrètes.
+   Elles ne doivent pas recréer un "Hero bis". */
+html body section.vip-categories{
+  margin:0 !important;
+  padding-top:8px !important;
+  padding-bottom:8px !important;
+}
+
+html body .vip-categories .vip-section-heading{
+  margin-top:0 !important;
+  margin-bottom:7px !important;
+}
+
+html body .vip-categories .vip-category-grid{
+  margin-top:0 !important;
+  padding-top:0 !important;
+}
+
+@media(max-width:720px){
+  html body section.vip-catalogue,
+  html body .vip-catalogue{
+    padding-top:12px !important;
+    padding-bottom:30px !important;
+  }
+
+  html body section.vip-categories{
+    padding-top:6px !important;
+    padding-bottom:6px !important;
+  }
+}

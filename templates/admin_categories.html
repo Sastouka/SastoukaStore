@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SastoukaStore — Catégories</title>
+<link rel="stylesheet" href="{{url_for('static',filename='css/admin6.css')}}">
+<!-- SastoukaStore PATCH 6.6 : ICÔNE / LOGO GLOBAL -->
+<link rel="shortcut icon" href="/static/icons/favicon.ico?v=66">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png?v=66">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png?v=66">
+<link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png?v=66">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png?v=66">
+<link rel="manifest" href="/static/manifest.webmanifest?v=66">
+<meta name="theme-color" content="#041C41">
+<meta property="og:image" content="/static/branding/sastoukastore-logo.png?v=66">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/static/branding/sastoukastore-logo.png?v=66">
+<!-- SastoukaStore PATCH 6.6.1 : ICÔNE / LOGO GLOBAL -->
+<link rel="shortcut icon" href="/static/icons/favicon.ico?v=661">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png?v=661">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png?v=661">
+<link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png?v=661">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png?v=661">
+<link rel="manifest" href="/static/manifest.webmanifest?v=661">
+<meta name="theme-color" content="#041C41">
+<meta property="og:image" content="/static/branding/sastoukastore-logo.png?v=661">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/static/branding/sastoukastore-logo.png?v=661">
+<link rel="stylesheet" href="/static/css/sastoukastore_theme_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_global_client_admin_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_icon_safety_v2_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_bande_haut_uniforme_vip_2026.css?v=20261006">
+
+<!-- SastoukaStore ADMIN VIP THEME -->
+
+<!-- SastoukaStore ADMIN VIP THEME -->
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_admin_2026.css?v=202610062146">
+
+<!-- Correctif Contraste Global -->
+
+<!-- Correctif Contraste Global -->
+<link rel="stylesheet" href="/static/css/sastoukastore_contraste_global_2026.css?v=202610062242">
+<link rel="stylesheet" href="/static/css/sastoukastore_admin_digital_v2.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_remove_region_banner_v2.css?v=20261007">
+</head><body><main class="wrap">
+<header><div><small>SastoukaStore ADMIN</small><h1>Catégories</h1></div>
+<div class="nav"><a href="{{url_for('admin_catalog_v6.nouvelle_categorie')}}">+ Nouvelle catégorie</a><a href="{{url_for('admin_catalog_v6.produits_fallback')}}">Produits</a><a href="/admin/deconnexion" style="color: #d92d20; font-weight: 900;">Déconnexion</a></div></header>
+<section class="cards">{% for c in categories %}<article class="card"><div><h2>{{c.name}}</h2><p>{{c.products_count}} produit(s)</p></div><div class="row"><a href="{{url_for('admin_catalog_v6.modifier_categorie',category_id=c.id)}}">Modifier</a><form method="post" action="{{url_for('admin_catalog_v6.supprimer_categorie',category_id=c.id)}}" onsubmit="return confirm('Supprimer cette catégorie ?')">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><button>Supprimer</button></form></div></article>{% else %}<div class="empty">Aucune catégorie.</div>{% endfor %}</section>
+</main><script src="/static/js/sastoukastore_remove_region_banner_v2.js?v=20261007"></script>
+</body></html>

@@ -1,0 +1,141 @@
+/* ============================================================
+   SASTOUKASTORE — CATALOGUE V4
+   - conserve le ratio original de chaque couverture
+   - affiche la couverture entière
+   - aucun recadrage / aucune déformation
+   - conserve les informations du produit sous l'image
+   ============================================================ */
+
+html body .vip-product-media{
+  height:300px !important;
+  min-height:300px !important;
+  max-height:300px !important;
+  width:100% !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  position:relative !important;
+  overflow:hidden !important;
+  background:#edf2f6 !important;
+  border-radius:16px 16px 0 0 !important;
+}
+
+html body .vip-product-media-inner{
+  position:static !important;
+  inset:auto !important;
+  width:100% !important;
+  height:100% !important;
+  min-height:0 !important;
+  max-height:none !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  overflow:hidden !important;
+  border-radius:16px !important;
+  background:#fff !important;
+}
+
+html body .vip-product-media-inner img,
+html body .vip-product-media > img{
+  display:block !important;
+  width:auto !important;
+  height:auto !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  transform:none !important;
+  margin:0 auto !important;
+}
+
+html body .vip-product-card .vip-product-body{
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  height:auto !important;
+  min-height:0 !important;
+  overflow:visible !important;
+  position:relative !important;
+  z-index:2 !important;
+  background:#fff !important;
+}
+
+html body .vip-product-meta,
+html body .vip-product-name,
+html body .vip-product-body > p,
+html body .vip-product-footer{
+  visibility:visible !important;
+  opacity:1 !important;
+}
+
+html body .p62-cover-stage{
+  min-height:0 !important;
+  height:auto !important;
+  max-height:none !important;
+  display:flex !important;
+  align-items:flex-start !important;
+  justify-content:center !important;
+  overflow:visible !important;
+}
+
+html body .p62-cover-sheet{
+  width:auto !important;
+  height:auto !important;
+  max-width:100% !important;
+  max-height:560px !important;
+  aspect-ratio:auto !important;
+  overflow:hidden !important;
+  background:#fff !important;
+  border-radius:4px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+
+html body .p62-cover-sheet img{
+  display:block !important;
+  width:auto !important;
+  height:auto !important;
+  max-width:100% !important;
+  max-height:560px !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+}
+
+@media(max-width:900px){
+  html body .vip-product-media{
+    height:280px !important;
+    min-height:280px !important;
+    max-height:280px !important;
+  }
+  html body .p62-cover-sheet,
+  html body .p62-cover-sheet img{
+    max-height:520px !important;
+  }
+}
+
+@media(max-width:720px){
+  html body .vip-product-media{
+    height:300px !important;
+    min-height:300px !important;
+    max-height:300px !important;
+  }
+  html body .p62-cover-sheet,
+  html body .p62-cover-sheet img{
+    max-height:480px !important;
+  }
+}
+
+@media(max-width:480px){
+  html body .vip-product-media{
+    height:285px !important;
+    min-height:285px !important;
+    max-height:285px !important;
+  }
+  html body .p62-cover-sheet,
+  html body .p62-cover-sheet img{
+    max-height:430px !important;
+  }
+}

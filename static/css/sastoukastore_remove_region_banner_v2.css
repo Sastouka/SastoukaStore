@@ -1,0 +1,16 @@
+/* SASTOUKASTORE — suppression force bande régionale */
+html body .ssk7-strip,
+html body .ssk-client-strip,
+html body .ssk6-strip{
+  display:none !important;
+  width:0 !important;
+  height:0 !important;
+  min-height:0 !important;
+  max-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  overflow:hidden !important;
+  visibility:hidden !important;
+  opacity:0 !important;
+}

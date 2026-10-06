@@ -1,0 +1,137 @@
+/* ============================================================
+   SASTOUKASTORE — CHECKOUT VIP & AGRESSIF (2026)
+   ============================================================ */
+:root {
+  --vip-dark: #050c16;
+  --vip-navy: #0d2138;
+  --vip-action: #ff6a00;
+  --vip-action-glow: rgba(255, 106, 0, 0.4);
+  --vip-success: #7bef42;
+}
+
+/* --- PAGE COMMANDE (CHECKOUT) --- */
+body.p64 .pp-head {
+  background: linear-gradient(135deg, var(--vip-dark) 0%, var(--vip-navy) 100%) !important;
+  border-bottom: 3px solid var(--vip-action) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2) !important;
+  padding: 30px !important;
+}
+
+body.p64 .pp-head h1 {
+  font-size: 42px !important;
+  letter-spacing: -2px !important;
+  text-transform: uppercase !important;
+  color: #fff !important;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
+}
+
+body.p64 .pp-paybox {
+  border: 2px solid var(--vip-navy) !important;
+  background: #fff !important;
+  border-radius: 18px !important;
+  box-shadow: 0 10px 30px rgba(13, 33, 56, 0.08) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+body.p64 .pp-paybox::before {
+  content: "PAIEMENT SÉCURISÉ";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  background: var(--vip-navy);
+  color: var(--vip-success);
+  font-size: 10px;
+  font-weight: 900;
+  text-align: center;
+  padding: 5px 0;
+  letter-spacing: 2px;
+}
+
+body.p64 .pp-pay-title { margin-top: 20px !important; }
+
+body.p64 .paypal-btn, 
+body.p64 .p64-primary {
+  animation: pulse-glow 2s infinite !important;
+  border-radius: 12px !important;
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 0 var(--vip-action-glow); }
+  70% { box-shadow: 0 0 15px 10px rgba(255, 106, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 106, 0, 0); }
+}
+
+body.p64 #mainContent > aside.pp-card {
+  position: sticky !important;
+  top: 90px !important;
+  border: 2px solid #e1e8f0 !important;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+}
+
+body.p64 .pp-total strong {
+  color: var(--vip-action) !important;
+  font-size: 32px !important;
+}
+
+/* --- PAGE MES COMMANDES (SUIVI) --- */
+body.p64 .p64-track-result {
+  background: #fff !important;
+  border: 1px solid var(--vip-navy) !important;
+  border-top: 5px solid var(--vip-navy) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 25px 50px rgba(7,17,31,0.1) !important;
+  padding: 30px !important;
+}
+
+body.p64 .p64-status {
+  background: #050c16 !important;
+  color: #fff !important;
+  border-radius: 16px !important;
+  padding: 20px !important;
+  border-left: 4px solid var(--vip-success) !important;
+}
+
+body.p64 .p64-status b {
+  color: var(--vip-success) !important;
+  font-size: 16px !important;
+  letter-spacing: 0.5px !important;
+}
+
+body.p64 .p64-status p { color: #aab7c5 !important; }
+
+body.p64 .p64-key-box {
+  background: linear-gradient(135deg, var(--vip-navy), #041224) !important;
+  border: 1px solid #1c3554 !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+  box-shadow: inset 0 2px 10px rgba(0,0,0,0.5) !important;
+}
+
+body.p64 .p64-key-box h3 {
+  color: var(--vip-success) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+body.p64 .p64-key-row input {
+  background: #020812 !important;
+  color: var(--vip-success) !important;
+  border: 1px solid #1c3554 !important;
+  font-size: 14px !important;
+  text-align: center !important;
+  letter-spacing: 2px !important;
+}
+
+body.p64 .p64-key-row button {
+  background: var(--vip-action) !important;
+  color: #fff !important;
+  text-transform: uppercase !important;
+  font-size: 12px !important;
+  transition: transform 0.2s !important;
+}
+
+body.p64 .p64-key-row button:hover {
+  transform: scale(1.05) !important;
+  background: #e65c00 !important;
+}

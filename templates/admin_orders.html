@@ -1,0 +1,25 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SastoukaStore — Achats numériques</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin4.css') }}?v=paypal1"><style>
+.digital-orders{max-width:1200px;margin:auto;padding:28px 22px 60px}.head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}.eyebrow{font-size:10px;letter-spacing:2px;color:#789}.head h1{font-size:36px;margin:5px 0}.head p{font-size:12px;color:#748192}.toolbar{background:#fff;border:1px solid #D9E4F1;border-radius:14px;padding:13px;margin-bottom:18px}.toolbar form{display:flex;gap:10px}.toolbar input{height:42px;flex:1;border:1px solid #d8e1e9;border-radius:9px;padding:0 11px}.toolbar button{height:42px;border:0;border-radius:9px;background:#041C41;color:#fff;font-weight:900;padding:0 17px}.table-wrap{background:#fff;border:1px solid #D9E4F1;border-radius:16px;overflow:auto}.table-wrap table{width:100%;border-collapse:collapse;font-size:12px}.table-wrap th,.table-wrap td{padding:13px 12px;border-bottom:1px solid #E5EEF7;text-align:left;white-space:nowrap}.table-wrap th{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#84909e}.table-wrap a{font-weight:900;color:#041C41}.pay{display:inline-flex;border-radius:999px;padding:6px 9px;font-size:9px;font-weight:900}.pay.pending{background:#fff2d9;color:#8a641f}.pay.paid{background:#e7faef;color:#36B331}.pay.failed{background:#FDE8E4;color:#9b3434}.back{border:1px solid #D9E4F1;background:#fff;border-radius:9px;padding:10px 13px;font-size:11px;font-weight:900}@media(max-width:650px){.digital-orders{padding:20px 11px 45px}.head{align-items:flex-start;flex-direction:column}.toolbar form{flex-direction:column}.toolbar button{height:42px}}
+</style><link rel="stylesheet" href="/static/css/sastoukastore_theme_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_global_client_admin_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_icon_safety_v2_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_bande_haut_uniforme_vip_2026.css?v=20261006">
+
+<!-- SastoukaStore ADMIN VIP THEME -->
+
+<!-- SastoukaStore ADMIN VIP THEME -->
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_admin_2026.css?v=202610062146">
+
+<!-- Correctif Contraste Global -->
+
+<!-- Correctif Contraste Global -->
+<link rel="stylesheet" href="/static/css/sastoukastore_contraste_global_2026.css?v=202610062242">
+<link rel="stylesheet" href="/static/css/sastoukastore_admin_digital_v2.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_remove_region_banner_v2.css?v=20261007">
+</head><body><main class="digital-orders"><header class="head">
+<a class="back" href="/admin/ventes" style="background:#041C41;color:#fff;border-color:#041C41;">Achats LIVE</a><div><span class="eyebrow">SastoukaStore ADMIN · BOUTIQUE NUMÉRIQUE</span><h1>Achats</h1><p>Suivi des commandes numériques et des paiements PayPal.</p></div><a class="back" href="/admin/dashboard">← Dashboard</a>
+<a class="back" href="/admin/deconnexion" style="color: #d92d20; border-color: #d92d20;">Déconnexion</a></header>
+<section class="toolbar"><form method="get"><input name="q" value="{{ q }}" placeholder="N° achat, client ou téléphone"><button>Rechercher</button></form></section>
+<div class="table-wrap"><table><thead><tr><th>N°</th><th>Client</th><th>Téléphone</th><th>Total</th><th>Paiement</th><th>Date</th><th></th></tr></thead><tbody>{% for o in orders %}<tr><td><b>#{{ o.id }}</b></td><td>{{ o.c_name or '—' }}</td><td>{{ o.c_phone or '—' }}</td><td>{{ "%.2f"|format(o.total or 0) }} {{ o.currency or 'FCFA' }}</td><td><span class="pay {{ 'paid' if o.payment_status=='paid' else ('failed' if o.payment_status=='failed' else 'pending') }}">{{ 'PAYPAL · PAYÉ' if o.payment_status=='paid' else ('PAYPAL · ÉCHEC' if o.payment_status=='failed' else 'PAYPAL · EN ATTENTE') }}</span></td><td>{{ o.created_at }}</td><td><a href="{{ url_for('admin_orders.commande_detail',order_id=o.id) }}">Ouvrir →</a></td></tr>{% else %}<tr><td colspan="7" style="text-align:center;padding:40px;color:#7b8794">Aucune commande.</td></tr>{% endfor %}</tbody></table></div></main><script src="/static/js/sastoukastore_remove_region_banner_v2.js?v=20261007"></script>
+</body></html>

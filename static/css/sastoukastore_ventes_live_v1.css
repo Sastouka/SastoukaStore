@@ -1,0 +1,49 @@
+/* SastoukaStore — Ventes LIVE V1 */
+:root{--n:#041C41;--ink:#07111f;--bg:#f2f6fa;--line:#d9e4ee;--blue:#0b63c7}
+html,body{margin:0!important;padding:0!important;background:var(--bg)!important;color:var(--ink)!important;overflow-x:hidden!important}
+.ssk-sales-live{max-width:1420px;margin:auto;padding:26px 22px 64px;font-family:Inter,Segoe UI,Arial,sans-serif}
+.ssk-sales-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:16px}
+.ssk-eyebrow{font-size:10px;font-weight:1000;letter-spacing:2px;color:#76869b}
+.ssk-sales-head h1{margin:6px 0;font-size:40px;line-height:1;color:var(--n)}
+.ssk-sales-head p{margin:0;color:#728094;font-size:12px}
+.ssk-live-pill{display:inline-flex;align-items:center;gap:6px;margin-left:7px;padding:6px 9px;border-radius:999px;background:#e8f9ee;color:#1b7d38;font-size:10px;letter-spacing:1px}
+.ssk-live-pill i{width:7px;height:7px;border-radius:50%;background:#26b451}
+.ssk-head-actions{display:flex;flex-wrap:wrap;gap:8px}
+.ssk-back,.ssk-logout{display:inline-flex;text-decoration:none;padding:10px 13px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--n);font-size:11px;font-weight:900}
+.ssk-logout{color:#b42318;border-color:#f0c6c2}
+.ssk-live-status{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;padding:11px 14px;border:1px solid #d7e7db;border-radius:13px;background:#fbfffc}
+.ssk-live-status b{display:block;color:#176b30;font-size:11px}.ssk-live-status span{color:#6e7d8c;font-size:10px}
+.ssk-refresh-dot{width:10px;height:10px;border-radius:50%;background:#25ae48}.ssk-refresh-dot.busy{animation:sskPulse .7s infinite alternate}
+@keyframes sskPulse{from{transform:scale(.8);opacity:.45}to{transform:scale(1.12);opacity:1}}
+.ssk-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:15px}
+.ssk-kpis article,.ssk-filters,.ssk-sales-section{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 12px 28px rgba(7,17,31,.045)}
+.ssk-kpis article{padding:17px}.ssk-kpis span{display:block;font-size:9px;font-weight:1000;letter-spacing:1px;color:#8290a0}
+.ssk-kpis strong{display:block;margin-top:8px;font-size:26px;line-height:1;color:var(--n)}.ssk-kpis small{display:block;margin-top:7px;color:#7f8d9d;font-size:10px}
+.ssk-filters{padding:18px;margin-bottom:15px}.ssk-filter-title,.ssk-section-bar{display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
+.ssk-filter-title>div span,.ssk-section-bar>div>span{font-size:9px;font-weight:1000;letter-spacing:1.5px;color:#8290a0}
+.ssk-filter-title h2,.ssk-section-bar h2{margin:5px 0 0;font-size:20px;color:var(--n)}.ssk-export{color:var(--blue);font-size:10px;font-weight:1000;text-decoration:none}
+#salesFilterForm{display:grid;grid-template-columns:minmax(220px,1.5fr) 190px 190px auto;gap:11px;align-items:end;margin-top:15px}
+#salesFilterForm label{display:grid;gap:7px;color:#43556b;font-size:10px;font-weight:900}
+#salesFilterForm input{width:100%;height:43px;box-sizing:border-box;padding:0 11px;border:1px solid #ccd9e5;border-radius:10px;background:#fff;color:#122138}
+.ssk-filter-actions{display:flex;align-items:center;gap:7px}.ssk-filter-actions button{height:43px;padding:0 16px;border:0;border-radius:10px;background:var(--n);color:#fff;font-size:10px;font-weight:1000;cursor:pointer}
+.ssk-clear{height:43px;display:inline-flex;align-items:center;padding:0 12px;border:1px solid #d6e0e9;border-radius:10px;color:#526273;font-size:10px;font-weight:900;text-decoration:none}
+.ssk-presets{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}.ssk-presets button{border:1px solid #d5e0e9;border-radius:999px;background:#f8fbfd;color:#526173;padding:7px 11px;font-size:9px;font-weight:900}
+.ssk-sales-section{padding:18px}.ssk-count-label{padding:7px 10px;border-radius:999px;background:#eef5fb;color:#52697f;font-size:9px;font-weight:1000}
+.ssk-sales-list{display:grid;gap:11px;margin-top:15px}
+.ssk-sale-card{display:grid;grid-template-columns:102px minmax(0,1fr);gap:15px;padding:14px;border:1px solid #e0e8ef;border-radius:16px;background:#fff}
+.ssk-cover-stack{position:relative;display:grid;grid-template-columns:repeat(2,45px);gap:6px;align-content:start}
+.ssk-cover-link{display:block;width:45px;aspect-ratio:210/297;overflow:hidden;border-radius:7px;border:1px solid #d8e1e9;background:#edf3f8}
+.ssk-cover-link img{display:block;width:100%;height:100%;object-fit:cover}.ssk-cover-empty{width:92px;aspect-ratio:210/297;display:grid;place-items:center;border-radius:8px;background:#edf3f8;color:#6f8092;font-size:10px;font-weight:1000}
+.ssk-more-covers{position:absolute;right:-5px;bottom:-4px;min-width:22px;height:22px;display:grid;place-items:center;border-radius:999px;background:var(--n);color:#fff;font-size:9px;font-weight:1000}
+.ssk-sale-top{display:flex;justify-content:space-between;gap:15px}.ssk-sale-id{color:#7c8b9b;font-size:9px;font-weight:1000;letter-spacing:1px}
+.ssk-sale-main h3{margin:4px 0 2px;font-size:17px;color:var(--n)}.ssk-sale-main p{margin:0;color:#768494;font-size:10px}
+.ssk-sale-price{text-align:right;white-space:nowrap}.ssk-sale-price strong{display:block;color:#0d5a2b;font-size:20px}.ssk-sale-price span{color:#738293;font-size:9px;font-weight:900}
+.ssk-books{margin-top:10px;border-top:1px solid #e8eef3}.ssk-book-line{display:flex;justify-content:space-between;gap:15px;padding:9px 0;border-bottom:1px solid #eef2f5}
+.ssk-book-line b{display:block;color:#17304d;font-size:11px}.ssk-book-line small{display:block;margin-top:3px;color:#82909f;font-size:9px}.ssk-book-line>strong{color:#20364f;font-size:10px;white-space:nowrap}.ssk-book-line.muted{color:#8795a3;font-size:10px}
+.ssk-sale-footer{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding-top:10px;color:#788697;font-size:9px}.ssk-paid{display:inline-flex;padding:6px 9px;border-radius:999px;background:#e8f8ed;color:#1d7b37;font-size:9px;font-weight:1000}
+.ssk-sale-footer a{margin-left:auto;color:var(--blue);font-weight:1000;text-decoration:none}.ssk-empty{text-align:center;padding:52px 20px;color:#748292}.ssk-empty>span{display:block;font-size:30px}.ssk-empty h3{margin:8px 0 4px;color:var(--n);font-size:17px}.ssk-empty p{margin:0;font-size:11px}
+.ssk-new-sale-toast{position:fixed;right:18px;bottom:18px;z-index:9999;display:flex;align-items:center;gap:10px;padding:13px 15px;border:1px solid #cce7d4;border-radius:14px;background:#fff;box-shadow:0 18px 42px rgba(7,17,31,.16)}
+.ssk-new-sale-toast>span{width:29px;height:29px;display:grid;place-items:center;border-radius:9px;background:#e7f8ec;color:#18823a;font-weight:1000}.ssk-new-sale-toast b{display:block;color:var(--n);font-size:11px}.ssk-new-sale-toast small{display:block;margin-top:3px;color:#748394;font-size:9px}
+[hidden]{display:none!important}
+@media(max-width:900px){.ssk-kpis{grid-template-columns:repeat(2,1fr)}#salesFilterForm{grid-template-columns:1fr 1fr}.ssk-filter-actions{grid-column:1/-1}}
+@media(max-width:620px){.ssk-sales-live{padding:19px 11px 45px}.ssk-sales-head{align-items:flex-start;flex-direction:column}.ssk-sales-head h1{font-size:31px}.ssk-kpis{grid-template-columns:1fr 1fr}#salesFilterForm{grid-template-columns:1fr}.ssk-filter-actions{grid-column:auto}.ssk-sale-card{grid-template-columns:72px minmax(0,1fr);gap:10px}.ssk-cover-stack{grid-template-columns:30px 30px;gap:4px}.ssk-cover-link{width:30px}.ssk-sale-price strong{font-size:17px}.ssk-sale-footer a{width:100%;margin-left:0}}

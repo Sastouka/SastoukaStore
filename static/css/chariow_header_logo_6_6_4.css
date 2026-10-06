@@ -1,0 +1,53 @@
+
+/* SastoukaStore PATCH 6.6.4 */
+.premium-brand .sastoukastore-header-logo,
+.sastoukastore-header-logo{
+    display:block !important;
+    width:42px !important;
+    height:42px !important;
+    min-width:42px !important;
+    min-height:42px !important;
+    max-width:42px !important;
+    max-height:42px !important;
+    object-fit:contain !important;
+    object-position:center !important;
+    border:0 !important;
+    border-radius:13px !important;
+    background:transparent !important;
+    box-shadow:none !important;
+}
+
+header.premium-nav .brand-logo,
+header.premium-nav .brand-mark,
+.premium-brand .brand-logo,
+.premium-brand .brand-mark{
+    background:transparent !important;
+    color:transparent !important;
+    border:0 !important;
+    box-shadow:none !important;
+    font-size:0 !important;
+}
+
+.p64-brand-mark .sastoukastore-header-logo,
+.brand-mark .sastoukastore-header-logo{
+    width:100% !important;
+    height:100% !important;
+    max-width:100% !important;
+    max-height:100% !important;
+    object-fit:contain !important;
+}
+
+/* SastoukaStore PATCH 6.6.4 CSS SAFETY */
+.premium-brand .sastoukastore-header-logo{
+    display:block !important;
+    width:42px !important;
+    height:42px !important;
+    object-fit:contain !important;
+}
+.premium-brand .brand-logo,
+.premium-brand .brand-mark{
+    background:transparent !important;
+    color:transparent !important;
+    border:0 !important;
+    box-shadow:none !important;
+}

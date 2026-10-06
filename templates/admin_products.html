@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SastoukaStore — Supports numériques</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/admin5.css') }}">
+<!-- SastoukaStore-A4-FORCE-2-6 -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/a4_covers_force_2_6.css') }}?v=20261004061930">
+<!-- SastoukaStore-A4-FORCE-2-6-1 -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/a4_covers_force_2_6.css') }}?v=20261004062328">
+<!-- SastoukaStore-COVERS-GLOBAL-2-7 -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/sastoukastore_covers_global_2_7.css') }}?v=20261004062747">
+<!-- SastoukaStore-COVERS-GLOBAL-2-8 -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/sastoukastore_covers_global_2_8.css') }}?v=20261004063848">
+<!-- SastoukaStore PATCH 6.6 : ICÔNE / LOGO GLOBAL -->
+<link rel="shortcut icon" href="/static/icons/favicon.ico?v=66">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png?v=66">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png?v=66">
+<link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png?v=66">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png?v=66">
+<link rel="manifest" href="/static/manifest.webmanifest?v=66">
+<meta name="theme-color" content="#041C41">
+<meta property="og:image" content="/static/branding/sastoukastore-logo.png?v=66">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/static/branding/sastoukastore-logo.png?v=66">
+<!-- SastoukaStore PATCH 6.6.1 : ICÔNE / LOGO GLOBAL -->
+<link rel="shortcut icon" href="/static/icons/favicon.ico?v=661">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png?v=661">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png?v=661">
+<link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png?v=661">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png?v=661">
+<link rel="manifest" href="/static/manifest.webmanifest?v=661">
+<meta name="theme-color" content="#041C41">
+<meta property="og:image" content="/static/branding/sastoukastore-logo.png?v=661">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/static/branding/sastoukastore-logo.png?v=661">
+<link rel="stylesheet" href="/static/css/sastoukastore_theme_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_global_client_admin_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_icon_safety_v2_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_bande_haut_uniforme_vip_2026.css?v=20261006">
+
+<!-- SastoukaStore ADMIN VIP THEME -->
+
+<!-- SastoukaStore ADMIN VIP THEME -->
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_admin_2026.css?v=202610062146">
+
+<!-- Correctif Contraste Global -->
+
+<!-- Correctif Contraste Global -->
+<link rel="stylesheet" href="/static/css/sastoukastore_contraste_global_2026.css?v=202610062242">
+<link rel="stylesheet" href="/static/css/sastoukastore_admin_digital_v2.css?v=20261006">
+
+<style id="SASTOUKASTORE_ADMIN_DELETE_PRODUCT_UI_V2">
+.ssk-admin-delete-form{
+  display:inline-block !important;
+  margin:0 !important;
+}
+.ssk-admin-delete-book{
+  appearance:none !important;
+  border:1px solid #dc2626 !important;
+  background:#fff !important;
+  color:#b91c1c !important;
+  border-radius:9px !important;
+  padding:8px 12px !important;
+  font:inherit !important;
+  font-size:12px !important;
+  font-weight:900 !important;
+  cursor:pointer !important;
+}
+.ssk-admin-delete-book:hover{
+  background:#dc2626 !important;
+  color:#fff !important;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style id="SASTOUKASTORE_ADMIN_DELETE_CSS_MODAL_V7">
+.ssk-delete-overlay-v7{
+  position:fixed!important;
+  inset:0!important;
+  z-index:2147483647!important;
+  display:none!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:20px!important;
+  background:rgba(2,12,25,.68)!important;
+  backdrop-filter:blur(5px)!important;
+  -webkit-backdrop-filter:blur(5px)!important;
+}
+.ssk-delete-overlay-v7.is-open{
+  display:flex!important;
+}
+.ssk-delete-dialog-v7{
+  width:min(470px,calc(100vw - 30px))!important;
+  background:#fff!important;
+  border-radius:20px!important;
+  border:1px solid #e3e9ef!important;
+  box-shadow:0 30px 90px rgba(0,0,0,.30)!important;
+  overflow:hidden!important;
+}
+.ssk-delete-head-v7{
+  display:flex!important;
+  gap:14px!important;
+  align-items:flex-start!important;
+  padding:23px 23px 11px!important;
+}
+.ssk-delete-icon-v7{
+  width:46px!important;
+  height:46px!important;
+  flex:0 0 46px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  border-radius:14px!important;
+  background:#fff1f1!important;
+  color:#c91c15!important;
+  font-size:24px!important;
+  font-weight:1000!important;
+}
+.ssk-delete-title-v7{
+  margin:0!important;
+  color:#07111f!important;
+  font-size:20px!important;
+  line-height:1.15!important;
+  font-weight:950!important;
+}
+.ssk-delete-book-v7{
+  margin-top:6px!important;
+  color:#657589!important;
+  font-size:13px!important;
+  line-height:1.45!important;
+  overflow-wrap:anywhere!important;
+}
+.ssk-delete-message-v7{
+  margin:0!important;
+  padding:8px 23px 0!important;
+  color:#657589!important;
+  font-size:12px!important;
+  line-height:1.55!important;
+}
+.ssk-delete-actions-v7{
+  display:flex!important;
+  justify-content:flex-end!important;
+  gap:9px!important;
+  padding:20px 23px 23px!important;
+}
+.ssk-delete-action-v7{
+  min-width:112px!important;
+  min-height:42px!important;
+  padding:10px 16px!important;
+  border:0!important;
+  border-radius:10px!important;
+  font:inherit!important;
+  font-size:12px!important;
+  font-weight:900!important;
+  cursor:pointer!important;
+}
+.ssk-delete-cancel-v7{
+  background:#edf1f5!important;
+  color:#25364a!important;
+}
+.ssk-delete-confirm-v7{
+  background:#d92d20!important;
+  color:#fff!important;
+  box-shadow:0 8px 20px rgba(217,45,32,.23)!important;
+}
+.ssk-delete-confirm-v7:hover{
+  background:#b91c1c!important;
+}
+.ssk-delete-cancel-v7:hover{
+  background:#e1e7ed!important;
+}
+@media(max-width:520px){
+  .ssk-delete-overlay-v7{padding:12px!important}
+  .ssk-delete-dialog-v7{width:100%!important;border-radius:17px!important}
+  .ssk-delete-actions-v7{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+  }
+  .ssk-delete-action-v7{width:100%!important}
+}
+</style>
+
+<link rel="stylesheet" href="/static/css/sastoukastore_remove_region_banner_v2.css?v=20261007">
+</head>
+<body>
+<div class="wrap digital-catalog">
+<header class="catalog-head">
+  <div>
+    <small>SastoukaStore ADMIN · BOUTIQUE NUMÉRIQUE</small>
+    <h1>Supports scolaires numériques</h1>
+    <p>Gérez les PDF éducatifs vendus aux élèves, étudiants et à la diaspora.</p>
+  </div>
+  <div class="actions">
+    <a class="primary" href="{{ url_for('admin_catalog.nouveau') }}">+ Nouveau support PDF</a>
+    <a href="{{ url_for('admin_catalog_v6.categories') }}">Catégories</a>
+    <a href="{{ url_for('admin_orders.commandes') }}">Achats</a>
+    <a href="/">Boutique</a>
+    <a href="/admin/deconnexion" style="color: #d92d20; font-weight: 900;">Déconnexion</a>
+  </div>
+</header>
+
+
+<section class="excel-tools" style="margin:18px 0;padding:18px;border:1px solid #dbe3ef;border-radius:16px;background:#f8fafc">
+  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
+    <div>
+      <strong>📚 Gestion massive des livres</strong>
+      <div style="font-size:.9rem;color:#64748b;margin-top:4px">Importez ou exportez votre catalogue au format Excel.</div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+      <a href="{{ url_for('admin_catalog.modele_excel') }}" style="padding:10px 14px;border-radius:10px;background:#e2e8f0;color:#0f172a;text-decoration:none;font-weight:600">📄 Modèle Excel</a>
+      <a href="{{ url_for('admin_catalog.export_excel') }}" style="padding:10px 14px;border-radius:10px;background:#0f172a;color:#fff;text-decoration:none;font-weight:600">⬇ Exporter Excel</a>
+      <form method="post" action="{{ url_for('admin_catalog.import_excel') }}" enctype="multipart/form-data" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="file" name="excel_file" accept=".xlsx" required style="max-width:240px">
+        <button type="submit" style="padding:10px 14px;border:0;border-radius:10px;background:#16a34a;color:#fff;font-weight:700;cursor:pointer">⬆ Importer Excel</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<form class="search" method="get">
+  <input name="q" value="{{ q }}" placeholder="Rechercher un cours, exercice, méthode...">
+  <button>Rechercher</button>
+</form>
+
+<div class="digital-info">
+  <div><b>💻 Produit numérique</b><span>Livraison par téléchargement après confirmation du paiement.</span></div>
+  <div class="payments"><b>Flooz</b><b>T-Money</b><b>Wave</b><b>Carte bancaire</b></div>
+</div>
+
+<div class="digital-grid">
+{% for p in products %}
+<article class="digital-card">
+  <div class="cover">
+    {% if p.image %}
+      {% if p.image.startswith('http://') or p.image.startswith('https://') %}
+        <img src="{{ p.image }}" alt="">
+      {% elif p.image.startswith('/static/') %}
+        <img src="{{ p.image }}" alt="">
+      {% else %}
+        <img src="{{ url_for('static', filename=p.image.lstrip('/')) }}" alt="">
+      {% endif %}
+    {% else %}
+      <div class="pdf-cover">PDF<span>ÉDUCATIF</span></div>
+    {% endif %}
+    <span class="digital-badge">PDF NUMÉRIQUE</span>
+  </div>
+
+  <div class="digital-body">
+    <div class="topline">
+      <div>
+        {% if p.level %}<span class="tag">{{ p.level }}</span>{% endif %}
+        {% if p.subject %}<span class="tag">{{ p.subject }}</span>{% endif %}
+      </div>
+      <span class="state {% if p.active %}on{% else %}off{% endif %}">
+        {% if p.active %}Publié{% else %}Masqué{% endif %}
+      </span>
+    </div>
+
+    <h2>{{ p.name }}</h2>
+    <p class="category">{{ p.category_name or 'Sans catégorie' }}</p>
+    <p class="desc">{{ p.short_description or p.description or 'Support pédagogique numérique.' }}</p>
+
+    <div class="price-line">
+      <strong>{{ "%.2f"|format(p.price or 0) }}</strong>
+      <span>{{ p.currency or 'FCFA' }}</span>
+    </div>
+
+    <div class="pdf-status {% if p.pdf_file %}ok{% else %}missing{% endif %}">
+      {% if p.pdf_file %}
+        ✓ PDF associé
+      {% else %}
+        ⚠ PDF manquant
+      {% endif %}
+    </div>
+
+    <div class="card-actions">
+      <a href="{{ url_for('admin_catalog.modifier', product_id=p.id) }}">Modifier</a>
+      <a href="/produit/{{ p.id }}" target="_blank">Voir boutique</a>
+      <form method="post" action="{{ url_for('admin_catalog.toggle', product_id=p.id) }}">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <button>{% if p.active %}Masquer{% else %}Publier{% endif %}</button>
+      </form>
+<!-- SASTOUKASTORE ADMIN DELETE BOOK V3 -->
+<form
+  method="post"
+  action="{{ url_for('admin_catalog.supprimer_livre_definitivement_v3', product_id=p.id) }}"
+  class="ssk-admin-delete-book-form"
+  data-book-name="{{ p.name|e }}"
+>
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <button type="submit" class="ssk-admin-delete-book-button">
+    Supprimer
+  </button>
+</form>
+<!-- FIN SASTOUKASTORE ADMIN DELETE BOOK V3 -->
+</div>
+  </div>
+</article>
+{% else %}
+<div class="empty">Aucun support numérique trouvé.</div>
+{% endfor %}
+</div>
+</div>
+
+<!-- SASTOUKASTORE ADMIN CSS DELETE MODAL V4 -->
+
+      <div>
+        <h2 id="sskDeleteTitleV4" class="ssk-delete-modal-title-v4">
+          Supprimer le livre ?
+        </h2>
+        <div id="sskDeleteBookV4" class="ssk-delete-modal-book-v4">
+          Livre sélectionné
+        </div>
+      </div>
+    </div>
+
+    <p id="sskDeleteTextV4" class="ssk-delete-modal-text-v4">
+      Cette suppression est définitive. Un livre déjà acheté reste protégé.
+    </p>
+
+    <div class="ssk-delete-modal-actions-v4">
+      <button type="button" id="sskDeleteCancelV4"
+              class="ssk-delete-btn-v4 ssk-delete-cancel-v4">
+        Annuler
+      </button>
+      <button type="button" id="sskDeleteConfirmV4"
+              class="ssk-delete-btn-v4 ssk-delete-confirm-v4 ssk-admin-delete-book-button">
+        Supprimer
+      </button>
+    </div>
+  </div>
+</div>
+<!-- FIN SASTOUKASTORE ADMIN CSS DELETE MODAL V4 -->
+
+
+
+
+
+
+      <div>
+        <h2 id="sskDeleteTitleV6" class="ssk-delete-title-v6">
+          Supprimer le livre ?
+        </h2>
+        <div id="sskDeleteBookV6" class="ssk-delete-book-v6">
+          Livre sélectionné
+        </div>
+      </div>
+    </div>
+
+    <p class="ssk-delete-message-v6">
+      Cette suppression est définitive. Un livre déjà acheté reste protégé.
+    </p>
+
+    <div class="ssk-delete-actions-v6">
+      <button type="button"
+              id="sskDeleteCancelV6"
+              class="ssk-delete-action-v6 ssk-delete-cancel-v6">
+        Annuler
+      </button>
+      <button type="button"
+              id="sskDeleteConfirmV6"
+              class="ssk-delete-action-v6 ssk-delete-confirm-v6 ssk-admin-delete-book-button">
+        Supprimer
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<script id="SASTOUKASTORE_ADMIN_DELETE_CSS_MODAL_V6_SCRIPT">
+(function(){
+  "use strict";
+
+  var pendingForm = null;
+
+  function openModal(form){
+    var overlay = document.getElementById("sskDeleteOverlayV6");
+    var book = document.getElementById("sskDeleteBookV6");
+    if(!overlay || !book) return;
+
+    pendingForm = form;
+    book.textContent =
+      form.getAttribute("data-book-name") || "ce livre";
+
+    overlay.classList.add("is-open");
+    overlay.setAttribute("aria-hidden","false");
+
+    var cancel = document.getElementById("sskDeleteCancelV6");
+    if(cancel){
+      window.setTimeout(function(){
+        cancel.focus();
+      },30);
+    }
+  }
+
+  function closeModal(){
+    var overlay = document.getElementById("sskDeleteOverlayV6");
+    if(!overlay) return;
+    overlay.classList.remove("is-open");
+    overlay.setAttribute("aria-hidden","true");
+    pendingForm = null;
+  }
+
+  /*
+   * Capture phase :
+   * empêche le bouton de lancer un ancien comportement natif.
+   */
+  document.addEventListener("click", function(event){
+    var target = event.target && event.target.closest
+      ? event.target.closest(".ssk-admin-delete-book-button")
+      : null;
+
+    if(target){
+      var form = target.closest("form");
+      if(form){
+        event.preventDefault();
+        event.stopPropagation();
+        openModal(form);
+        return;
+      }
+    }
+
+    if(event.target && event.target.id === "sskDeleteCancelV6"){
+      event.preventDefault();
+      closeModal();
+      return;
+    }
+
+    if(event.target && event.target.id === "sskDeleteConfirmV6"){
+      event.preventDefault();
+
+      if(pendingForm){
+        var formToSubmit = pendingForm;
+        closeModal();
+
+        /*
+         * Envoi direct POST.
+         * Aucun confirm(), aucune alerte navigateur.
+         */
+        HTMLFormElement.prototype.submit.call(formToSubmit);
+      }
+      return;
+    }
+
+    var overlay = document.getElementById("sskDeleteOverlayV6");
+    if(overlay && event.target === overlay){
+      closeModal();
+    }
+  }, true);
+
+  document.addEventListener("keydown", function(event){
+    var overlay = document.getElementById("sskDeleteOverlayV6");
+    if(!overlay || !overlay.classList.contains("is-open")) return;
+
+    if(event.key === "Escape"){
+      event.preventDefault();
+      closeModal();
+    }
+  });
+
+})();
+</script>
+
+
+<div id="sskDeleteOverlayV7"
+     class="ssk-delete-overlay-v7"
+     aria-hidden="true">
+  <div class="ssk-delete-dialog-v7"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="sskDeleteTitleV7">
+    <div class="ssk-delete-head-v7">
+      <div class="ssk-delete-icon-v7">!</div>
+      <div>
+        <h2 id="sskDeleteTitleV7" class="ssk-delete-title-v7">
+          Supprimer le livre ?
+        </h2>
+        <div id="sskDeleteBookV7" class="ssk-delete-book-v7">
+          Livre sélectionné
+        </div>
+      </div>
+    </div>
+
+    <p class="ssk-delete-message-v7">
+      Cette suppression est définitive. Un livre déjà acheté reste protégé.
+    </p>
+
+    <div class="ssk-delete-actions-v7">
+      <button type="button"
+              id="sskDeleteCancelV7"
+              class="ssk-delete-action-v7 ssk-delete-cancel-v7">
+        Annuler
+      </button>
+      <button type="button"
+              id="sskDeleteConfirmV7"
+              class="ssk-delete-action-v7 ssk-delete-confirm-v7">
+        Supprimer
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<script id="SASTOUKASTORE_ADMIN_DELETE_CSS_MODAL_V7_SCRIPT">
+(function(){
+  "use strict";
+
+  var pendingForm = null;
+
+  function openDeleteModal(form){
+    var overlay = document.getElementById("sskDeleteOverlayV7");
+    var book = document.getElementById("sskDeleteBookV7");
+    if(!overlay || !book) return;
+
+    pendingForm = form;
+    book.textContent =
+      form.getAttribute("data-book-name") || "ce livre";
+
+    overlay.classList.add("is-open");
+    overlay.setAttribute("aria-hidden","false");
+
+    var cancel = document.getElementById("sskDeleteCancelV7");
+    if(cancel){
+      window.setTimeout(function(){
+        cancel.focus();
+      },30);
+    }
+  }
+
+  function closeDeleteModal(){
+    var overlay = document.getElementById("sskDeleteOverlayV7");
+    if(!overlay) return;
+
+    overlay.classList.remove("is-open");
+    overlay.setAttribute("aria-hidden","true");
+    pendingForm = null;
+  }
+
+  document.addEventListener("click", function(event){
+    var target = event.target && event.target.closest
+      ? event.target.closest(".ssk-admin-delete-book-button")
+      : null;
+
+    if(target){
+      var form = target.closest("form");
+      if(form){
+        event.preventDefault();
+        event.stopPropagation();
+        openDeleteModal(form);
+        return;
+      }
+    }
+
+    if(event.target && event.target.id === "sskDeleteCancelV7"){
+      event.preventDefault();
+      closeDeleteModal();
+      return;
+    }
+
+    if(event.target && event.target.id === "sskDeleteConfirmV7"){
+      event.preventDefault();
+
+      if(pendingForm){
+        var formToSubmit = pendingForm;
+        closeDeleteModal();
+
+        HTMLFormElement.prototype.submit.call(formToSubmit);
+      }
+      return;
+    }
+
+    var overlay = document.getElementById("sskDeleteOverlayV7");
+    if(overlay && event.target === overlay){
+      closeDeleteModal();
+    }
+  }, true);
+
+  document.addEventListener("keydown", function(event){
+    var overlay = document.getElementById("sskDeleteOverlayV7");
+    if(!overlay || !overlay.classList.contains("is-open")) return;
+
+    if(event.key === "Escape"){
+      event.preventDefault();
+      closeDeleteModal();
+    }
+  });
+
+})();
+</script>
+
+<script src="/static/js/sastoukastore_remove_region_banner_v2.js?v=20261007"></script>
+</body>
+</html>

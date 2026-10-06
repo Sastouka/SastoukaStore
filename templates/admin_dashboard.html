@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SastoukaStore — Tableau de bord</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard7.css') }}">
+<!-- SastoukaStore PATCH 6.6 : ICÔNE / LOGO GLOBAL -->
+<link rel="shortcut icon" href="/static/icons/favicon.ico?v=66">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png?v=66">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png?v=66">
+<link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png?v=66">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png?v=66">
+<link rel="manifest" href="/static/manifest.webmanifest?v=66">
+<meta name="theme-color" content="#041C41">
+<meta property="og:image" content="/static/branding/sastoukastore-logo.png?v=66">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/static/branding/sastoukastore-logo.png?v=66">
+<!-- SastoukaStore PATCH 6.6.1 : ICÔNE / LOGO GLOBAL -->
+<link rel="shortcut icon" href="/static/icons/favicon.ico?v=661">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/icons/favicon-16.png?v=661">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/icons/favicon-32.png?v=661">
+<link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png?v=661">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/icons/apple-touch-icon.png?v=661">
+<link rel="manifest" href="/static/manifest.webmanifest?v=661">
+<meta name="theme-color" content="#041C41">
+<meta property="og:image" content="/static/branding/sastoukastore-logo.png?v=661">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/static/branding/sastoukastore-logo.png?v=661">
+<link rel="stylesheet" href="/static/css/sastoukastore_theme_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_global_client_admin_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_icon_safety_v2_2026.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_bande_haut_uniforme_vip_2026.css?v=20261006">
+
+<!-- SastoukaStore ADMIN VIP THEME -->
+
+<!-- SastoukaStore ADMIN VIP THEME -->
+<link rel="stylesheet" href="/static/css/sastoukastore_vip_admin_2026.css?v=202610062146">
+
+<!-- Correctif Contraste Global -->
+
+<!-- Correctif Contraste Global -->
+<link rel="stylesheet" href="/static/css/sastoukastore_contraste_global_2026.css?v=202610062242">
+<link rel="stylesheet" href="/static/css/sastoukastore_admin_digital_v2.css?v=20261006">
+<link rel="stylesheet" href="/static/css/sastoukastore_remove_region_banner_v2.css?v=20261007">
+</head>
+<body>
+<div class="shell">
+<header class="head">
+  <div>
+    <span class="kicker">SastoukaStore ADMIN</span>
+    <h1>Tableau de bord</h1>
+    <p>Vue commerciale de votre boutique</p>
+  </div>
+  <nav>
+    <a href="{{ url_for('admin_dashboard.dashboard') }}">Dashboard</a>
+    <a href="{{ url_for('admin_orders.commandes') }}">Achats</a>
+    <a href="{{ url_for('admin_catalog_v6.produits_fallback') }}">Produits</a>
+    <a href="{{ url_for('admin_catalog_v6.categories') }}">Catégories</a>
+    <a href="/admin/deconnexion" style="color: #d92d20; font-weight: 900;">Déconnexion</a>
+  </nav>
+</header>
+
+<section class="periods">
+  {% for key,label in [('all','Tout'),('today','Aujourd’hui'),('7d','7 jours'),('30d','30 jours'),('year','Cette année')] %}
+    <a class="{% if period==key %}active{% endif %}" href="{{ url_for('admin_dashboard.dashboard', period=key) }}">{{ label }}</a>
+  {% endfor %}
+  <a class="export" href="{{ url_for('admin_dashboard.export_orders') }}">Exporter CSV</a>
+</section>
+
+<section class="metrics">
+  <article><span>Achats</span><strong>{{ total_orders }}</strong></article>
+  <article><span>Chiffre d’affaires</span><strong>{{ "%.2f"|format(revenue or 0) }}</strong></article>
+  <article><span>Paiements encaissés</span><strong>{{ "%.2f"|format(paid_revenue or 0) }}</strong></article>
+  <article><span>Clients</span><strong>{{ customers }}</strong></article>
+  <article><span>Produits</span><strong>{{ products }}</strong></article>
+  <article class="warning"><span>Stock ≤ 5</span><strong>{{ low_stock }}</strong></article>
+  <article class="danger"><span>Ruptures</span><strong>{{ out_of_stock }}</strong></article>
+</section>
+
+<div class="layout">
+<section class="panel chart-panel">
+  <div class="panel-title"><h2>Activité récente</h2><span>14 derniers jours</span></div>
+  <div class="chart">
+    {% for d in by_day %}
+      {% set maxrev = (by_day | map(attribute='revenue') | max) if by_day else 1 %}
+      {% set h = ((d.revenue or 0) / (maxrev or 1) * 100)|round|int %}
+      <div class="bar-col">
+        <div class="bar-value">{{ "%.0f"|format(d.revenue or 0) }}</div>
+        <div class="bar" style="height:{{ [h,4]|max }}%"></div>
+        <small>{{ d.day[5:] }}</small>
+      </div>
+    {% else %}
+      <div class="empty">Pas encore de données.</div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel-title"><h2>Statuts des achats</h2></div>
+  {% for s in by_status %}
+    <div class="status-row"><span>{{ s.status }}</span><b>{{ s.n }}</b></div>
+  {% else %}<div class="empty">Aucune commande.</div>{% endfor %}
+</section>
+
+<section class="panel">
+  <div class="panel-title"><h2>Produits les plus vendus</h2></div>
+  {% for p in top_products %}
+    <div class="product-row"><div><b>{{ p.product_name }}</b><small>{{ p.qty }} unité(s)</small></div><strong>{{ "%.2f"|format(p.amount or 0) }}</strong></div>
+  {% else %}<div class="empty">Aucune vente.</div>{% endfor %}
+</section>
+
+<section class="panel">
+  <div class="panel-title"><a href="/admin/ventes" style="display:inline-flex;align-items:center;gap:6px;padding:8px 11px;border-radius:9px;background:#041C41;color:#fff;text-decoration:none;font-size:10px;font-weight:900;">● Achats LIVE</a>
+<h2>Derniers achats</h2><a href="{{ url_for('admin_orders.commandes') }}">Voir tout</a></div>
+  <div class="orders">
+  {% for o in recent %}
+    <a class="order-row" href="{{ url_for('admin_orders.commande_detail', order_id=o.id) }}">
+      <div><b>#{{ o.id }}</b><span>{{ o.customer_name }}</span></div>
+      <div><strong>{{ "%.2f"|format(o.total or 0) }}</strong><small>{{ o.delivery_status }}</small></div>
+    </a>
+  {% else %}<div class="empty">Aucune commande.</div>{% endfor %}
+  </div>
+</section>
+</div>
+</div>
+<script src="/static/js/sastoukastore_remove_region_banner_v2.js?v=20261007"></script>
+</body>
+</html>

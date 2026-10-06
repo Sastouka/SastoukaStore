@@ -1,0 +1,114 @@
+/* SASTOUKASTORE — MA COMMANDE / FIX V2 */
+html body.p64{
+  margin:0 !important;
+  padding:0 !important;
+  width:100% !important;
+  min-width:0 !important;
+  overflow-x:hidden !important;
+}
+html body.p64 .p64-nav{
+  width:100% !important;
+  height:78px !important;
+  min-height:78px !important;
+  max-height:78px !important;
+  padding:0 max(20px,calc((100% - 1240px)/2)) !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:20px !important;
+  position:sticky !important;
+  top:0 !important;
+  z-index:1000 !important;
+  overflow:hidden !important;
+}
+html body.p64 .p64-brand{
+  display:flex !important;
+  align-items:center !important;
+  gap:10px !important;
+  width:auto !important;
+  height:52px !important;
+  min-width:0 !important;
+  max-width:320px !important;
+  flex:0 0 auto !important;
+  position:relative !important;
+  overflow:visible !important;
+}
+html body.p64 .p64-brand img.chariow-header-logo,
+html body.p64 .p64-brand img.chariow-brand-icon,
+html body.p64 .p64-brand > img{
+  display:block !important;
+  width:42px !important;
+  height:42px !important;
+  min-width:42px !important;
+  min-height:42px !important;
+  max-width:42px !important;
+  max-height:42px !important;
+  flex:0 0 42px !important;
+  aspect-ratio:1 / 1 !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  position:static !important;
+  inset:auto !important;
+  transform:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  float:none !important;
+  visibility:visible !important;
+  opacity:1 !important;
+}
+html body.p64 .p64-brand-word{
+  display:block !important;
+  width:auto !important;
+  height:auto !important;
+  max-width:240px !important;
+  min-width:0 !important;
+  overflow:visible !important;
+  white-space:nowrap !important;
+  font-size:20px !important;
+  line-height:1.05 !important;
+  font-weight:900 !important;
+}
+html body.p64 .p64-brand-word small{
+  display:block !important;
+  margin-top:3px !important;
+  font-size:8px !important;
+  letter-spacing:1.3px !important;
+  line-height:1 !important;
+}
+html body.p64 .p64-nav-links{
+  display:flex !important;
+  align-items:center !important;
+  gap:22px !important;
+  min-width:0 !important;
+}
+html body.p64 .p64-nav-links a,
+html body.p64 .p64-cart-btn{
+  position:static !important;
+  transform:none !important;
+}
+@media(max-width:760px){
+  html body.p64 .p64-nav{
+    height:70px !important;
+    min-height:70px !important;
+    max-height:70px !important;
+    padding:0 14px !important;
+    gap:10px !important;
+  }
+  html body.p64 .p64-brand{
+    height:48px !important;
+    max-width:210px !important;
+  }
+  html body.p64 .p64-brand img.chariow-header-logo,
+  html body.p64 .p64-brand img.chariow-brand-icon,
+  html body.p64 .p64-brand > img{
+    width:40px !important;
+    height:40px !important;
+    min-width:40px !important;
+    min-height:40px !important;
+    max-width:40px !important;
+    max-height:40px !important;
+    flex-basis:40px !important;
+  }
+  html body.p64 .p64-brand-word{font-size:16px !important}
+  html body.p64 .p64-nav-links{display:none !important}
+}

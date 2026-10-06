@@ -1,0 +1,125 @@
+/* ============================================================
+   SASTOUKASTORE — ESPACE AVANT PRODUITS / AMAZON V3
+   ============================================================ */
+
+/* Le "grand vide" est surtout créé par les sections qui précèdent
+   le catalogue. On les compacte réellement. */
+
+html body .vip-trust-bar{
+  padding-top:4px !important;
+  padding-bottom:4px !important;
+  margin:0 !important;
+}
+
+html body .vip-trust-grid{
+  gap:6px !important;
+}
+
+html body section.vip-section.vip-categories{
+  padding-top:10px !important;
+  padding-bottom:10px !important;
+  margin-top:0 !important;
+  margin-bottom:0 !important;
+}
+
+html body .vip-categories .vip-section-heading{
+  margin-top:0 !important;
+  margin-bottom:8px !important;
+}
+
+html body .vip-categories .vip-section-heading h2{
+  margin-top:0 !important;
+  margin-bottom:3px !important;
+}
+
+html body .vip-categories .vip-category-grid{
+  gap:7px !important;
+}
+
+html body .vip-categories .vip-category-card{
+  min-height:68px !important;
+  padding:9px 11px !important;
+  border-radius:13px !important;
+}
+
+html body .vip-categories .vip-category-icon{
+  width:34px !important;
+  height:34px !important;
+}
+
+/* Barre "01 -> 02 -> 03" : très compacte pour ne pas repousser
+   la grille de livres. */
+html body .ssk-conversion-strip{
+  margin:3px auto 0 !important;
+  padding:5px 9px !important;
+  min-height:0 !important;
+  line-height:1.15 !important;
+}
+
+html body .ssk-conversion-strip .ssk-step{
+  padding:2px 5px !important;
+}
+
+html body .ssk-conversion-strip .ssk-arrow{
+  margin:0 2px !important;
+}
+
+/* CATALOGUE : démarre quasiment immédiatement */
+html body section.vip-section.vip-catalogue{
+  padding-top:7px !important;
+  padding-bottom:40px !important;
+  margin-top:0 !important;
+}
+
+html body .vip-catalogue .vip-catalogue-heading{
+  margin-top:0 !important;
+  margin-bottom:7px !important;
+}
+
+html body .vip-catalogue .vip-kicker{
+  margin-top:0 !important;
+  margin-bottom:2px !important;
+}
+
+html body .vip-catalogue .vip-catalogue-heading h2{
+  margin-top:0 !important;
+  margin-bottom:0 !important;
+}
+
+html body #catalogue .vip-product-grid{
+  margin-top:5px !important;
+  padding-top:0 !important;
+  row-gap:12px !important;
+}
+
+/* Pas d'espace artificiel ajouté par les anciens correctifs */
+html body .vip-catalogue > .vip-container{
+  padding-top:0 !important;
+}
+
+@media (max-width:720px){
+  html body section.vip-section.vip-categories{
+    padding-top:7px !important;
+    padding-bottom:7px !important;
+  }
+
+  html body .vip-categories .vip-category-card{
+    min-height:60px !important;
+    padding:8px 9px !important;
+  }
+
+  html body .ssk-conversion-strip{
+    margin-top:2px !important;
+    margin-bottom:0 !important;
+    padding:4px 7px !important;
+  }
+
+  html body section.vip-section.vip-catalogue{
+    padding-top:5px !important;
+  }
+
+  html body #catalogue .vip-product-grid{
+    margin-top:4px !important;
+    row-gap:9px !important;
+  }
+}
